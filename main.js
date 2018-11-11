@@ -1,0 +1,226 @@
+/**
+ * CREATE_INSTANT_INVITE	0x00000001	Allows creation of instant invites	T, V
+KICK_MEMBERS *	0x00000002	Allows kicking members	
+BAN_MEMBERS *	0x00000004	Allows banning members	
+ADMINISTRATOR *	0x00000008	Allows all permissions and bypasses channel permission overwrites	
+MANAGE_CHANNELS *	0x00000010	Allows management and editing of channels	T, V
+MANAGE_GUILD *	0x00000020	Allows management and editing of the guild	
+ADD_REACTIONS	0x00000040	Allows for the addition of reactions to messages	T
+VIEW_AUDIT_LOG	0x00000080	Allows for viewing of audit logs	
+VIEW_CHANNEL	0x00000400	Allows guild members to view a channel, which includes reading messages in text channels	T, V
+SEND_MESSAGES	0x00000800	Allows for sending messages in a channel	T
+SEND_TTS_MESSAGES	0x00001000	Allows for sending of /tts messages	T
+MANAGE_MESSAGES *	0x00002000	Allows for deletion of other users messages	T
+EMBED_LINKS	0x00004000	Links sent by users with this permission will be auto-embedded	T
+ATTACH_FILES	0x00008000	Allows for uploading images and files	T
+READ_MESSAGE_HISTORY	0x00010000	Allows for reading of message history	T
+MENTION_EVERYONE	0x00020000	Allows for using the @everyone tag to notify all users in a channel, and the @here tag to notify all online users in a channel	T
+USE_EXTERNAL_EMOJIS	0x00040000	Allows the usage of custom emojis from other servers	T
+CONNECT	0x00100000	Allows for joining of a voice channel	V
+SPEAK	0x00200000	Allows for speaking in a voice channel	V
+MUTE_MEMBERS	0x00400000	Allows for muting members in a voice channel	V
+DEAFEN_MEMBERS	0x00800000	Allows for deafening of members in a voice channel	V
+MOVE_MEMBERS	0x01000000	Allows for moving of members between voice channels	V
+USE_VAD	0x02000000	Allows for using voice-activity-detection in a voice channel	V
+PRIORITY_SPEAKER	0x00000100	Allows for using priority speaker in a voice channel	V
+CHANGE_NICKNAME	0x04000000	Allows for modification of own nickname	
+MANAGE_NICKNAMES	0x08000000	Allows for modification of other users nicknames	
+MANAGE_ROLES *	0x10000000	Allows management and editing of roles	T, V
+MANAGE_WEBHOOKS *	0x20000000	Allows management and editing of webhooks	T, V
+MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis	
+ */
+
+
+const config = require("./config/config.json");
+const Discord = require("discord.js");
+const fs = require("fs");
+const bot = new Discord.Client({disableEveryone: true});
+bot.commands = new Discord.Collection();
+const token = process.env.token;
+
+const active = new Map();
+
+const serverStats = {
+    guildID: '511250353430462465',
+    totalUsersID: '511251090097045526',
+    memberCountID: '511251296054149141',
+    botCountID: '511251340119244841'
+}
+
+fs.readdir("./commands/", (err, files) => {
+
+  if(err) console.log(err);
+
+  let jsfile = files.filter(f => f.split(".").pop() === "js")
+  if(jsfile.length <= 0){
+    console.log("Couldn't find commands.");
+    return;
+  }
+
+  jsfile.forEach((f, i) =>{
+    let props = require(`./commands/${f}`);
+    console.log(`${f} loaded!`);
+    bot.commands.set(props.help.name, props);
+  });
+
+});
+
+
+bot.on("ready", async () => {
+  console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
+
+  bot.user.setActivity("Obéir à son maître", {type: "WATCHING"});
+
+  //bot.user.setGame("on SourceCade!");
+});
+
+
+bot.on("message", async message => {
+
+    //Return Statements
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return;
+
+  //MUSIC BOT
+  let ops = {
+      active: active
+  }
+
+
+  let prefix = config.prefix;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+
+  let commandfile = bot.commands.get(cmd.slice(prefix.length));
+  if(commandfile) commandfile.run(bot,message,args, ops);
+});
+
+
+bot.on('guildMemberAdd', member => {
+    console.log(`lklkmklmk`);
+
+   // if (member.guild.id !== serverStats.guildID) return;
+
+   member.sendMessage("POUR SOUTENIR LA ASCALON ALLEZ NOUS SUIVRE SUR TWITTER   https://twitter.com/ASCALONCUP");
+
+    bot.channels.get(serverStats.totalUsersID).setName(`Total Users : ${member.guild.memberCount}`); // total users
+    bot.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`); // total members (not inscued bot)
+    bot.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`); // bot count
+    
+});
+
+bot.on('guildMemberRemove', member => {
+
+    console.log(`lklkmklmk`);
+
+    bot.channels.get(serverStats.totalUsersID).setName(`Total Users : ${member.guild.memberCount}`); // total users
+    bot.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`); // total members (not inscued bot)
+    bot.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`); // bot count
+
+});
+
+
+
+
+
+
+//MESSAGE EVENT
+
+bot.on("message", async message => {
+    
+    // Part 1 : checking & removing the text
+    //1 blacklisted words
+  let blacklisted = ['discord.gg'] //words put , after the word
+
+  //2 looking for words
+  let foundInText = false;
+  for (var i in blacklisted) { // loops through the blacklisted list
+    if(message.channel.name == "👍partenariat" || message.channel.name == "🤝échange-de-pub🤝") {
+        return;
+    }
+
+    if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
+  }
+  // checks casesensitive words
+
+  //3 deletes and send message
+    if (foundInText) {
+      //message delete
+      message.delete();
+      //message send to author
+      message.author.send('La pub de discord sur le serveur ASCALON est interdite !');
+      //message channel send to author for advertissment
+      message.channel.send(`<@${message.author.id}> Bonjour, la pub de serveur discord est interdite. Dernière avertissement avant le ban`).then(message => message.delete(5000));
+    }
+
+    //RESULTAT
+
+    if(message.channel.name == "🎲résultat") {
+
+        if (!message.content.includes("=")) {
+            //Message delete
+            message.delete();
+            //send message to author message
+            message.author.send("Bonjour, vous avez essayer de mettre un message qui n'est pas en rapport aux résultats.");
+            } else {
+                message.react("✅");
+            }
+        }
+
+
+   //INSCRIPTION
+
+    //IF MESSAGE IS "🌀inscription-solo-on"
+    if(message.channel.name == "🌀inscription-solo-on") {
+
+    if (!message.content.includes("Pseudo du joueur IG :") || !message.content.includes("@")) {
+        //Message delete
+        message.delete();
+        //send message to author message
+        message.author.send("Bonjour, vous avez essayer de vous inscire à un tournoi ASCALON Solo, hélas vous n'avez pas respecter le modèle.");
+        message.author.send("Pseudo du joueur IG : @<votre mention>");
+        } else {
+            message.react("✅");
+            message.delete("Pseudo du joueur IG :");
+        }
+        //IS CHANNEL "🌀inscription-solo-off"
+    } else if(message.channel.name == "🌀inscription-solo-off") {
+        if(message.member.hasPermission("ADMINISTRATOR")) {
+            return;
+        }
+        //message deleted
+        message.delete();
+        //message author send
+        message.author.send("Bonjour, vous avez essayer de vous inscire à un tournoi ASCALON Solo, les inscriptiosn sont fermées.");
+    }
+
+    //INSCRIPTION DUO
+
+    if(message.channel.name == "🌀inscription-duo-on") {
+
+        //if message not include "NOM DE TEAM :", "J1", "J2", "@"
+        if (!message.content.includes("Nom de l'équipe") || !message.content.includes("@") || !message.content.includes("Joueur 1") || !message.content.includes("Joueur 1")) {
+            //Message delete
+            message.delete();
+            //send message to author message
+            message.author.send("Bonjour, vous avez essayer de vous inscire à un tournoi ASCALON Duo, hélas vous n'avez pas respecter le modèle.");
+            message.author.send("Nom de l'équipe :");
+            message.author.send("Joueur 1 :               @MENTION");
+            message.author.send("Joueur 2 :                @MENTION");
+            } else {
+                message.react("✅");
+            }
+            //IS CHANNEL "🌀inscription-solo-off"
+        } else if(message.channel.name == "🌀inscription-duo-off") {
+            if(message.member.hasPermission("ADMINISTRATOR")) {
+                return;
+            }
+            message.delete();
+            message.author.send("Bonjour, vous avez essayer de vous inscire à un tournoi ASCALON Duo, les inscriptiosn sont fermées.");
+       }
+    });
+
+
+  bot.login(token);
+
