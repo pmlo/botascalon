@@ -185,4 +185,4 @@ bot.on("message", async message => {
     });
 
 
-client.login(token);
+bot.login(token);
