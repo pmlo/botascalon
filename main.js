@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-var client = new Discord.Client();
+var bot = new Discord.Client();
 const token = process.env.token;
 const fs = require("fs");
 
