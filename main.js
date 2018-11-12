@@ -99,6 +99,13 @@ bot.on("message", async message => {
 bot.on('guildMemberAdd', member => {
 
    // if (member.guild.id !== serverStats.guildID) return;
+    
+    let bienvenueChannel = message.guild.channels.find(`name`, "👐bienvenue");
+    if(!bienvenueChannel) return;
+
+    bienvenueChannel.send(`Bievenue ${message.author}, avant de te divertir sur ASCALON CUP je t'invite à lire le règlement. Have Fun:tada::hugging: !`);
+    
+    //"Bienvenue @J'aimeLesChats , avant de te divertir sur  ASCALON CUP je t'invite à lire le règlement . Have Fun:tada::hugging: !"
 
    member.sendMessage("POUR SOUTENIR LA ASCALON ALLEZ NOUS SUIVRE SUR TWITTER   https://twitter.com/ASCALONCUP");
 
