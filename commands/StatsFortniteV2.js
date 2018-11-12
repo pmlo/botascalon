@@ -8,12 +8,11 @@ module.exports.run = async (bot, message, args, ops) => {
 
     if(!['pc', 'xbox','ps4']) message.channel.send('Veuillez préciser la platforme du joueur : a!fnitestats platform username');
 
-    if(!args[1]) message.channel.send('Veuillez préciser le pseudo du joueur : a!fnitestats <pc;xbox;ps4< <username>');
+    if(!args[0]) message.channel.send('Veuillez préciser le pseudo du joueur : a!fnitestats <username>');
 
-    platform = args.shift();
-    username = args.join(' ');
+    username = args.shift();
 
-    stats.getInfo(username,platform).then( date => {
+    stats.getInfo(username,'pc').then( date => {
 
         const embed = new Discord.MessageEmbed()
         .setColor('0xffffff')
