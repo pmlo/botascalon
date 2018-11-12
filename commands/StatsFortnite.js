@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const Client = require("fortnite");
-const fortnite = new Client('7f2c2d81-71e1-4fdd-a18a-9ea6ccdde148')
+const fortnite = new Client(process.env.tokenfortnite)
 module.exports.run = async (bot, message, args, ops) => {
   //this is where the actual code for the command goes
   await message.delete();
