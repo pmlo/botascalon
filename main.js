@@ -99,8 +99,7 @@ bot.on("message", async message => {
 bot.on('guildMemberAdd', member => 
        
        
-    let channelWelcome = member.guild.channels.find(`name`, `👐bienvenue`);
-       channelWelcome.sendMessage(`Bienvenue ${member} , avant de te divertir sur  ASCALON CUP je t'invite à lire le règlement . Have Fun:tada::hugging: !`
+       //channelWelcome.sendMessage(`Bienvenue ${member} , avant de te divertir sur  ASCALON CUP je t'invite à lire le règlement . Have Fun:tada::hugging: !`
 
    // if (member.guild.id !== serverStats.guildID) return;
 
