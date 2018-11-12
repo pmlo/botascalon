@@ -97,7 +97,6 @@ bot.on("message", async message => {
 
 
 bot.on('guildMemberAdd', member => {
-    console.log(`lklkmklmk`);
 
    // if (member.guild.id !== serverStats.guildID) return;
 
@@ -110,8 +109,6 @@ bot.on('guildMemberAdd', member => {
 });
 
 bot.on('guildMemberRemove', member => {
-
-    console.log(`lklkmklmk`);
 
     bot.channels.get(serverStats.totalUsersID).setName(`Total Users : ${member.guild.memberCount}`); // total users
     bot.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`); // total members (not inscued bot)
@@ -183,17 +180,8 @@ bot.on("message", async message => {
             message.react("✅");
             message.delete("Pseudo du joueur IG :");
         }
-        //IS CHANNEL "🌀inscription-solo-off"
-    } else if(message.channel.name == "🌀inscription-solo-off") {
-        if(message.member.hasPermission("ADMINISTRATOR")) {
-            return;
-        }
-        //message deleted
-        message.delete();
-        //message author send
-        message.author.send("Bonjour, vous avez essayer de vous inscire à un tournoi ASCALON Solo, les inscriptiosn sont fermées.");
-    }
-
+        
+    } 
     //INSCRIPTION DUO
 
     if(message.channel.name == "🌀inscription-duo-on") {
@@ -210,14 +198,7 @@ bot.on("message", async message => {
             } else {
                 message.react("✅");
             }
-            //IS CHANNEL "🌀inscription-solo-off"
-        } else if(message.channel.name == "🌀inscription-duo-off") {
-            if(message.member.hasPermission("ADMINISTRATOR")) {
-                return;
-            }
-            message.delete();
-            message.author.send("Bonjour, vous avez essayer de vous inscire à un tournoi ASCALON Duo, les inscriptiosn sont fermées.");
-       }
+                    } 
     });
 
 
