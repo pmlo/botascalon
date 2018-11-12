@@ -103,7 +103,7 @@ bot.on('guildMemberAdd', member => {
     let bienvenueChannel = member.guild.channels.find(`name`, "👐bienvenue");
     if(!bienvenueChannel) return;
 
-    bienvenueChannel.send(`Bievenue ${message.author}, avant de te divertir sur ASCALON CUP je t'invite à lire le règlement. Have Fun:tada::hugging: !`);
+    bienvenueChannel.sendMessage(`Bievenue ${message.author}, avant de te divertir sur ASCALON CUP je t'invite à lire le règlement. Have Fun:tada::hugging: !`);
     
     //"Bienvenue @J'aimeLesChats , avant de te divertir sur  ASCALON CUP je t'invite à lire le règlement . Have Fun:tada::hugging: !"
 
