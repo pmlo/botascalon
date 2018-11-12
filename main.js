@@ -100,7 +100,7 @@ bot.on('guildMemberAdd', member => {
 
    // if (member.guild.id !== serverStats.guildID) return;
     
-    let bienvenueChannel = message.guild.channels.find(`name`, "👐bienvenue");
+    let bienvenueChannel = member.guild.channels.find(`name`, "👐bienvenue");
     if(!bienvenueChannel) return;
 
     bienvenueChannel.send(`Bievenue ${message.author}, avant de te divertir sur ASCALON CUP je t'invite à lire le règlement. Have Fun:tada::hugging: !`);
