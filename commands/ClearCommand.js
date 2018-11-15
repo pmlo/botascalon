@@ -21,7 +21,6 @@ module.exports.run = async (bot, message, args, ops) => {
     messages.length = amount + 1;
   }
   messages.map(async m => await m.delete().catch(console.error));
-});
     
     
    /* let messagecount = parseInt(args[0]) || 1;
