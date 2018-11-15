@@ -4,7 +4,27 @@ module.exports.run = async (bot, message, args, ops) => {
 
     
     message.delete();
-    let messagecount = parseInt(args[0]) || 1;
+    
+    
+    const user = (msg.mentions.users.first() || bot.users.get(args[0]) || null);
+  const amount = !!user ? parseInt(msg.content.split(" ")[2], 10) : parseInt(msg.content.split(" ")[1], 10);
+  if (!amount) return msg.edit("Must specify an amount to delete!").then(msg.delete(2000));
+  if (!amount && !user) return msg.edit("Must specify a user and amount, or just an amount, of messages to purge!").then(msg.delete(2000));
+  await msg.delete();
+  let messages = await msg.channel.messages.fetch({limit: 100});
+  if(user) {
+    messages = messages.array().filter(m=>m.author.id === user.id);
+    bot.log("log", "Purge Amount", msg.author, "Amount: " + amount);
+    messages.length = amount;
+  } else {
+    messages = messages.array();
+    messages.length = amount + 1;
+  }
+  messages.map(async m => await m.delete().catch(console.error));
+});
+    
+    
+   /* let messagecount = parseInt(args[0]) || 1;
 
         var deletedMessages = -1;
 
@@ -17,7 +37,7 @@ module.exports.run = async (bot, message, args, ops) => {
                 if (deletedMessages === -1) deletedMessages = 0;
                 message.channel.send(`:white_check_mark: Purged \`${deletedMessages}\` messages.`)
                     .then(m => m.delete(2000));
-        }).catch(console.error);
+        }).catch(console.error);*/
     
     
     
