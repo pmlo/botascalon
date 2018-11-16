@@ -169,7 +169,7 @@ bot.on("message", async message => {
             }
         }
 
-
+/*
    //INSCRIPTION
 
     //IF MESSAGE IS "🌀inscription-solo-on"
@@ -203,7 +203,8 @@ bot.on("message", async message => {
             } else {
                 message.react("✅");
             }
-                    } 
+                    } */
+                    
     });
 
 
