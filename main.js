@@ -192,14 +192,14 @@ bot.on("message", async message => {
     if(message.channel.name == "🌀inscription-duo-on") {
 
         //if message not include "NOM DE TEAM :", "J1", "J2", "@"
-        if (!message.content.includes("Nom de l'équipe") || !message.content.includes("@") || !message.content.includes("Joueur 1") || !message.content.includes("Joueur 1")) {
+        if (!message.content.includes("Nom de l'équipe") || !message.content.includes("@") || !message.content.includes("J1") || !message.content.includes("J2")) {
             //Message delete
             message.delete();
             //send message to author message
             message.author.send("Bonjour, vous avez essayer de vous inscire à un tournoi ASCALON Duo, hélas vous n'avez pas respecter le modèle.");
             message.author.send("Nom de l'équipe :");
-            message.author.send("Joueur 1 :               @MENTION");
-            message.author.send("Joueur 2 :                @MENTION");
+            message.author.send("J1 :               @MENTION");
+            message.author.send("J2 :                @MENTION");
             } else {
                 message.react("✅");
             }
