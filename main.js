@@ -192,7 +192,7 @@ bot.on("message", async message => {
     if(message.channel.name == "🌀inscription-duo-on") {
 
         //if message not include "NOM DE TEAM :", "J1", "J2", "@"
-        if (!message.content.includes("Nom de l'équipe") || !message.content.includes("@") || !message.content.includes("J1") || !message.content.includes("J2")) {
+        if (!message.content.includes("NOM DE TEAM") || !message.content.includes("@") || !message.content.includes("J1") || !message.content.includes("J2")) {
             //Message delete
             message.delete();
             //send message to author message
