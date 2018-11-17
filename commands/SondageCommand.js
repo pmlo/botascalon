@@ -28,6 +28,10 @@ module.exports.run = async (bot, message, args, ops) => {
     .then(function (message) {
         message.react("❌")
         message.react("✅")
+        
+        const logChannel = member.guild.channels.find('name', 'history-bot');
+    logChannel.send(`[LOG] SEND SONDAGE MESSAGE BY ${message.author}`);
+
     }).catch(function() { });
 
    // Notif Sondages
