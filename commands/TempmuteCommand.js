@@ -15,6 +15,7 @@ module.exports.run = async (bot, message, args, ops) => {
   //start of create role
   if(!muterole){
     try{
+
       muterole = await message.guild.createRole({
         name: "muted",
         color: "#000000",
@@ -37,6 +38,9 @@ module.exports.run = async (bot, message, args, ops) => {
   if(!mutetime) return message.channel.send("Vous n'avez pas précisez le temps.").then(message => message.delete(5000));
 
   await(tomute.addRole(muterole.id));
+  const logChannel = member.guild.channels.find('name', 'history-bot');
+const logChannel = member.guild.channels.find('name', 'history-bot');
+    logChannel.send(`[LOG] MUTED PLAYER <@${tomute.id}>`);
   message.reply(`<@${tomute.id}> à été mute pour ${ms(ms(mutetime))}`).then(message => message.delete(5000));;
 
   setTimeout(function(){
