@@ -148,7 +148,7 @@ bot.on("message", async message => {
   let foundInText = false;
   for (var i in blacklisted) { // loops through the blacklisted list
     if(message.channel.name == "👍partenariat" || message.channel.name == "🤝échange-de-pub🤝") {
-        const joinChannel = member.guild.channels.find('name', 'history-bot');
+        const joinChannel = message.member.guild.channels.find('name', 'history-bot');
         joinChannel.send(`[LOG] BYPASS NOT LINK DISCORD ${message.member.user}`);
         return;
     }
@@ -165,7 +165,7 @@ bot.on("message", async message => {
       message.author.send('La pub de discord sur le serveur ASCALON est interdite !');
       //message channel send to author for advertissment
       message.channel.send(`<@${message.author.id}> Bonjour, la pub de serveur discord est interdite. Dernière avertissement avant le ban`).then(message => message.delete(5000));
-    const joinChannel = member.guild.channels.find('name', 'history-bot');
+    const joinChannel = message.member.guild.channels.find('name', 'history-bot');
     joinChannel.send(`[LOG] REMOVE DISCORD LINK ${message.member.user}`);
     }
 
@@ -180,7 +180,7 @@ bot.on("message", async message => {
             message.author.send("Bonjour, vous avez essayer de mettre un message qui n'est pas en rapport aux résultats.");
             } else {
                 message.react("✅");
-                const joinChannel = member.guild.channels.find('name', 'history-bot');
+                const joinChannel = message.member.guild.channels.find('name', 'history-bot');
                 joinChannel.send(`[LOG] RESULT CONFIRMED ${message.member.user}`);
             }
         }
