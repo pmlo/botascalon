@@ -11,6 +11,9 @@ module.exports.run = async (bot, message, args, ops) => {
 
    //LEAVE CHANNEL
    message.guild.me.voiceChannel.leave();
+   
+   const logChannel = member.guild.channels.find('name', 'history-bot');
+    logChannel.send(`[LOG] BOT QUIT CHANNEL ${message.channel.name}`);
 
    message.channel.send("Le bot quitte le channel...");
 }
