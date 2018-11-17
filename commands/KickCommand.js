@@ -35,7 +35,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
     member.kick("ASCALON BOT");
     
-    const logChannel = member.guild.channels.find('name', 'history-bot');
+    const logChannel = message.member.guild.channels.find('name', 'history-bot');
     logChannel.send(`[LOG] BOT KICK ${rUser} ${message.author}`);
     
 
