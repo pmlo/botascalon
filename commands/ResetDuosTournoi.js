@@ -46,7 +46,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
     message.channel.send("Channels Duos reset").then(message => message.delete(5000));
   
-  const logChannel = member.guild.channels.find('name', 'history-bot');
+  const logChannel = message.member.guild.channels.find('name', 'history-bot');
     logChannel.send(`[LOG] EQUIPE 1 CHANGED ${message.author}`);
     logChannel.send(`[LOG] EQUIPE 2 CHANGED ${message.author}`);
     logChannel.send(`[LOG] EQUIPE 3 CHANGED ${message.author}`);
