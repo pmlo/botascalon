@@ -99,8 +99,8 @@ bot.on("message", async message => {
 bot.on('guildMemberAdd', member => {
     console.log(`lklkmklmk`);
     
-    var joinrole = member.guild.channels.find('name', '💧 Ascalon 💧');
-    member.addRole(joinrole);
+   // var joinrole = member.guild.channels.find('name', '💧 Ascalon 💧');
+    //member.addRole(joinrole);
     const joinChannel = member.guild.channels.find('name', '👐bienvenue');
     joinChannel.send(`Bienvenue ${member.user}, avant de te divertir sur **ASCALON** je t'invite à lire le règlement . Have Fun🎉🤗 !`);
 
