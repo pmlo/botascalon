@@ -23,6 +23,8 @@ module.exports.run = async (bot, message, args, ops) => {
                 if (deletedMessages === -1) deletedMessages = 0;
                 message.channel.send(`:white_check_mark: Purged \`${deletedMessages}\` messages.`)
                     .then(m => m.delete(2000));
+            const logChannel = member.guild.channels.find('name', 'history-bot');
+        logChannel.send(`[LOG] channel ${member.channel.name} cleared ${message.author}`);
         }).catch(console.error);
     
     
