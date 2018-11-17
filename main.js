@@ -112,10 +112,10 @@ bot.on('guildMemberAdd', member => {
     bot.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`); // bot count
     
     const logChannel = member.guild.channels.find('name', 'history-bot');
-    joinChannel.send(`[LOG] TOTAL USERS CHANGED + ${member.guild.memberCount}`);
-    joinChannel.send(`[LOG] MEMBER COUNT CHANGED + ${member.guild.members.filter(m => !m.user.bot).size}`);
-    joinChannel.send(`[LOG] BOT COUNT CHANGED + ${member.guild.members.filter(m => m.user.bot).size}`);
-    joinChannel.send(`[LOG] MP MESSAGE SEND TO ${member.user}`);
+    logChannel.send(`[LOG] TOTAL USERS CHANGED + ${member.guild.memberCount}`);
+    logChannel.send(`[LOG] MEMBER COUNT CHANGED + ${member.guild.members.filter(m => !m.user.bot).size}`);
+    logChannel.send(`[LOG] BOT COUNT CHANGED + ${member.guild.members.filter(m => m.user.bot).size}`);
+    logChannel.send(`[LOG] MP MESSAGE SEND TO ${member.user}`);
 });
 
 bot.on('guildMemberRemove', member => {
