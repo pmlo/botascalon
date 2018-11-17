@@ -220,7 +220,7 @@ module.exports.run = async (bot, message, args, ops) => {
     bot.channels.get(channelTeam15).setName('Equipe 15 - ' + nameTeam15 );
     bot.channels.get(channelTeam16).setName('Equipe 16 - ' + nameTeam16 );
     
-    const logChannel = member.guild.channels.find('name', 'history-bot');
+    const logChannel = message.member.guild.channels.find('name', 'history-bot');
     logChannel.send(`[LOG] EQUIPE 1 CHANGED ${message.author}`);
     logChannel.send(`[LOG] EQUIPE 2 CHANGED ${message.author}`);
     logChannel.send(`[LOG] EQUIPE 3 CHANGED ${message.author}`);
