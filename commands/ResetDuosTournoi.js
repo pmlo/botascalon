@@ -45,6 +45,24 @@ module.exports.run = async (bot, message, args, ops) => {
     bot.channels.get(channelTeam16).setName('Equipe 16 - ' );
 
     message.channel.send("Channels Duos reset").then(message => message.delete(5000));
+  
+  const logChannel = member.guild.channels.find('name', 'history-bot');
+    logChannel.send(`[LOG] EQUIPE 1 CHANGED ${message.author}`);
+    logChannel.send(`[LOG] EQUIPE 2 CHANGED ${message.author}`);
+    logChannel.send(`[LOG] EQUIPE 3 CHANGED ${message.author}`);
+    logChannel.send(`[LOG] EQUIPE 4 CHANGED ${message.author}`);
+    logChannel.send(`[LOG] EQUIPE 5 CHANGED ${message.author}`);
+    logChannel.send(`[LOG] EQUIPE 6 CHANGED ${message.author}`);
+    logChannel.send(`[LOG] EQUIPE 7 CHANGED ${message.author}`);
+    logChannel.send(`[LOG] EQUIPE 8 CHANGED ${message.author}`);
+    logChannel.send(`[LOG] EQUIPE 9 CHANGED ${message.author}`);
+    logChannel.send(`[LOG] EQUIPE 10 CHANGED ${message.author}`);
+    logChannel.send(`[LOG] EQUIPE 11 CHANGED ${message.author}`);
+    logChannel.send(`[LOG] EQUIPE 12 CHANGED ${message.author}`);
+    logChannel.send(`[LOG] EQUIPE 13 CHANGED ${message.author}`);
+    logChannel.send(`[LOG] EQUIPE 14 CHANGED ${message.author}`);
+    logChannel.send(`[LOG] EQUIPE 15 CHANGED ${message.author}`);
+    logChannel.send(`[LOG] EQUIPE 16 CHANGED ${message.author}`);
 
 }
 
