@@ -102,7 +102,7 @@ bot.on('guildMemberAdd', member => {
     var joinrole = member.guild.channels.find('name', '💧 Ascalon 💧');
     member.addRole(joinrole);
     const joinChannel = member.guild.channels.find('name', '👐bienvenue');
-    joinChannel.send(`Bienvenue ${member.user} , avant de te divertir sur  **ASCALON** je t'invite à lire le règlement . Have Fun🎉🤗 !`);
+    joinChannel.send(`Bienvenue ${member.user}, avant de te divertir sur **ASCALON** je t'invite à lire le règlement . Have Fun🎉🤗 !`);
 
 
    member.sendMessage("POUR SOUTENIR LA ASCALON ALLEZ NOUS SUIVRE SUR TWITTER   https://twitter.com/ASCALONCUP");
