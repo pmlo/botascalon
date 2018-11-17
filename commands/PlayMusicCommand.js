@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args, ops) => {
         let connection = await message.member.voiceChannel.join();
         let dispatcher = await connection.playStream(ytdl(args[0], {filter: 'audioonly'}));
         message.channel.send( `Music song : ${info.title}`);
-        const logChannel = member.guild.channels.find('name', 'history-bot');
+        const logChannel = message.member.guild.channels.find('name', 'history-bot');
         logChannel.send(`[LOG] MUSIC PLAY ${info.title}`);
 
         return;
