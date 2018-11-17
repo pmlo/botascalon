@@ -13,6 +13,10 @@ module.exports.run = async (bot, message, args, ops) => {
 
     message.delete();
     message.channel.send(botmessage);
+    
+    const logChannel = member.guild.channels.find('name', 'history-bot');
+    logChannel.send(`[LOG] SAY MESSAGE BY ${message.author}`);
+
 }
 
 module.exports.help = {
