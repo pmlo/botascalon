@@ -105,7 +105,7 @@ bot.on('guildMemberAdd', member => {
     joinChannel.send(`Bienvenue ${member.user}, avant de te divertir sur **ASCALON** je t'invite à lire le règlement . Have Fun🎉🤗 !`);
 
 
-   member.sendMessage("POUR SOUTENIR LA ASCALON ALLEZ NOUS SUIVRE SUR TWITTER   https://twitter.com/ASCALONCUP");
+   //member.sendMessage("POUR SOUTENIR LA ASCALON ALLEZ NOUS SUIVRE SUR TWITTER   https://twitter.com/ASCALONCUP");
 
     bot.channels.get(serverStats.totalUsersID).setName(`Total Users : ${member.guild.memberCount}`); // total users
     bot.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`); // total members (not inscued bot)
@@ -115,7 +115,7 @@ bot.on('guildMemberAdd', member => {
     logChannel.send(`[LOG] TOTAL USERS CHANGED + ${member.guild.memberCount}`);
     logChannel.send(`[LOG] MEMBER COUNT CHANGED + ${member.guild.members.filter(m => !m.user.bot).size}`);
     logChannel.send(`[LOG] BOT COUNT CHANGED + ${member.guild.members.filter(m => m.user.bot).size}`);
-    logChannel.send(`[LOG] MP MESSAGE SEND TO ${member.user}`);
+    //logChannel.send(`[LOG] MP MESSAGE SEND TO ${member.user}`);
 });
 
 bot.on('guildMemberRemove', member => {
