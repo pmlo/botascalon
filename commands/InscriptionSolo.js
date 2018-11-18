@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
     let arg = message.content.split(" ").slice(1);
     let messages = arg.join(" ");
-    if(bot.SoloTournoi.has(messages)) {
+    if(bot.SoloTournoi.has(`${messages}`)) {
       message.channel.send(`<@${message.author.id}> Vous êtes déjà inscrit`);
       return;
     }
