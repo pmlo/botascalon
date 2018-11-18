@@ -88,6 +88,7 @@ bot.on("message", async message => {
 
   let ops = {
       active: active,
+      soloTournoi: soloTournoi,
   }
 
 
