@@ -36,11 +36,14 @@ const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 let token = process.env.token;
+
+
+//INSCRIPTION SOLO
 var isSoloFull = false;
 var numberisinscriptionsolo = 0;
+var soloTournoi = new Map();
 
 const active = new Map();
-var soloTournoi = new Map();
 
 const serverStats = {
     guildID: '511250353430462465',
@@ -85,7 +88,6 @@ bot.on("message", async message => {
 
   let ops = {
       active: active,
-      soloTournoi: soloTournoi
   }
 
 
