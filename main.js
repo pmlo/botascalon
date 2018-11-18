@@ -40,7 +40,7 @@ var isSoloFull = false;
 var numberisinscriptionsolo = 0;
 
 const active = new Map();
-const soloTournoi = new Map();
+var soloTournoi = new Map();
 
 const serverStats = {
     guildID: '511250353430462465',
@@ -85,6 +85,7 @@ bot.on("message", async message => {
 
   let ops = {
       active: active,
+      soloTournoi: soloTournoi
   }
 
 
