@@ -36,8 +36,11 @@ const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 let token = process.env.token;
+var isSoloFull = false;
+var numberisinscriptionsolo = 0;
 
 const active = new Map();
+const soloTournoi = new Map();
 
 const serverStats = {
     guildID: '511250353430462465',
@@ -80,9 +83,8 @@ bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
 
-  //MUSIC BOT
   let ops = {
-      active: active
+      active: active,
   }
 
 
@@ -99,6 +101,7 @@ bot.on("message", async message => {
 bot.on('guildMemberAdd', member => {
     console.log(`lklkmklmk`);
     
+
    // var joinrole = member.guild.channels.find('name', '💧 Ascalon 💧');
     //member.addRole(joinrole);
     const joinChannel = member.guild.channels.find('name', '👐bienvenue');
@@ -139,6 +142,7 @@ bot.on('guildMemberRemove', member => {
 //MESSAGE EVENT
 
 bot.on("message", async message => {
+
     
     // Part 1 : checking & removing the text
     //1 blacklisted words
