@@ -75,6 +75,8 @@ bot.on("ready", async () => {
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
 
   bot.user.setActivity("Obéir à son maître", {type: "WATCHING"});
+    
+  bot.user.setUsername("ASCALON").then(user => console.log("--> New username set: " + user.username));
 
   //bot.user.setGame("on SourceCade!");
 });
