@@ -82,8 +82,6 @@ bot.on("ready", async () => {
 
 
 bot.on("message", async message => {
-    
-    bot.user.setUsername('ASCALON').then(user => console.log("--> New username set: " + user.username));
 
     //Return Statements
   if(message.author.bot) return;
