@@ -15,5 +15,5 @@ bot.user.setUsername(username)
 }
  
 module.exports.help = {
-  name: "ban"
+  name: "setname"
 }
