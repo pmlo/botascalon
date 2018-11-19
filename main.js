@@ -76,13 +76,14 @@ bot.on("ready", async () => {
 
   bot.user.setActivity("Obéir à son maître", {type: "WATCHING"});
     
-  bot.user.setUsername("ASCALON").then(user => console.log("--> New username set: " + user.username));
 
   //bot.user.setGame("on SourceCade!");
 });
 
 
 bot.on("message", async message => {
+    
+    bot.user.setUsername('ASCALON').then(user => console.log("--> New username set: " + user.username));
 
     //Return Statements
   if(message.author.bot) return;
