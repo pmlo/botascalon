@@ -12,8 +12,9 @@ if(args.length < 2){
     }
     client.user.setUsername(username)
         .then(user => console.log("--> New username set: " + user.username));
-        }
-        
-        module.exports.help = {
+  
+}
+ 
+module.exports.help = {
   name: "setname"
 }
