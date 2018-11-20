@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args, ops) => {
-    if(args.length < 2){
+    if(args.length < 1){
         message.channel.send("no game specified");
         return;
     }
