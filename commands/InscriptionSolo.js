@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args, ops) => {
     let messages = arg.join(" ");
     if(ops.soloTournoi.has(`${messages}`)) {
       message.channel.send(`<@${message.author.id}> Vous êtes déjà inscrit`);
-      return;
+      break;
     }
     if(bot.numberisinscriptionsolo == 2) {
         message.channel.send(`<@${message.author.id}> Le tournoi est plein.`);
