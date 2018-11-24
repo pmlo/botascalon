@@ -20,23 +20,12 @@ module.exports.run = async (bot, message, args, ops) => {
     logChannel.send(`[LOG] EQUIPE 4 TO POULE 4 CHANGED ${message.author}`);
 
 
-    message.reply("Combien de joueurs souhaitez vous au maximum ? .... il vous reste 10 secondes avec l'annulation de cette requête.").then(q => q.delete(15000))
-    message.channel.awaitMessages(filter, {
-    max: 1,
-    time: 10000
-  }).then(solosize => {
-    solosize.delete(15000);
-    if (solosize.first().content === 'cancel') {
-      return message.reply("Annulé.");
-    }
-
-    let Solosize = solosize.first().content;
+    let Solosize = args[0];
 
     bot.numermaxinscriptionsolo = Solosize;
 
     bot.log("" + bot.numermaxinscriptionsolo);
-});
-    
+
 };
 
 module.exports.help = {
