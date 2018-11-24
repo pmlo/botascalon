@@ -76,7 +76,7 @@ bot.on("ready", async () => {
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
 
   bot.user.setActivity("Obéir à son maître", {type: "WATCHING"});
-  
+
 });
 
 
