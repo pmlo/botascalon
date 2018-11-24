@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args, ops) => {
       message.channel.send(`<@${message.author.id}> Vous êtes déjà inscrit`);
       return;
     }
-    if(bot.numberisinscriptionsolo == 16) {
+    if(bot.numberisinscriptionsolo >= bot.numermaxinscriptionsolo) {
         message.channel.send(`<@${message.author.id}> Le tournoi est plein.`);
         return;
     }
