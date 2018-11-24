@@ -41,9 +41,11 @@ let token = process.env.token;
 //INSCRIPTION SOLO
 var isSoloFull = false;
 var numberisinscriptionsolo = 0;
+var numermaxinscriptionsolo = 0;
 var soloTournoi = new Map();
 
 const active = new Map();
+
 
 const serverStats = {
     guildID: '511250353430462465',
