@@ -9,10 +9,6 @@ module.exports.run = async (bot, message, args, ops) => {
     bot.channels.get(channelTeam3).setName('Equipe 3 -'); bot.channels.get(channelTeam4).setName('Equipe 4 -'); 
     
     ops.soloTournoi.clear();
-
-    const joinChannel = message.member.guild.channels.find('id', '482932870067912724');
-    messages = joinChannel.fetchMessages();
-    joinChannel.bulkDelete(messages);
     
     message.reply(`solo tournoi complete :white_check_mark:`).then(message => message.delete(5000));
 }
