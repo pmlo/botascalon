@@ -179,7 +179,7 @@ bot.on("message", async message => {
 
     //RESULTAT
 
-    if(message.channel.name == "🎲résultat") {
+    /**if(message.channel.name == "🎲résultat") {
 
         if (!message.content.includes("=")) {
             //Message delete
@@ -191,7 +191,7 @@ bot.on("message", async message => {
                 const joinChannel = message.member.guild.channels.find('name', 'history-bot');
                 joinChannel.send(`[LOG] RESULT CONFIRMED ${message.member.user}`);
             }
-        }
+        }**/
 
 /*
    //INSCRIPTION
