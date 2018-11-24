@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args, ops) => {
     
     ops.soloTournoi.clear(); 
     
-    message.reply(`<@${tomute.id}> solo tournoi complete :white_check_mark:`).then(message => message.delete(5000));
+    message.reply(`solo tournoi complete :white_check_mark:`).then(message => message.delete(5000));
 }
  
 module.exports.help = {
