@@ -23,8 +23,9 @@ module.exports.run = async (bot, message, args, ops) => {
     let Solosize = args[0];
 
     bot.numermaxinscriptionsolo = Solosize;
+    
+    logChannel.send(`${Solosize} ${bot.numermaxinscriptionsolo}`);
 
-    bot.log("" + bot.numermaxinscriptionsolo);
 
 };
 
