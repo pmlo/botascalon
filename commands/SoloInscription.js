@@ -4,12 +4,6 @@ module.exports.run = async (bot, message, args, ops) => {
 
     message.delete();
 
-    if(bot.isSoloFull == true) {
-      message.channel.send(`<@${message.author.id}> Je suis désolée mais les places pour les inscriptions tournois sont complètes...`);
-      return;
-    }
-
-
     let arg = message.content.split(" ").slice(1);
     let messages = arg.join(" ");
     if(ops.soloTournoi.has(`${messages}`)) {
