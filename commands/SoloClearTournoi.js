@@ -8,11 +8,9 @@ module.exports.run = async (bot, message, args, ops) => {
     bot.channels.get(channelTeam1).setName('Equipe 1 -'); bot.channels.get(channelTeam2).setName('Equipe 2 -'); 
     bot.channels.get(channelTeam3).setName('Equipe 3 -'); bot.channels.get(channelTeam4).setName('Equipe 4 -'); 
     
-    ops.soloTournoi.clear(); 
+    ops.soloTournoi.clear();
 
-     const equipe_inscrite = message.member.guild.channels.find('id', '482932870067912724');
-     messages = equipe_inscrite.fetchMessages();
-     equipe_inscrite.bulkDelete(messages);
+    bot.channels.get("482932870067912724").clear();
     
     message.reply(`solo tournoi complete :white_check_mark:`).then(message => message.delete(5000));
 }
