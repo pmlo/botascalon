@@ -1,4 +1,4 @@
-
+const Discord = require("discord.js");
 module.exports.run = async (bot, message, args, ops) => {
 
     let channelTeam1 = "501124673354858516";
