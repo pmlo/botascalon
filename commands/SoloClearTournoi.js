@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args, ops) => {
     
     ops.soloTournoi.clear(); 
 
-    const equipe_inscrite = member.guild.channels.find('id', '482932870067912724');
+     const equipe_inscrite = message.member.guild.channels.find('id', '482932870067912724');
      messages = equipe_inscrite.fetchMessages();
      equipe_inscrite.bulkDelete(messages);
     
