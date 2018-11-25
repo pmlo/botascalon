@@ -12,6 +12,9 @@ module.exports.run = async (bot, message, args, ops) => {
 
     ops.isONSOLO = false;
 
+    bot.channels.get('511210802712412170').setName('🌀inscription-solo-off');
+
+
     const clearTournoi = message.member.guild.channels.find('id', '515948520239267844');
     clearTournoi.bulkDelete(100);
     clearTournoi.bulkDelete(100);
