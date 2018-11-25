@@ -103,9 +103,6 @@ bot.on("message", async message => {
 
 bot.on('guildMemberAdd', member => {
 
-    let muterole = member.guild.roles.find(`name`, "💧 Ascalon 💧");
-    await(member.addRole(muterole.id));
-
     const joinChannel = member.guild.channels.find('name', '👐bienvenue');
     joinChannel.send(`Bienvenue ${member.user}, avant de te divertir sur **ASCALON** je t'invite à lire le règlement . Have Fun🎉🤗 !`);
 
@@ -121,6 +118,9 @@ bot.on('guildMemberAdd', member => {
     logChannel.send(`[LOG] MEMBER COUNT CHANGED + ${member.guild.members.filter(m => !m.user.bot).size}`);
     logChannel.send(`[LOG] BOT COUNT CHANGED + ${member.guild.members.filter(m => m.user.bot).size}`);
     //logChannel.send(`[LOG] MP MESSAGE SEND TO ${member.user}`);
+
+    let muterole = member.guild.roles.find(`name`, "💧 Ascalon 💧");
+    member.addRole(muterole.id);
 });
 
 bot.on('guildMemberRemove', member => {
