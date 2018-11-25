@@ -10,9 +10,10 @@ module.exports.run = async (bot, message, args, ops) => {
     
     ops.soloTournoi.clear();
 
-    let role = message.guild.roles.find(`name`, `JOUEUR TOURNOIS`);
+    let role = message.guild.roles.find(`name`, `test`);
 
-    await (everyone.removeRole(role.id))
+    const guildMember = message.member;
+    await (guildMember.removeRole(role.id))
     .then(role => console.log(`CLEAR JOUEURS TOURNOIS: ${message.guild.name}`))
     .catch(console.error);
 
