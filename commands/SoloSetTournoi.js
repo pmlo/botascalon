@@ -19,6 +19,8 @@ module.exports.run = async (bot, message, args, ops) => {
     bot.channels.get(channelTeam3).setName('Poule 3');
     bot.channels.get(channelTeam4).setName('Poule 4');
 
+    bot.channels.get('511210802712412170').setName('🌀inscription-solo-on');
+
     const logChannel = message.member.guild.channels.find('name', 'history-bot');
     logChannel.send(`[LOG] EQUIPE 1 TO POULE 1 CHANGED`);// ${message.author}`);
     logChannel.send(`[LOG] EQUIPE 2 TO POULE 2 CHANGED`);// ${message.author}`);
@@ -39,8 +41,6 @@ module.exports.run = async (bot, message, args, ops) => {
           inscriptionChannel.overwritePermissions(muterole, {
           SEND_MESSAGES: true 
         });
-
-        bot.channels.get('511210802712412170').setName('🌀inscription-solo-on');
 
         //CREATE ROLE
         try{
