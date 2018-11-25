@@ -47,6 +47,9 @@ module.exports.run = async (bot, message, args, ops) => {
         .then(deleted => console.log(`Deleted role ${deleted.name}`))
         .catch(console.error);
 
+        bot.numberisinscriptionsolo=0;
+        bot.numermaxinscriptionsolo=0;
+
     message.reply(`solo tournoi complete :white_check_mark:`).then(message => message.delete(5000));
 }
  
