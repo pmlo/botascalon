@@ -7,6 +7,8 @@ module.exports.run = async (bot, message, args, ops) => {
         return;
     }
 
+    ops.isONSOLO = true;
+
     let channelTeam1 = "501124673354858516";
     let channelTeam2 = "502944251026472970";
     let channelTeam3 = "502945786028490753";
