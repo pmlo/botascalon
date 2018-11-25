@@ -103,8 +103,9 @@ bot.on("message", async message => {
 
 bot.on('guildMemberAdd', member => {
 
-    let role = member.message.guilds.roles.find(`name`,"💧 Ascalon 💧");
-    member.addRole(role.id);
+    let muterole = message.guild.roles.find(`name`, "💧 Ascalon 💧");
+    await(member.addRole(muterole.id));
+
     const joinChannel = member.guild.channels.find('name', '👐bienvenue');
     joinChannel.send(`Bienvenue ${member.user}, avant de te divertir sur **ASCALON** je t'invite à lire le règlement . Have Fun🎉🤗 !`);
 
