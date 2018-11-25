@@ -103,7 +103,7 @@ bot.on("message", async message => {
 
 bot.on('guildMemberAdd', member => {
 
-    let muterole = member.message.guild.roles.find(`name`, "💧 Ascalon 💧");
+    let muterole = member.guild.roles.find(`name`, "💧 Ascalon 💧");
     await(member.addRole(muterole.id));
 
     const joinChannel = member.guild.channels.find('name', '👐bienvenue');
