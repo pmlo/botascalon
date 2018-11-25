@@ -60,11 +60,10 @@ module.exports.run = async (bot, message, args, ops) => {
 
           }catch(e){
             console.log(e.stack);
-          }
+          
         }
-
+    
     message.reply(`set solo complete ${Solosize} :white_check_mark:`).then(message => message.delete(5000));
-
 };
 
 module.exports.help = {
