@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
     message.delete();
 
-    if(bot.numberisinscriptionsolo >= bot.numermaxinscriptionsolo) {
+    if(ops.soloTournoi.size() >= bot.numermaxinscriptionsolo) {
       message.channel.send(`<@${message.author.id}> Le tournoi est plein.`);
       return;
   }
