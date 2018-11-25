@@ -37,7 +37,7 @@ module.exports.run = async (bot, message, args, ops) => {
           let muterole = message.guild.roles.find(`name`, "💧 Ascalon 💧");
 
           inscriptionChannel.overwritePermissions(muterole, {
-          SEND_MESSAGES: false 
+          SEND_MESSAGES: true 
         });
 
 
