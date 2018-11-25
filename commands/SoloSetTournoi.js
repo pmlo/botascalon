@@ -24,8 +24,6 @@ module.exports.run = async (bot, message, args, ops) => {
     bot.channels.get(channelTeam3).setName('Poule 3');
     bot.channels.get(channelTeam4).setName('Poule 4');
 
-    bot.channels.get('511210802712412170').setName('🌀inscription-solo-on');
-
     const logChannel = message.member.guild.channels.find('name', 'history-bot');
     logChannel.send(`[LOG] EQUIPE 1 TO POULE 1 CHANGED`);// ${message.author}`);
     logChannel.send(`[LOG] EQUIPE 2 TO POULE 2 CHANGED`);// ${message.author}`);
@@ -39,7 +37,7 @@ module.exports.run = async (bot, message, args, ops) => {
     ops.isONSOLO = true;
 
     const inscriptionChannel = message.member.guild.channels.find('id', '511210802712412170');
-    inscriptionChannel.send(`Pseudo du joueur IG :`);
+    inscriptionChannel.send(`Veuillez respecter cette commande pour vous inscrire : a!inscriptionsolo <votre pseudo>`);
 
           let muterole = message.guild.roles.find(`name`, "💧 Ascalon 💧");
 
@@ -70,6 +68,8 @@ module.exports.run = async (bot, message, args, ops) => {
             roltournoi.setMentionable(true, 'JOUEUR TOURNOIS')
             .then(updated => console.log(`Role mentionable: ${updated.mentionable}`))
             .catch(console.error);
+
+            bot.channels.get('511210802712412170').setName('🌀inscription-solo-on');
     
     message.reply(`set solo complete ${bot.numermaxinscriptionsolo} :white_check_mark:`).then(message => message.delete(5000));
 };
