@@ -4,6 +4,11 @@ module.exports.run = async (bot, message, args, ops) => {
 
     message.delete();
 
+    if(bot.numberisinscriptionsolo >= bot.numermaxinscriptionsolo) {
+      message.channel.send(`<@${message.author.id}> Le tournoi est plein.`);
+      return;
+  }
+
     if(message.channel.name == "🌀inscription-solo-off") {
       return message.channel.send(`<@${message.author.id}> L'inscription pour le tournoi **ASCALON SOLO** est fermer. `).then(message => message.delete(5000));
     }
@@ -14,12 +19,8 @@ module.exports.run = async (bot, message, args, ops) => {
       message.channel.send(`<@${message.author.id}> Vous êtes déjà inscrit`);
       return;
     }
-    if(bot.numberisinscriptionsolo >= bot.numermaxinscriptionsolo) {
-        message.channel.send(`<@${message.author.id}> Le tournoi est plein.`);
-        return;
-    }
     
-    bot.numberisinscriptionsolo+=1;
+    bot.numberisinscriptionsolo++;
     const joinChannel = message.member.guild.channels.find('name', '🚻equipe-inscrite');
     joinChannel.send(`Le joueur ${messages} (<@${message.author.id}>) vient de s'inscrire pour le tournoi **ASCALON SOLO**`);
     ops.soloTournoi.set(`${messages}`, `${messages}`);
