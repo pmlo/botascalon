@@ -78,6 +78,19 @@ bot.on("ready", async () => {
 
 });
 
+/** 
+//MESSAGE REACTION ADD
+bot.on('messageReactionAdd', (reaction, user) => {
+
+    //CHANNEL ID
+    channelID = reaction.message.channel.id;
+    //IF CHANNEL ID = 495909946672807947 && EMOJI IS :notif_discord: 
+    if(reaction.emoji.name == ":notif_discord:" && channelID == "495909946672807947") {
+    //CLIENT ID
+    client_id = client.users.get("name", user.username).id;
+    } 
+});
+**/
 
 bot.on("message", async message => {
 
@@ -231,7 +244,6 @@ bot.on("message", async message => {
                     } */
                     
     });
-
 
   bot.login(token);
 
