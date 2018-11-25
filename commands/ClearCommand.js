@@ -9,8 +9,91 @@ module.exports.run = async (bot, message, args, ops) => {
         message.delete();
         return;
     }
+
+    if(!args[0]) {
+        message.channel.send("Vous n'avez pas précisez combien de message je dois supprimer").then(message => message.delete(2000));
+        message.delete();
+        return;
+    }
+
+    if(args[0] == "full") {
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    message.channel.bulkDelete(100);
+    }
+
+    message.channel.bulkDelete(args[0]);
     
-    let messagecount = parseInt(args[0]) || 1;
+    /*let messagecount = parseInt(args[0]) || 1;
 
         var deletedMessages = -1;
 
@@ -26,7 +109,7 @@ module.exports.run = async (bot, message, args, ops) => {
             const logChannel = message.member.guild.channels.find('name', 'history-bot');
         logChannel.send(`[LOG] channel ${message.member.channel.name} cleared ${message.author}`);
         }).catch(console.error);
-    
+    */
     
     
    /** if(!message.member.hasPermission("MANAGE_MESSAGES")) {
