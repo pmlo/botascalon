@@ -5,7 +5,17 @@ module.exports.run = async (bot, message, args, ops) => {
     message.delete();
 
     //TOURNOI FULL
-    if(ops.soloTournoi.size >= bot.numermaxinscriptionsolo) return message.channel.send(`<@${message.author.id}> Le tournoi est plein.`);
+    if(ops.soloTournoi.size >= bot.numermaxinscriptionsolo) {
+      var embed = new Discord.RichEmbed()
+    .setTitle(`TOURNOI SOLO ASCALON`)
+    .addField(`📛 Vous n'êtes pas inscrit au tournoi ASCALON SOLO ${messages} celui ci est au complet ! 📛`, "🕛 Venez quand même, des places se libéreront surêment ! 🕛")
+    .setColor("0xB40404")
+    .setTimestamp()
+    .setFooter("TOURNOI SOLO ASCALON");
+    message.guild.channels.find("id", "511210802712412170").sendEmbed(embed);
+       message.channel.send(`<@${message.author.id}> Le tournoi est plein.`); 
+      return;
+    }
   
     //IF NOT CHANNEL ON
     if(message.channel.name == "🌀inscription-solo-off") return message.channel.send(`<@${message.author.id}> L'inscription pour le tournoi **ASCALON SOLO** est fermer. `).then(message => message.delete(5000));
@@ -35,7 +45,7 @@ module.exports.run = async (bot, message, args, ops) => {
     .setFooter("TOURNOI SOLO ASCALON");
     message.guild.channels.find("id", "511210802712412170").sendEmbed(embed);
 
-    
+    //📛📛
 }
  
 module.exports.help = {
