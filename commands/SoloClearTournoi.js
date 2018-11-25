@@ -17,27 +17,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
     const clearTournoi = message.member.guild.channels.find('id', '515948520239267844');
     clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
-    clearTournoi.bulkDelete(100);
+
 
     const clearEquipeInscriteTournoi = message.member.guild.channels.find('id', '482932870067912724');
 
@@ -46,24 +26,11 @@ module.exports.run = async (bot, message, args, ops) => {
     const clearresultattournoi = message.member.guild.channels.find('id', '503137930680860683');
 
     clearresultattournoi.bulkDelete(100);
-    clearresultattournoi.bulkDelete(100);
-    clearresultattournoi.bulkDelete(100);
-    clearresultattournoi.bulkDelete(100);
-    clearresultattournoi.bulkDelete(100);
-    clearresultattournoi.bulkDelete(100);
-    clearresultattournoi.bulkDelete(100);
-    clearresultattournoi.bulkDelete(100);
 
     const cleainscriptionsolo = message.member.guild.channels.find('id', '511210802712412170');
 
     cleainscriptionsolo.bulkDelete(100);
-    cleainscriptionsolo.bulkDelete(100);
-    cleainscriptionsolo.bulkDelete(100);
-    cleainscriptionsolo.bulkDelete(100);
-    cleainscriptionsolo.bulkDelete(100);
-    cleainscriptionsolo.bulkDelete(100);
-    cleainscriptionsolo.bulkDelete(100);
-    cleainscriptionsolo.bulkDelete(100);
+
 
     const inscriptionChannel = message.member.guild.channels.find('id', '511210802712412170');
     inscriptionChannel.send(`Pseudo du joueur IG :`);
@@ -73,7 +40,6 @@ module.exports.run = async (bot, message, args, ops) => {
           inscriptionChannel.overwritePermissions(muterole, {
           SEND_MESSAGES: false 
         });
-
 
         let joueurtournoi = message.guild.roles.find(`name`, "JOUEUR TOURNOIS");
 
