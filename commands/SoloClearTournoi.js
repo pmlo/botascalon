@@ -12,13 +12,6 @@ module.exports.run = async (bot, message, args, ops) => {
 
     ops.isONSOLO = false;
 
-    let role = message.guild.roles.find(`name`, `test`);
-
-    const guildMember = message.member;
-    await (guildMember.removeRole(role.id))
-    .then(role => console.log(`CLEAR JOUEURS TOURNOIS: ${message.guild.name}`))
-    .catch(console.error);
-
     const clearTournoi = message.member.guild.channels.find('id', '515948520239267844');
     clearTournoi.bulkDelete(100);
     clearTournoi.bulkDelete(100);
