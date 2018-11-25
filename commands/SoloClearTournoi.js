@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args, ops) => {
     const clearTournoi = message.member.guild.channels.find('name', 'bot');
     clearTournoi.bulkDelete(100).then(() => {
       msg.channel.send("Purged 100 messages.").then(m => m.delete(3000));
-    
+    });
     message.reply(`solo tournoi complete :white_check_mark:`).then(message => message.delete(5000));
 }
  
