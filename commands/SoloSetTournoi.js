@@ -66,7 +66,7 @@ module.exports.run = async (bot, message, args, ops) => {
             .then(updated => console.log(`Role mentionable: ${updated.mentionable}`))
             .catch(console.error);
     
-    message.reply(`set solo complete ${Solosize} :white_check_mark:`).then(message => message.delete(5000));
+    message.reply(`set solo complete ${bot.numermaxinscriptionsolo} :white_check_mark:`).then(message => message.delete(5000));
 };
 
 module.exports.help = {
