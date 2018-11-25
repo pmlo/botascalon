@@ -41,6 +41,10 @@ let token = process.env.token;
 var numberisinscriptionsolo = 0;
 var numermaxinscriptionsolo = 0;
 var soloTournoi = new Map();
+var isONSOLO = false;
+
+//INSCRIPTION SOLO BUILDFIGHT
+var isONSOLOBUILD = false;
 
 const active = new Map();
 
@@ -101,6 +105,7 @@ bot.on("message", async message => {
   let ops = {
       active: active,
       soloTournoi: soloTournoi,
+      isONSOLO: isONSOLO
   }
 
 
