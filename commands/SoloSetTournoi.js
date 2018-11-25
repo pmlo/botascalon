@@ -25,9 +25,7 @@ module.exports.run = async (bot, message, args, ops) => {
     logChannel.send(`[LOG] EQUIPE 3 TO POULE 3 CHANGED`);// ${message.author}`);
     logChannel.send(`[LOG] EQUIPE 4 TO POULE 4 CHANGED`);// ${message.author}`);
 
-    let Solosize = args[0];
-
-    bot.numermaxinscriptionsolo = Solosize;
+    args[0] = bot.numermaxinscriptionsolo;
     
     logChannel.send(`${Solosize} ${bot.numermaxinscriptionsolo}`);
 
