@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args, ops) => {
     .then(role => console.log(`CLEAR JOUEURS TOURNOIS: ${message.guild.name}`))
     .catch(console.error);
 
-    /*const clearTournoi = message.member.guild.channels.find('id', '515948520239267844');
+    const clearTournoi = message.member.guild.channels.find('id', '515948520239267844');
     clearTournoi.bulkDelete(100);
     clearTournoi.bulkDelete(100);
     clearTournoi.bulkDelete(100);
@@ -57,7 +57,7 @@ module.exports.run = async (bot, message, args, ops) => {
     clearresultattournoi.bulkDelete(100);
     clearresultattournoi.bulkDelete(100);
     clearresultattournoi.bulkDelete(100);
-**/
+
     const cleainscriptionsolo = message.member.guild.channels.find('id', '511210802712412170');
 
     cleainscriptionsolo.bulkDelete(100);
@@ -78,6 +78,12 @@ module.exports.run = async (bot, message, args, ops) => {
           SEND_MESSAGES: false 
         });
 
+
+        let joueurtournoi = message.guild.roles.find(`name`, "JOUEUR TOURNOIS");
+
+        joueurtournoi.delete('delete role')
+        .then(deleted => console.log(`Deleted role ${deleted.name}`))
+        .catch(console.error);
 
     message.reply(`solo tournoi complete :white_check_mark:`).then(message => message.delete(5000));
 }

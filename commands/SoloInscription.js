@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args, ops) => {
     joinChannel.send(`Le joueur ${messages} (<@${message.author.id}>) vient de s'inscrire pour le tournoi **ASCALON SOLO**`);
     ops.soloTournoi.set(`${messages}`, `${messages}`);
 
-    let role = message.guild.roles.find(`name`, `test`);
+    let role = message.guild.roles.find(`name`, `JOUEUR TOURNOIS`);
 
     const guildMember = message.member;
     guildMember.addRole(role.id);

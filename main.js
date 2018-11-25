@@ -119,6 +119,65 @@ bot.on("message", async message => {
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 bot.on('guildMemberAdd', member => {
 
     const joinChannel = member.guild.channels.find('name', '👐bienvenue');
@@ -159,9 +218,40 @@ bot.on('guildMemberRemove', member => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //MESSAGE EVENT
 
 bot.on("message", async message => {
+
+    //INSCRIPTION SOLO
 
     
     // Part 1 : checking & removing the text

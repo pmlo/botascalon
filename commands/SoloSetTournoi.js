@@ -42,6 +42,27 @@ module.exports.run = async (bot, message, args, ops) => {
 
         bot.channels.get('511210802712412170').setName('🌀inscription-solo-on');
 
+        //CREATE ROLE
+        try{
+
+            roletournoi = await message.guild.createRole({
+              name: "JOUEUR TOURNOIS",
+              color: "#00ff00",
+              permissions:[]
+            })
+
+            roletournoi.setPosition(28).then(updated => console.log(`Role position: ${updated.position}`))
+            .catch(console.error);
+
+            roletournoi.setMentionable(true, 'JOUEUR TOURNOIS')
+            .then(updated => console.log(`Role mentionable: ${updated.mentionable}`))
+            .catch(console.error);
+
+          }catch(e){
+            console.log(e.stack);
+          }
+        }
+
     message.reply(`set solo complete ${Solosize} :white_check_mark:`).then(message => message.delete(5000));
 
 };
