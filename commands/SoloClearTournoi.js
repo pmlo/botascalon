@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args, ops) => {
     .catch(console.error);
 
     const clearTournoi = message.member.guild.channels.find('name', 'bot');
-    clearTournoi.fetchMessage()
+    clearTournoi.fetchMessages()
     .delete();
     
     message.reply(`solo tournoi complete :white_check_mark:`).then(message => message.delete(5000));
