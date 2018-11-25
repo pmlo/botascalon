@@ -4,15 +4,12 @@ module.exports.run = async (bot, message, args, ops) => {
 
     message.delete();
 
-    if(ops.soloTournoi.size >= bot.numermaxinscriptionsolo) {
-      message.channel.send(`<@${message.author.id}> Le tournoi est plein.`);
-      return;
-  }
-
-    if(message.channel.name == "🌀inscription-solo-off") {
-      return message.channel.send(`<@${message.author.id}> L'inscription pour le tournoi **ASCALON SOLO** est fermer. `).then(message => message.delete(5000));
-    }
-
+    //TOURNOI FULL
+    if(ops.soloTournoi.size >= bot.numermaxinscriptionsolo) return message.channel.send(`<@${message.author.id}> Le tournoi est plein.`);
+  
+    //IF NOT CHANNEL ON
+    if(message.channel.name == "🌀inscription-solo-off") return message.channel.send(`<@${message.author.id}> L'inscription pour le tournoi **ASCALON SOLO** est fermer. `).then(message => message.delete(5000));
+    
     let arg = message.content.split(" ").slice(1);
     let messages = arg.join(" ");
     if(ops.soloTournoi.has(`${messages}`)) {
@@ -29,6 +26,14 @@ module.exports.run = async (bot, message, args, ops) => {
 
     const guildMember = message.member;
     guildMember.addRole(role.id);
+
+    var embed = new Discord.RichEmbed()
+    .setDescription(`TOURNOI SOLO ASCALON`)
+    .addField(`Vous êtes inscrit au tournoi ASCALON SOLO <@${message.author.id}>`, "Si vous voulez abandonnez, veuillez tapper la commande suivante :")
+    .setColor("0xB40404")
+    .setTimestamp()
+    .setFooter("TOURNOI SOLO ASCALON");
+    message.guild.channels.find("id", "511210802712412170").sendEmbed(embed);
 
     
 }
