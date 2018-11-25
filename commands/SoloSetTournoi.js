@@ -64,7 +64,7 @@ module.exports.run = async (bot, message, args, ops) => {
         roltournoi.setPosition(28).then(updated => console.log(`Role position: ${updated.position}`))
             .catch(console.error);
 
-            roltournoi.setMentionable(true, 'JOUEUR TOURNOIS')
+            roltournoi.setMentionable(false, 'JOUEUR TOURNOIS')
             .then(updated => console.log(`Role mentionable: ${updated.mentionable}`))
             .catch(console.error);
     
