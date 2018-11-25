@@ -47,6 +47,17 @@ module.exports.run = async (bot, message, args, ops) => {
 
     clearEquipeInscriteTournoi.bulkDelete(100);
 
+    const clearresultattournoi = message.member.guild.channels.find('id', '503137930680860683');
+
+    clearresultattournoi.bulkDelete(100);
+    clearresultattournoi.bulkDelete(100);
+    clearresultattournoi.bulkDelete(100);
+    clearresultattournoi.bulkDelete(100);
+    clearresultattournoi.bulkDelete(100);
+    clearresultattournoi.bulkDelete(100);
+    clearresultattournoi.bulkDelete(100);
+    clearresultattournoi.bulkDelete(100);
+
     message.reply(`solo tournoi complete :white_check_mark:`).then(message => message.delete(5000));
 }
  

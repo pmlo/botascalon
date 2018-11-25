@@ -31,8 +31,15 @@ module.exports.run = async (bot, message, args, ops) => {
 
     ops.isONSOLO = true;
 
-    const joinChannel = message.member.guild.channels.find('id', '511210802712412170');
-    joinChannel.send(`Pseudo du joueur IG :`);
+    const inscriptionChannel = message.member.guild.channels.find('id', '511210802712412170');
+    inscriptionChannel.send(`Pseudo du joueur IG :`);
+
+          let muterole = message.guild.roles.find(`name`, "💧 Ascalon 💧");
+
+          inscriptionChannel.overwritePermissions(muterole, {
+          SEND_MESSAGES: false 
+        });
+
 
     message.reply(`set solo complete ${Solosize} :white_check_mark:`).then(message => message.delete(5000));
 
