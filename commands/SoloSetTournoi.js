@@ -40,6 +40,7 @@ module.exports.run = async (bot, message, args, ops) => {
           SEND_MESSAGES: true 
         });
 
+        bot.channels.get('511210802712412170').setName('🌀inscription-solo-on');
 
     message.reply(`set solo complete ${Solosize} :white_check_mark:`).then(message => message.delete(5000));
 

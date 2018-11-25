@@ -58,6 +58,17 @@ module.exports.run = async (bot, message, args, ops) => {
     clearresultattournoi.bulkDelete(100);
     clearresultattournoi.bulkDelete(100);
 
+    const cleainscriptionsolo = message.member.guild.channels.find('id', '511210802712412170');
+
+    cleainscriptionsolo.bulkDelete(100);
+    cleainscriptionsolo.bulkDelete(100);
+    cleainscriptionsolo.bulkDelete(100);
+    cleainscriptionsolo.bulkDelete(100);
+    cleainscriptionsolo.bulkDelete(100);
+    cleainscriptionsolo.bulkDelete(100);
+    cleainscriptionsolo.bulkDelete(100);
+    cleainscriptionsolo.bulkDelete(100);
+
     const inscriptionChannel = message.member.guild.channels.find('id', '511210802712412170');
     inscriptionChannel.send(`Pseudo du joueur IG :`);
 
