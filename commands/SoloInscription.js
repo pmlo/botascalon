@@ -4,6 +4,10 @@ module.exports.run = async (bot, message, args, ops) => {
 
     message.delete();
 
+    if(ops.isONSOLO == false) {
+      return message.channel.send(`<@${message.author.id}> L'inscription pour le tournoi **ASCALON SOLO** est fermer. `).then(message => message.delete(5000));
+    }
+
     let arg = message.content.split(" ").slice(1);
     let messages = arg.join(" ");
     if(ops.soloTournoi.has(`${messages}`)) {
@@ -24,6 +28,8 @@ module.exports.run = async (bot, message, args, ops) => {
 
     const guildMember = message.member;
     guildMember.addRole(role.id);
+
+    
 }
  
 module.exports.help = {

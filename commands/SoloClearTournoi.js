@@ -10,6 +10,8 @@ module.exports.run = async (bot, message, args, ops) => {
     
     ops.soloTournoi.clear();
 
+    ops.isONSOLO = false;
+
     let role = message.guild.roles.find(`name`, `test`);
 
     const guildMember = message.member;
@@ -17,6 +19,9 @@ module.exports.run = async (bot, message, args, ops) => {
     .then(role => console.log(`CLEAR JOUEURS TOURNOIS: ${message.guild.name}`))
     .catch(console.error);
 
+    const clearTournoi = message.member.guild.channels.find('name', 'bot');
+    clearTournoi.fetchMessage()
+    .delete();
     
     message.reply(`solo tournoi complete :white_check_mark:`).then(message => message.delete(5000));
 }
