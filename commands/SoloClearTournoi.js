@@ -2,6 +2,11 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args, ops) => {
 
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) {
+    message.delete();
+    return;
+}
+
     let channelTeam1 = "501124673354858516"; let channelTeam2 = "502944251026472970"; 
     let channelTeam3 = "502945786028490753"; let channelTeam4 = "501124944885710859"; 
     

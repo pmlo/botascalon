@@ -3,6 +3,11 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args, ops) => {
 
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) {
+        message.delete();
+        return;
+    }
+
     if(args[0] == null) {
         return;
     }
