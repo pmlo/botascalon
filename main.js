@@ -37,7 +37,6 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 let token = process.env.token;
 
-
 //INSCRIPTION SOLO
 var numberisinscriptionsolo = 0;
 var numermaxinscriptionsolo = 0;
@@ -103,11 +102,9 @@ bot.on("message", async message => {
 
 
 bot.on('guildMemberAdd', member => {
-    console.log(`lklkmklmk`);
-    
 
-   // var joinrole = member.guild.channels.find('name', '💧 Ascalon 💧');
-    //member.addRole(joinrole);
+    var joinrole = member.guild.channels.find('name', '💧 Ascalon 💧');
+    member.addRole(joinrole);
     const joinChannel = member.guild.channels.find('name', '👐bienvenue');
     joinChannel.send(`Bienvenue ${member.user}, avant de te divertir sur **ASCALON** je t'invite à lire le règlement . Have Fun🎉🤗 !`);
 
@@ -173,8 +170,11 @@ bot.on("message", async message => {
       message.author.send('La pub de discord sur le serveur ASCALON est interdite !');
       //message channel send to author for advertissment
       message.channel.send(`<@${message.author.id}> Bonjour, la pub de serveur discord est interdite. Dernière avertissement avant le ban`).then(message => message.delete(5000));
-    const joinChannel = message.member.guild.channels.find('name', 'history-bot');
-    joinChannel.send(`[LOG] REMOVE DISCORD LINK ${message.member.user}`);
+    
+      log("")
+      //const joinChannel = message.member.guild.channels.find('name', 'history-bot');
+    //joinChannel.send(`[LOG] REMOVE DISCORD LINK ${message.member.user}`);
+    log
     }
 
     //RESULTAT
@@ -233,8 +233,6 @@ bot.on("message", async message => {
 
 
   bot.login(token);
-
-
 
   // LANCEMENT DE GAME, INSCRIPTION, (CLASSEMENT)
 
