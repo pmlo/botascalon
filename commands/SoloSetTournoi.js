@@ -12,7 +12,9 @@ module.exports.run = async (bot, message, args, ops) => {
         return;
     }
 
-    bot.channels.get('511210802712412170').setName('🌀inscription-solo-on');
+    let inscriptionsolo = "511210802712412170";
+
+    bot.channels.get(inscriptionsolo).setName('🌀inscription-solo-on');
 
     ops.isONSOLO = true;
 
