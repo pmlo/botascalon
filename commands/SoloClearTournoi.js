@@ -46,6 +46,12 @@ module.exports.run = async (bot, message, args, ops) => {
     const inscriptionChannel = message.member.guild.channels.find('id', '511210802712412170');
     //inscriptionChannel.send(`Pseudo du joueur IG :`);
 
+    let joueurtournoi = message.guild.roles.find(`name`, "JOUEUR TOURNOIS");
+
+        joueurtournoi.delete('delete role')
+        .then(deleted => console.log(`Deleted role ${deleted.name}`))
+        .catch(console.error);
+
 
     try {
           let muterole = message.guild.roles.find(`name`, "💧 Ascalon 💧");
@@ -53,12 +59,6 @@ module.exports.run = async (bot, message, args, ops) => {
           inscriptionChannel.overwritePermissions(muterole, {
           SEND_MESSAGES: false 
         });
-
-        let joueurtournoi = message.guild.roles.find(`name`, "JOUEUR TOURNOIS");
-
-        joueurtournoi.delete('delete role')
-        .then(deleted => console.log(`Deleted role ${deleted.name}`))
-        .catch(console.error);
 
       } catch(e){
         console.log(e.stack);
