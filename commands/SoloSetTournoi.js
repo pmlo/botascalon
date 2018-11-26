@@ -56,6 +56,8 @@ module.exports.run = async (bot, message, args, ops) => {
               permissions:[]
             })
 
+            roletournoi.setMentionable(true, 'true');
+
 
           }catch(e){
             console.log(e.stack);
@@ -67,9 +69,9 @@ module.exports.run = async (bot, message, args, ops) => {
         roltournoi.setPosition(28).then(updated => console.log(`Role position: ${updated.position}`))
             .catch(console.error);
 
-            roltournoi.setMentionable(true, 'JOUEUR TOURNOIS')
-            .then(updated => console.log(`Role mentionable: ${updated.mentionable}`))
-            .catch(console.error);
+            //roltournoi.setMentionable(true, 'true')
+          //  .then(updated => console.log(`Role mentionable: ${updated.mentionable}`))
+           // .catch(console.error);
 
     
     message.reply(`set solo complete ${bot.numermaxinscriptionsolo} :white_check_mark:`).then(message => message.delete(5000));
