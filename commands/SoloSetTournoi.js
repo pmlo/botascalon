@@ -59,8 +59,6 @@ module.exports.run = async (bot, message, args, ops) => {
     }
 
     bot.numermaxinscriptionsolo = args[0];
-    
-    logChannel.send(`${bot.numermaxinscriptionsolo}`);
 
     ops.isONSOLO = true;
 
