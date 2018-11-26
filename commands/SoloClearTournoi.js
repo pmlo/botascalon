@@ -43,8 +43,8 @@ module.exports.run = async (bot, message, args, ops) => {
     }
 
 
-    const inscriptionChannel = message.member.guild.channels.find('id', '511210802712412170');
-    inscriptionChannel.send(`Pseudo du joueur IG :`);
+    //const inscriptionChannel = message.member.guild.channels.find('id', '511210802712412170');
+    //inscriptionChannel.send(`Pseudo du joueur IG :`);
 
 
     try {
