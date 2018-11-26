@@ -42,14 +42,15 @@ module.exports.run = async (bot, message, args, ops) => {
 
     if(args[0] == "20") {
 
-    bot.channels.get(channelTeam1).setName('Poule 1');
-    bot.channels.get(channelTeam2).setName('Poule 2');
-    bot.channels.get(channelTeam3).setName('Poule 3');
-    bot.channels.get(channelTeam4).setName('Poule 4');
-    bot.channels.get(channelTeam5).setName('Poule 5');
+        bot.channels.get(channelTeam1).setName('Poule 1');
+        bot.channels.get(channelTeam2).setName('Poule 2');
+        bot.channels.get(channelTeam3).setName('Poule 3');
+        bot.channels.get(channelTeam4).setName('Poule 4');
+        bot.channels.get(channelTeam5).setName('Poule 5');
     }
 
     if(args[0] == 24) {
+
         bot.channels.get(channelTeam1).setName('Poule 1');
         bot.channels.get(channelTeam2).setName('Poule 2');
         bot.channels.get(channelTeam3).setName('Poule 3');
@@ -57,6 +58,11 @@ module.exports.run = async (bot, message, args, ops) => {
         bot.channels.get(channelTeam5).setName('Poule 5');
         bot.channels.get(channelTeam6).setName('Poule 6');
     }
+
+    bot.channels.get(channelTeam1).setName('Poule 1');
+    bot.channels.get(channelTeam2).setName('Poule 2');
+    bot.channels.get(channelTeam3).setName('Poule 3');
+    bot.channels.get(channelTeam4).setName('Poule 4');
 
     bot.numermaxinscriptionsolo = args[0];
 
