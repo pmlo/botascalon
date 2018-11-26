@@ -15,17 +15,19 @@ module.exports.run = async (bot, message, args, ops) => {
       return;
     }
 
+
+
     
     //TOURNOI FULL
     if(ops.soloTournoi.size >= bot.numermaxinscriptionsolo) {
       var embed = new Discord.RichEmbed()
     .setTitle(`TOURNOI SOLO ASCALON`)
-    .addField(`📛 Vous n'êtes pas inscrit au tournoi ASCALON SOLO ${messages} celui ci est au complet ! 📛`, "🕛 Venez quand même, des places se libéreront surêment ! 🕛")
+    .addField(`📛 Vous n'êtes pas inscrit au tournoi ASCALON SOLO ${messages} ! Celui ci est au complet 📛`, "🕛 Vous venez quand même au tournoi, des places se libéreront surêment ! 🕛")
     .setColor("0xB40404")
     .setTimestamp()
     .setFooter("TOURNOI SOLO ASCALON");
     message.guild.channels.find("id", "511210802712412170").sendEmbed(embed);
-       message.channel.send(`<@${message.author.id}> Le tournoi est plein.`); 
+       //message.channel.send(`<@${message.author.id}> Le tournoi est plein.`); 
       return;
     }
     
@@ -41,7 +43,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
     var embed = new Discord.RichEmbed()
     .setTitle(`TOURNOI SOLO ASCALON`)
-    .addField(`🔥 Vous êtes inscrit au tournoi ASCALON SOLO ${messages} ! 🔥`, "🕛N'oubliez pas d'être à l'heure pour le tournoi🕛")
+    .addField(`🔥 Vous êtes inscrit au tournoi ASCALON SOLO ${messages} ! 🔥`, "🕛 N'oubliez pas d'être à l'heure pour le tournoi 🕛")
     .setColor("0xB40404")
     .setTimestamp()
     .setFooter("TOURNOI SOLO ASCALON");
