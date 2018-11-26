@@ -40,7 +40,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
     ops.isONSOLO = true;
 
-    const inscriptionChannel = message.member.guild.channels.find('id', '511210802712412170');
+    const inscriptionChannel = message.member.guild.channels.find('id', inscriptionsolo);
     inscriptionChannel.send(`Veuillez respecter cette commande pour vous inscrire : a!inscriptionsolo <votre pseudo>`);
 
           let muterole = message.guild.roles.find(`name`, "💧 Ascalon 💧");
