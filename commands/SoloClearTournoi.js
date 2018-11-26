@@ -9,17 +9,19 @@ module.exports.run = async (bot, message, args, ops) => {
 
     let channelTeam1 = "501124673354858516"; let channelTeam2 = "502944251026472970"; 
     let channelTeam3 = "502945786028490753"; let channelTeam4 = "501124944885710859"; 
+    let inscriptionsolo = "511210802712412170";
     
     bot.channels.get(channelTeam1).setName('Equipe 1 -'); bot.channels.get(channelTeam2).setName('Equipe 2 -'); 
     bot.channels.get(channelTeam3).setName('Equipe 3 -'); bot.channels.get(channelTeam4).setName('Equipe 4 -'); 
     
     ops.soloTournoi.clear();
 
+    bot.channels.get(inscriptionsolo).setName('🌀inscription-solo-off');
+
     ops.isONSOLO = false;
 
-    bot.channels.get('511210802712412170').setName('🌀inscription-solo-off');
 
-
+    try {
     const clearTournoi = message.member.guild.channels.find('id', '515948520239267844');
     clearTournoi.bulkDelete(100);
 
@@ -36,10 +38,16 @@ module.exports.run = async (bot, message, args, ops) => {
 
     cleainscriptionsolo.bulkDelete(100);
 
+    } catch(e){
+      console.log(e.stack);
+    }
+
 
     const inscriptionChannel = message.member.guild.channels.find('id', '511210802712412170');
     inscriptionChannel.send(`Pseudo du joueur IG :`);
 
+
+    try {
           let muterole = message.guild.roles.find(`name`, "💧 Ascalon 💧");
 
           inscriptionChannel.overwritePermissions(muterole, {
@@ -51,6 +59,10 @@ module.exports.run = async (bot, message, args, ops) => {
         joueurtournoi.delete('delete role')
         .then(deleted => console.log(`Deleted role ${deleted.name}`))
         .catch(console.error);
+
+      } catch(e){
+        console.log(e.stack);
+      }
 
         bot.numberisinscriptionsolo=0;
         bot.numermaxinscriptionsolo=0;

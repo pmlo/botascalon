@@ -12,6 +12,8 @@ module.exports.run = async (bot, message, args, ops) => {
         return;
     }
 
+    bot.channels.get('511210802712412170').setName('🌀inscription-solo-on');
+
     ops.isONSOLO = true;
 
     let channelTeam1 = "501124673354858516";
@@ -69,7 +71,6 @@ module.exports.run = async (bot, message, args, ops) => {
             .then(updated => console.log(`Role mentionable: ${updated.mentionable}`))
             .catch(console.error);
 
-            bot.channels.get('511210802712412170').setName('🌀inscription-solo-on');
     
     message.reply(`set solo complete ${bot.numermaxinscriptionsolo} :white_check_mark:`).then(message => message.delete(5000));
 };
