@@ -22,6 +22,10 @@ module.exports.run = async (bot, message, args, ops) => {
     let channelTeam2 = "502944251026472970";
     let channelTeam3 = "502945786028490753";
     let channelTeam4 = "501124944885710859";
+    let channelTeam5 = "502945846493446156";
+    let channelTeam6 = "502945957705547791";
+
+    if(args[0] == "16") {
 
     bot.channels.get(channelTeam1).setName('Poule 1');
     bot.channels.get(channelTeam2).setName('Poule 2');
@@ -33,6 +37,26 @@ module.exports.run = async (bot, message, args, ops) => {
     logChannel.send(`[LOG] EQUIPE 2 TO POULE 2 CHANGED`);// ${message.author}`);
     logChannel.send(`[LOG] EQUIPE 3 TO POULE 3 CHANGED`);// ${message.author}`);
     logChannel.send(`[LOG] EQUIPE 4 TO POULE 4 CHANGED`);// ${message.author}`);
+
+    }
+
+    if(args[0] == "20") {
+
+    bot.channels.get(channelTeam1).setName('Poule 1');
+    bot.channels.get(channelTeam2).setName('Poule 2');
+    bot.channels.get(channelTeam3).setName('Poule 3');
+    bot.channels.get(channelTeam4).setName('Poule 4');
+    bot.channels.get(channelTeam5).setName('Poule 5');
+    }
+
+    if(args[0] == 24) {
+        bot.channels.get(channelTeam1).setName('Poule 1');
+        bot.channels.get(channelTeam2).setName('Poule 2');
+        bot.channels.get(channelTeam3).setName('Poule 3');
+        bot.channels.get(channelTeam4).setName('Poule 4');
+        bot.channels.get(channelTeam5).setName('Poule 5');
+        bot.channels.get(channelTeam6).setName('Poule 6');
+    }
 
     bot.numermaxinscriptionsolo = args[0];
     
