@@ -17,6 +17,10 @@ module.exports.run = async (bot, message, args, ops) => {
     }
 
     if(args[0] == "full") {
+
+        try {
+
+
     message.channel.bulkDelete(100);
     message.channel.bulkDelete(100);
     message.channel.bulkDelete(100);
@@ -89,7 +93,11 @@ module.exports.run = async (bot, message, args, ops) => {
     message.channel.bulkDelete(100);
     message.channel.bulkDelete(100);
     message.channel.bulkDelete(100);
-    }
+
+        }catch(e){
+            console.log(e.stack);
+        }
+    } 
 
     message.channel.bulkDelete(args[0]);
     
