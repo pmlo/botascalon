@@ -49,7 +49,7 @@ module.exports.run = async (bot, message, args, ops) => {
         bot.channels.get(channelTeam5).setName('Poule 5');
     }
 
-    if(args[0] == 24) {
+    if(args[0] == "24") {
 
         bot.channels.get(channelTeam1).setName('Poule 1');
         bot.channels.get(channelTeam2).setName('Poule 2');
