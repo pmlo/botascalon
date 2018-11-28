@@ -56,7 +56,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
     ops.isONDUO = true;
 
-    const inscriptionChannel = message.member.guild.channels.find('id', inscriptionsolo);
+    const inscriptionChannel = message.member.guild.channels.find('id', inscriptionduo);
     inscriptionChannel.send(`Veuillez respecter cette commande pour vous inscrire : a!inscriptionduo <votre team>`);
 
           let muterole = message.guild.roles.find(`name`, "💧 Ascalon 💧");
