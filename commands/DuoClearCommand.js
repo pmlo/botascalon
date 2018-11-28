@@ -56,7 +56,7 @@ module.exports.run = async (bot, message, args, ops) => {
         
             const cleainscriptionduo = message.member.guild.channels.find('id', '488462538283941910');
         
-            cleainscriptionsolo.bulkDelete(100);
+            cleainscriptionduo.bulkDelete(100);
 
             } catch(e){
               console.log(e.stack);
