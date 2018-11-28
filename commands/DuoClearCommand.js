@@ -26,7 +26,7 @@ module.exports.run = async (bot, message, args, ops) => {
     
         let inscriptionduo = "488462538283941910";
     
-        bot.channels.get(inscriptionduo).setName('🌀inscription-solo-off');
+        bot.channels.get(inscriptionduo).setName('🌀inscription-duo-off');
         
         bot.channels.get(channelTeam1).setName('Equipe 1 -'); bot.channels.get(channelTeam2).setName('Equipe 2 -'); 
         bot.channels.get(channelTeam3).setName('Equipe 3 -'); bot.channels.get(channelTeam4).setName('Equipe 4 -'); 
