@@ -1,4 +1,3 @@
-const ytdl = require('ytdl-core');
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args, ops) => {
@@ -8,13 +7,12 @@ module.exports.run = async (bot, message, args, ops) => {
         return;
     }
 
+    let inscriptionsolo = "511210802712412170";
+    bot.channels.get(inscriptionsolo).setName('🌀inscription-solo-on');
+
     if(args[0] == null) {
         return;
     }
-
-    let inscriptionsolo = "511210802712412170";
-
-    bot.channels.get(inscriptionsolo).setName('🌀inscription-solo-on');
 
     ops.isONSOLO = true;
 

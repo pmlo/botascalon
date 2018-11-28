@@ -38,10 +38,14 @@ bot.commands = new Discord.Collection();
 let token = process.env.token;
 
 //INSCRIPTION SOLO
-var numberisinscriptionsolo = 0;
 var numermaxinscriptionsolo = 0;
 var soloTournoi = new Map();
 var isONSOLO = false;
+
+//INSCRIPTION DUOS
+var numermaxinscriptionduo = 0;
+var duoTournoi = new Map();
+var isONDUO = false;
 
 //INSCRIPTION SOLO BUILDFIGHT
 var isONSOLOBUILD = false;
@@ -105,7 +109,9 @@ bot.on("message", async message => {
   let ops = {
       active: active,
       soloTournoi: soloTournoi,
-      isONSOLO: isONSOLO
+      isONSOLO: isONSOLO,
+      duoTournoi: duoTournoi,
+      isONDUO: isONDUO
   }
 
 

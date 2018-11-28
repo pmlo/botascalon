@@ -66,7 +66,6 @@ module.exports.run = async (bot, message, args, ops) => {
         console.log(e.stack);
       }
 
-        bot.numberisinscriptionsolo=0;
         bot.numermaxinscriptionsolo=0;
 
     message.reply(`solo tournoi complete :white_check_mark:`).then(message => message.delete(5000));
