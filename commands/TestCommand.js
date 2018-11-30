@@ -5,9 +5,11 @@ module.exports.run = async (bot, message, args, ops) => {
 
     if(!message.member.voiceChannel) return;
 
+
+
    //if(message.guild.me.voiceChannel) return message.channel.send('Désolée mais le bot est déjà dans votre channel.');
 
-   var VC = message.member.voiceChannel;
+   /*var VC = message.member.voiceChannel;
    if (!VC)
        return;
     VC.join()
@@ -17,7 +19,8 @@ module.exports.run = async (bot, message, args, ops) => {
    })
    .catch(console.error);
 };
-
+*/
+}
 
 
 module.exports.help = {
