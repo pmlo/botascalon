@@ -42,7 +42,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
     var embed = new Discord.RichEmbed()
     .setTitle(`TOURNOI SOLO ASCALON`)
-    .addField(`🔥 Vous êtes inscrit au tournoi ASCALON SOLO ${messages} il reste ${bot.numermaxinscriptionsolo - ops.soloTournoi.size} ! 🔥`, "🕛 N'oubliez pas d'être à l'heure pour le tournoi 🕛")
+    .addField(`🔥 Vous êtes inscrit au tournoi ASCALON SOLO ${messages} ${ops.soloTournoi.size} / ${bot.numermaxinscriptionsolo} ! 🔥`, "🕛 N'oubliez pas d'être à l'heure pour le tournoi 🕛")
     .setColor("0xB40404")
     .setTimestamp()
     .setFooter("TOURNOI SOLO ASCALON");
