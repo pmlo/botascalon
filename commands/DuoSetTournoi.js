@@ -87,6 +87,8 @@ module.exports.run = async (bot, message, args, ops) => {
 
         roltournoi.setPosition(28).then(updated => console.log(`Role position: ${updated.position}`))
             .catch(console.error);
+
+        message.reply(`set duo complete ${bot.numermaxinscriptionsolo} :white_check_mark:`).then(message => message.delete(5000));
 }
 
 
