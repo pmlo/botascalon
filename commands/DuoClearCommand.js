@@ -86,7 +86,7 @@ module.exports.run = async (bot, message, args, ops) => {
       }
 
         bot.numermaxinscriptionduo=0;
-0
+
     message.reply(`solo tournoi complete :white_check_mark:`).then(message => message.delete(5000));
 }
 
