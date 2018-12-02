@@ -15,7 +15,10 @@ module.exports.run = async (bot, message, args, ops) => {
       return;
     }
 
-
+    if(ops.soloTournoi.has(`${message.author.id}`)) {
+      message.channel.send(`<@${message.author.id}> Vous êtes déjà inscrit`);
+      return;
+    }
 
     
     //TOURNOI FULL
@@ -33,7 +36,7 @@ module.exports.run = async (bot, message, args, ops) => {
     
     const joinChannel = message.member.guild.channels.find('name', '🚻equipe-inscrite');
     joinChannel.send(`Le joueur ${messages} (<@${message.author.id}>) vient de s'inscrire pour le tournoi **ASCALON SOLO**`);
-    ops.soloTournoi.set(`${messages}`, `${messages}`);
+    ops.soloTournoi.set(`${messages}`, `${message.author.id}`);
 
     let role = message.guild.roles.find(`name`, `JOUEUR TOURNOIS`);
 

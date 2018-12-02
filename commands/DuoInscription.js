@@ -31,6 +31,11 @@ module.exports.run = async (bot, message, args, ops) => {
       return;
     }
 
+    if(ops.duoTournoi.has(`${message.author.id}`)) {
+        message.channel.send(`<@${message.author.id}> Vous êtes déjà inscrit`);
+        return;
+      }
+
     //TOURNOI FULL
     if(ops.duoTournoi.size >= bot.numermaxinscriptionduo) {
         var embed = new Discord.RichEmbed()
@@ -42,8 +47,7 @@ module.exports.run = async (bot, message, args, ops) => {
         message.guild.channels.find("id", "488462538283941910").sendEmbed(embed);
            //message.channel.send(`<@${message.author.id}> Le tournoi est plein.`); 
           return;
-        }
-
+    }
 
 
     const joinChannel = message.member.guild.channels.find('name', '🚻equipe-inscrite');
