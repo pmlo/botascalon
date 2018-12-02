@@ -13,6 +13,9 @@ module.exports.run = async (bot, message, args, ops) => {
       await channel.overwritePermissions(muterole, {
         SEND_MESSAGES: false,
         ADD_REACTIONS: false,
+        CREATE_INSTANT_INVITE: false,
+        MANAGE_CHANNELS: false,
+        VIEW_CHANNEL: false                
         
       });
     });
