@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return;
-  
+
   if(tomute.hasPermission("MANAGE_MESSAGES")) return;
   let muterole = message.guild.roles.find(`name`, "muted");
   //start of create role
@@ -26,7 +26,7 @@ module.exports.run = async (bot, message, args, ops) => {
           SEND_MESSAGES: false,
           ADD_REACTIONS: false,
           SPEAK: false
-          
+
         });
       });
     }catch(e){
