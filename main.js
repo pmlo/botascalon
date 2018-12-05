@@ -1,12 +1,12 @@
 /**
  * CREATE_INSTANT_INVITE	0x00000001	Allows creation of instant invites	T, V
-KICK_MEMBERS *	0x00000002	Allows kicking members	
-BAN_MEMBERS *	0x00000004	Allows banning members	
-ADMINISTRATOR *	0x00000008	Allows all permissions and bypasses channel permission overwrites	
+KICK_MEMBERS *	0x00000002	Allows kicking members
+BAN_MEMBERS *	0x00000004	Allows banning members
+ADMINISTRATOR *	0x00000008	Allows all permissions and bypasses channel permission overwrites
 MANAGE_CHANNELS *	0x00000010	Allows management and editing of channels	T, V
-MANAGE_GUILD *	0x00000020	Allows management and editing of the guild	
+MANAGE_GUILD *	0x00000020	Allows management and editing of the guild
 ADD_REACTIONS	0x00000040	Allows for the addition of reactions to messages	T
-VIEW_AUDIT_LOG	0x00000080	Allows for viewing of audit logs	
+VIEW_AUDIT_LOG	0x00000080	Allows for viewing of audit logs
 VIEW_CHANNEL	0x00000400	Allows guild members to view a channel, which includes reading messages in text channels	T, V
 SEND_MESSAGES	0x00000800	Allows for sending messages in a channel	T
 SEND_TTS_MESSAGES	0x00001000	Allows for sending of /tts messages	T
@@ -23,11 +23,11 @@ DEAFEN_MEMBERS	0x00800000	Allows for deafening of members in a voice channel	V
 MOVE_MEMBERS	0x01000000	Allows for moving of members between voice channels	V
 USE_VAD	0x02000000	Allows for using voice-activity-detection in a voice channel	V
 PRIORITY_SPEAKER	0x00000100	Allows for using priority speaker in a voice channel	V
-CHANGE_NICKNAME	0x04000000	Allows for modification of own nickname	
-MANAGE_NICKNAMES	0x08000000	Allows for modification of other users nicknames	
+CHANGE_NICKNAME	0x04000000	Allows for modification of own nickname
+MANAGE_NICKNAMES	0x08000000	Allows for modification of other users nicknames
 MANAGE_ROLES *	0x10000000	Allows management and editing of roles	T, V
 MANAGE_WEBHOOKS *	0x20000000	Allows management and editing of webhooks	T, V
-MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis	
+MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
  */
 
 
@@ -86,17 +86,17 @@ bot.on("ready", async () => {
 
 });
 
-/** 
+/**
 //MESSAGE REACTION ADD
 bot.on('messageReactionAdd', (reaction, user) => {
 
     //CHANNEL ID
     channelID = reaction.message.channel.id;
-    //IF CHANNEL ID = 495909946672807947 && EMOJI IS :notif_discord: 
+    //IF CHANNEL ID = 495909946672807947 && EMOJI IS :notif_discord:
     if(reaction.emoji.name == ":notif_discord:" && channelID == "495909946672807947") {
     //CLIENT ID
     client_id = client.users.get("name", user.username).id;
-    } 
+    }
 });
 **/
 
@@ -195,7 +195,7 @@ bot.on('guildMemberAdd', member => {
     bot.channels.get(serverStats.totalUsersID).setName(`Total Users : ${member.guild.memberCount}`); // total users
     bot.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`); // total members (not inscued bot)
     bot.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`); // bot count
-    
+
     const logChannel = member.guild.channels.find('name', 'history-bot');
     logChannel.send(`[LOG] TOTAL USERS CHANGED + ${member.guild.memberCount}`);
     logChannel.send(`[LOG] MEMBER COUNT CHANGED + ${member.guild.members.filter(m => !m.user.bot).size}`);
@@ -259,7 +259,7 @@ bot.on("message", async message => {
 
     //INSCRIPTION SOLO
 
-    
+
     // Part 1 : checking & removing the text
     //1 blacklisted words
   let blacklisted = ['discord.gg'] //words put , after the word
@@ -267,7 +267,7 @@ bot.on("message", async message => {
   //2 looking for words
   let foundInText = false;
   for (var i in blacklisted) { // loops through the blacklisted list
-    if(message.channel.name == "👍partenariat" || message.channel.name == "🤝échange-de-pub🤝") {
+    if(message.channel.name == "👍partenariat" || message.channel.name == "🤝échange-de-pub🤝" || message.member.hasPermission("MANAGE_CHANNELS")) {
         const joinChannel = message.member.guild.channels.find('name', 'history-bot');
         joinChannel.send(`[LOG] BYPASS NOT LINK DISCORD ${message.member.user}`);
         return;
@@ -322,8 +322,8 @@ bot.on("message", async message => {
             message.react("✅");
             message.delete("Pseudo du joueur IG :");
         }
-        
-    } 
+
+    }
     //INSCRIPTION DUO
 
     if(message.channel.name == "🌀inscription-duo-on") {
@@ -341,7 +341,7 @@ bot.on("message", async message => {
                 message.react("✅");
             }
                     } */
-                    
+
     });
 
   bot.login(token);
@@ -437,7 +437,7 @@ bot.on("message", async message => {
          client.channels.get("510162232659673128").sendMessage(`${message.author.username} just tried ban ` + member);
 
          message.author.send("Bonjour, vous avez essayer d'éxecuter la commande a!ban mais la personne ciblée n'existe pas ^^");
-         
+
          message.delete();
 
         } else {
@@ -448,7 +448,7 @@ bot.on("message", async message => {
              message.delete();
 
             } else {
-            
+
               message.guild.member(member).ban("ASCALON BOT");
 
               client.channels.get("510162232659673128").sendMessage(`ban ` + member).then(function (message) {
@@ -464,7 +464,7 @@ bot.on("message", async message => {
             message.delete();
 
               break;
-            
+
             }
         }
     }
@@ -475,7 +475,7 @@ bot.on("message", async message => {
 
         //KICK
 
-        case "kick": 
+        case "kick":
 
         //IF MEMBER NOT PERMISSION *KICK_MEMBERS
 
@@ -490,7 +490,7 @@ bot.on("message", async message => {
            var member = message.mentions.members.first();
 
            //if not member, @ = null
-        
+
            if(!member) {
 
             //SEND MESSAGE CHANNEL "History-Bot"
@@ -500,9 +500,9 @@ bot.on("message", async message => {
             //SEND TO AUTHOR MESSAGE AVERT NO SUCCES
 
             message.author.send("Bonjour, vous avez essayer d'éxecuter la commande a!kick mais la personne ciblée n'existe pas ^^");
-            
+
             //DELETE MESSAGE
-            
+
             message.delete();
 
            } else {
@@ -538,7 +538,7 @@ bot.on("message", async message => {
                     //DELETING MESSAGE a!kick ....
 
                     message.delete();
-             
+
                    });
                }
            }
