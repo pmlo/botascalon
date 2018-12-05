@@ -268,8 +268,8 @@ bot.on("message", async message => {
   let foundInText = false;
   for (var i in blacklisted) { // loops through the blacklisted list
     if(message.channel.name == "👍partenariat" || message.channel.name == "🤝échange-de-pub🤝" || message.member.hasPermission("MANAGE_CHANNELS")) {
-        const joinChannel = message.member.guild.channels.find('name', 'history-bot');
-        joinChannel.send(`[LOG] BYPASS NOT LINK DISCORD ${message.member.user}`);
+      //  const joinChannel = message.member.guild.channels.find('name', 'history-bot');
+      //  joinChannel.send(`[LOG] BYPASS NOT LINK DISCORD ${message.member.user}`);
         return;
     }
 
