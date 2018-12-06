@@ -33,6 +33,8 @@ module.exports.run = async (bot, message, args, ops) => {
         console.log(e.stack);
       }
 
+      try {
+
       inscriptionDuoChannel.overwritePermissions(muterole, {
       SEND_MESSAGES: true
     });
