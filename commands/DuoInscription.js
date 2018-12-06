@@ -31,7 +31,7 @@ module.exports.run = async (bot, message, args, ops) => {
       return;
     }
 
-    if(ops.duoTournoi.has(`${mesage.author.name}`)) {
+    if(ops.duoTournoi.has(`${message.author.name}`)) {
         message.channel.send(`<@${message.author.id}> Vous êtes déjà inscrit`);
         return;
       }

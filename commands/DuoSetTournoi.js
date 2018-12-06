@@ -57,12 +57,12 @@ module.exports.run = async (bot, message, args, ops) => {
     ops.isONDUO = true;
 
     const inscriptionChannel = message.member.guild.channels.find('id', inscriptionduo);
-    inscriptionChannel.send(`Veuillez respecter cette commande pour vous inscrire : a!inscriptionduo <votre team>`);
+    inscriptionChannel.send(`Veuillez respecter cette commande pour vous inscrire : a!duo <votre team>`);
 
           let muterole = message.guild.roles.find(`name`, "💧 Ascalon 💧");
 
           inscriptionChannel.overwritePermissions(muterole, {
-          SEND_MESSAGES: true 
+          SEND_MESSAGES: true
         });
 
         //CREATE ROLE
@@ -76,7 +76,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
 
           }catch(e){
-            console.log(e.stack); 
+            console.log(e.stack);
         }
 
         let roltournoi = message.guild.roles.find(`name`, "JOUEUR TOURNOIS");
