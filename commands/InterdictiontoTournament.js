@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args, ops) => {
         muterole = await message.guild.createRole({
           name: "NoTournament",
           color: "#000000",
-          permissions:[]s
+          permissions:[]
         })
         const inscriptionSoloChannel = message.member.guild.channels.find('id', '511210802712412170');
         const inscriptionDuoChannel = message.member.guild.channels.find('id', '511210802712412170');
