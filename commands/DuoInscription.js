@@ -45,7 +45,7 @@ module.exports.run = async (bot, message, args, ops) => {
         .setTimestamp()
         .setFooter("TOURNOI SOLO ASCALON");
         message.guild.channels.find("id", "488462538283941910").sendEmbed(embed);
-           //message.channel.send(`<@${message.author.id}> Le tournoi est plein.`); 
+           //message.channel.send(`<@${message.author.id}> Le tournoi est plein.`);
           return;
     }
 
@@ -150,5 +150,5 @@ module.exports.run = async (bot, message, args, ops) => {
 
 module.exports.help = {
     //COMMAND
-    name: "inscriptionduo"
+    name: "duo"
   }
