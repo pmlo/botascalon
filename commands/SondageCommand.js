@@ -28,7 +28,7 @@ module.exports.run = async (bot, message, args, ops) => {
     .then(function (message) {
         message.react("❌")
         message.react("✅")
-        
+
         const logChannel = message.member.guild.channels.find('name', 'history-bot');
     logChannel.send(`[LOG] SEND SONDAGE MESSAGE BY ${message.author}`);
 
@@ -36,7 +36,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
    // Notif Sondages
 }
- 
+
 module.exports.help = {
   name: "sondage"
 }

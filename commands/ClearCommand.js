@@ -2,9 +2,9 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args, ops) => {
 
-    
+
     message.delete();
-    
+
     if(!message.member.hasPermission("MANAGE_MESSAGES")) {
         message.delete();
         return;
@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args, ops) => {
     if(args[0] == "full") {
 
         try {
-            
+
     message.channel.bulkDelete(100);
     message.channel.bulkDelete(100);
     message.channel.bulkDelete(100);
@@ -99,7 +99,7 @@ module.exports.run = async (bot, message, args, ops) => {
     }
 
     message.channel.bulkDelete(args[0]);
-    
+
     /*let messagecount = parseInt(args[0]) || 1;
 
         var deletedMessages = -1;
@@ -117,13 +117,13 @@ module.exports.run = async (bot, message, args, ops) => {
         logChannel.send(`[LOG] channel ${message.member.channel.name} cleared ${message.author}`);
         }).catch(console.error);
     */
-    
-    
+
+
    /** if(!message.member.hasPermission("MANAGE_MESSAGES")) {
         message.delete();
         return;
     }
-    
+
     if(!args[0]) {
         message.channel.send("Vous n'avez pas précisez combien de message je dois supprimer").then(message => message.delete(5000));
         message.delete();
@@ -139,4 +139,3 @@ module.exports.run = async (bot, message, args, ops) => {
 module.exports.help = {
     name: "clear"
   }
-

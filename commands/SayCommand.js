@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args, ops) => {
-    
+
     if(!message.member.hasPermission("ADMINISTRATOR")) {
         message.delete();
         return;
@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
     message.delete();
     message.channel.send(botmessage);
-    
+
     const logChannel = message.member.guild.channels.find('name', 'history-bot');
     logChannel.send(`[LOG] SAY MESSAGE BY ${message.author}`);
 
