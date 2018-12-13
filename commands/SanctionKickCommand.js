@@ -46,7 +46,7 @@ module.exports.run = async (bot, message, args, ops) => {
     message.delete();
     kickchannel.send(reportEmbed);
 
-    let kickchanneltest = message.guild.channels.find(`name`, "sanction");
+    let kickchanneltest = message.guild.channels.find(`name`, "sanction_modération");
     if(!kickchanneltest) return;
 
     kickchanneltest.send('');

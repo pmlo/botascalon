@@ -66,9 +66,14 @@ module.exports.run = async (bot, message, args, ops) => {
     const joinChannel = message.member.guild.channels.find('name', 'history-bot');
     joinChannel.send(`[LOG] USER ${rUser} BANNED by ${message.author} for reason ${rreason}`);
 
+<<<<<<< HEAD
     let banchannel = message.guild.channels.find('name', 'history-bot');
     let banchannelsanction = message.guild.channels.find(`id`, "522503012799741971");
 
+=======
+    let banchannel = message.guild.channels.find('name', 'sanction_modération');
+    let banchannelsanction = message.guild.channels.find(`id`, "509790654113644571");
+>>>>>>> 71b617d9a3c5330cb28294d4b06fb5c13d59bb0a
     if(!banchannel) return;
 
 
