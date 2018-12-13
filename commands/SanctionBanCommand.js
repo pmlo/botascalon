@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
     //si l'argument 0 ou 1 (a!ban args[0] and args[1])
     if(args[0] == null || args[1] == null) {
-    
+
         //message deleted
         message.delete();
 
@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args, ops) => {
         return;
     }
 
-    //recup id mention 
+    //recup id mention
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     //if not existe
     if(!rUser) {
@@ -62,14 +62,15 @@ module.exports.run = async (bot, message, args, ops) => {
     .addField("Raison du ban", rreason);
 
     message.guild.member(member).ban(rreason);
-    
+
     const joinChannel = message.member.guild.channels.find('name', 'history-bot');
     joinChannel.send(`[LOG] USER ${rUser} BANNED by ${message.author} for reason ${rreason}`);
 
     let banchannel = message.guild.channels.find('name', 'history-bot');
-    let banchannelsanction = message.guild.channels.find(`id`, "509790654113644571");
+    let banchannelsanction = message.guild.channels.find(`id`, "522503012799741971");
+
     if(!banchannel) return;
-    
+
 
     message.delete();
     banchannel.send(reportEmbed);
@@ -78,7 +79,7 @@ module.exports.run = async (bot, message, args, ops) => {
     message.delete();
     banchannelsanction.send(reportEmbed);
 }
- 
+
 module.exports.help = {
   name: "ban"
 }

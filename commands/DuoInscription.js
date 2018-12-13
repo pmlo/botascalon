@@ -58,7 +58,6 @@ module.exports.run = async (bot, message, args, ops) => {
 
     const guildMember = message.member;
     guildMember.addRole(role.id);
-
     var embed = new Discord.RichEmbed()
     .setTitle(`TOURNOI DUO ASCALON`)
     .addField(`🔥 Vous êtes inscrit au tournoi ASCALON DUO **${messages}** ! 🔥`, "🕛 N'oubliez pas d'être à l'heure pour le tournoi 🕛")

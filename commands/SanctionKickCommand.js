@@ -34,10 +34,10 @@ module.exports.run = async (bot, message, args, ops) => {
     .addField("Kick par", `${message.author}`)
 
     member.kick("ASCALON BOT");
-    
+
     const logChannel = message.member.guild.channels.find('name', 'history-bot');
     logChannel.send(`[LOG] BOT KICK ${rUser} ${message.author}`);
-    
+
 
     let kickchannel = message.guild.channels.find(`name`, "history-bot");
     if(!kickchannel) return;

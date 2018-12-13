@@ -36,6 +36,7 @@ const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 let token = process.env.token;
+const config = require("./config.json");
 
 //INSCRIPTION SOLO
 var numermaxinscriptionsolo = 0;
@@ -115,7 +116,7 @@ bot.on("message", async message => {
   }
 
 
-  let prefix = "a!";
+  let prefix = config.prefix;
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
