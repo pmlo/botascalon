@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const config = require("./config.json");
 
 module.exports.run = async (bot, message, args, ops) => {
 
@@ -7,7 +8,7 @@ module.exports.run = async (bot, message, args, ops) => {
         return;
     }
 
-    let inscriptionsolo = "511210802712412170";
+    let inscriptionsolo = config.id_channel_inscription_solo;
     bot.channels.get(inscriptionsolo).setName('🌀inscription-solo-on');
 
     if(args[0] == null) {
@@ -72,7 +73,7 @@ module.exports.run = async (bot, message, args, ops) => {
           let muterole = message.guild.roles.find(`name`, "💧 Ascalon 💧");
 
           inscriptionChannel.overwritePermissions(muterole, {
-          SEND_MESSAGES: true 
+          SEND_MESSAGES: true
         });
 
         //CREATE ROLE
@@ -87,7 +88,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
           }catch(e){
             console.log(e.stack);
-          
+
         }
 
         let roltournoi = message.guild.roles.find(`name`, "JOUEUR TOURNOIS");
@@ -100,7 +101,7 @@ module.exports.run = async (bot, message, args, ops) => {
             .catch(console.error);
 
 
-    
+
     message.reply(`set solo complete ${bot.numermaxinscriptionsolo} :white_check_mark:`).then(message => message.delete(5000));
 };
 
