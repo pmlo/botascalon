@@ -36,7 +36,7 @@ const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 let token = process.env.token;
-const config = require("./config.json");
+const config = require("./commands/config/config.json");
 
 //INSCRIPTION SOLO
 var numermaxinscriptionsolo = 0;
