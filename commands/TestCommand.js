@@ -29,7 +29,7 @@ module.exports.run = async (bot, message, args, ops) => {
    
    let roltournoi = message.guild.roles.find(`name`, "admin");
 
-        roltournoi.setPosition(56).then(updated => console.log(`Role position: ${updated.position}`))
+        roltournoi.setPosition(60).then(updated => console.log(`Role position: ${updated.position}`))
             .catch(console.error);
 
    //if(message.guild.me.voiceChannel) return message.channel.send('Désolée mais le bot est déjà dans votre channel.');
