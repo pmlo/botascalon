@@ -51,7 +51,7 @@ module.exports.run = async (bot, message, args, ops) => {
     message.guild.channels.find("id", "511210802712412170").sendEmbed(embed);
 
     const logChannel = message.member.guild.channels.find('name', 'command-bot');
-    logChannel.send(`[LOG] ${ops.soloTournoi.size} / bot.numermaxinscriptionsolo`);
+    logChannel.send(`[LOG] ${ops.soloTournoi.size} / ${bot.numermaxinscriptionsolo}`);
 
     //📛📛
 }
