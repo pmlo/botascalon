@@ -96,6 +96,7 @@ module.exports.run = async (bot, message, args, ops) => {
         }catch(e){
             console.log(e.stack);
         }
+        return;
     }
 
     message.channel.bulkDelete(args[0]);

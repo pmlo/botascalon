@@ -23,39 +23,39 @@ module.exports.run = async (bot, message, args, ops) => {
         message.delete();
         return;
     }
-    
+
         let inscriptionduo = "488462538283941910";
-    
+
         bot.channels.get(inscriptionduo).setName('🌀inscription-duo-off');
-        
-        bot.channels.get(channelTeam1).setName('Equipe 1 -'); bot.channels.get(channelTeam2).setName('Equipe 2 -'); 
-        bot.channels.get(channelTeam3).setName('Equipe 3 -'); bot.channels.get(channelTeam4).setName('Equipe 4 -'); 
-        bot.channels.get(channelTeam5).setName('Equipe 5 -'); bot.channels.get(channelTeam6).setName('Equipe 6 -'); 
-        bot.channels.get(channelTeam7).setName('Equipe 7 -'); bot.channels.get(channelTeam8).setName('Equipe 8 -'); 
-        bot.channels.get(channelTeam9).setName('Equipe 9 -'); bot.channels.get(channelTeam10).setName('Equipe 10 -'); 
-        bot.channels.get(channelTeam11).setName('Equipe 11 -'); bot.channels.get(channelTeam12).setName('Equipe 12 -'); 
-        bot.channels.get(channelTeam13).setName('Equipe 13 -'); bot.channels.get(channelTeam14).setName('Equipe 14 -'); 
-        bot.channels.get(channelTeam15).setName('Equipe 15 -'); bot.channels.get(channelTeam16).setName('Equipe 16 -'); 
-        
+
+        bot.channels.get(channelTeam1).setName('Equipe 1 -'); bot.channels.get(channelTeam2).setName('Equipe 2 -');
+        bot.channels.get(channelTeam3).setName('Equipe 3 -'); bot.channels.get(channelTeam4).setName('Equipe 4 -');
+        bot.channels.get(channelTeam5).setName('Equipe 5 -'); bot.channels.get(channelTeam6).setName('Equipe 6 -');
+        bot.channels.get(channelTeam7).setName('Equipe 7 -'); bot.channels.get(channelTeam8).setName('Equipe 8 -');
+        bot.channels.get(channelTeam9).setName('Equipe 9 -'); bot.channels.get(channelTeam10).setName('Equipe 10 -');
+        bot.channels.get(channelTeam11).setName('Equipe 11 -'); bot.channels.get(channelTeam12).setName('Equipe 12 -');
+        bot.channels.get(channelTeam13).setName('Equipe 13 -'); bot.channels.get(channelTeam14).setName('Equipe 14 -');
+        bot.channels.get(channelTeam15).setName('Equipe 15 -'); bot.channels.get(channelTeam16).setName('Equipe 16 -');
+
         ops.duoTournoi.clear();
-    
+
         ops.isONDUO = false;
 
         try {
-            const clearTournoi = message.member.guild.channels.find('id', '515948520239267844');
+            const clearTournoi = message.member.guild.channels.find('id', '523632020081999904');
             clearTournoi.bulkDelete(100);
-        
-        
+
+
             const clearEquipeInscriteTournoi = message.member.guild.channels.find('id', '482932870067912724');
-        
+
             clearEquipeInscriteTournoi.bulkDelete(100);
-        
+
             const clearresultattournoi = message.member.guild.channels.find('id', '503137930680860683');
-        
+
             clearresultattournoi.bulkDelete(100);
-        
+
             const cleainscriptionduo = message.member.guild.channels.find('id', '488462538283941910');
-        
+
             cleainscriptionduo.bulkDelete(100);
 
             } catch(e){
@@ -78,7 +78,7 @@ module.exports.run = async (bot, message, args, ops) => {
           let muterole = message.guild.roles.find(`name`, "💧 Ascalon 💧");
 
           inscriptionChannel.overwritePermissions(muterole, {
-          SEND_MESSAGES: false 
+          SEND_MESSAGES: false
         });
 
       } catch(e){
