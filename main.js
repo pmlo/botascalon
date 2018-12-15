@@ -288,7 +288,6 @@ bot.on("message", async message => {
       message.channel.send(`<@${message.author.id}> Bonjour, la pub de serveur discord est interdite. Dernière avertissement avant le ban`).then(message => message.delete(5000));
       //const joinChannel = message.member.guild.channels.find('name', 'history-bot');
     //joinChannel.send(`[LOG] REMOVE DISCORD LINK ${message.member.user}`);
-    log
     }
 
     //RESULTAT
