@@ -1,4 +1,6 @@
 const Discord = require("discord.js");
+const config = require("./config/config.json");
+
 const ms = require("ms");
 
 module.exports.run = async (bot, message, args, ops) => {
@@ -11,7 +13,7 @@ module.exports.run = async (bot, message, args, ops) => {
   if(!tomute) return;
 
   if(tomute.hasPermission("MANAGE_MESSAGES")) return;
-  let muterole = message.guild.roles.find(`name`, "muted");
+  let muterole = message.guild.roles.find(`name`, config.role_mute);
   //start of create role
   if(!muterole){
     try{
