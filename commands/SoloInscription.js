@@ -12,12 +12,12 @@ module.exports.run = async (bot, message, args, ops) => {
     let messages = arg.join(" ");
 
     if(ops.soloTournoi.has(`${messages}`)) {
-      message.channel.send(`<@${mesage.author.name}> Vous êtes déjà inscrit`);
+      message.channel.send(`<@${message.author.name}> Vous êtes déjà inscrit`);
       return;
     }
 
-    if(ops.soloTournoi.has(`<@${mesage.author.name}>`)) {
-      message.channel.send(`<@${mesage.author.id}> Vous êtes déjà inscrit`);
+    if(ops.soloTournoi.has(`<@${message.author.name}>`)) {
+      message.channel.send(`<@${message.author.id}> Vous êtes déjà inscrit`);
       return;
     }
 
@@ -30,14 +30,12 @@ module.exports.run = async (bot, message, args, ops) => {
     .setColor("0xB40404")
     .setTimestamp()
     .setFooter("TOURNOI SOLO ASCALON");
-    message.guild.channels.find("id", "511210802712412170").sendEmbed(embed);
-       //message.channel.send(`<@${message.author.id}> Le tournoi est plein.`);
       return;
     }
 
     const joinChannel = message.member.guild.channels.find('name', '🚻equipe-inscrite');
     joinChannel.send(`Le joueur ${messages} (<@${message.author.id}>) vient de s'inscrire pour le tournoi **ASCALON SOLO**`);
-    ops.soloTournoi.set(`${messages}`, `<@${mesage.author.name}>`);
+    ops.soloTournoi.set(`${messages}`, `<@${message.author.name}>`);
 
     let role = message.guild.roles.find(`name`, `JOUEUR TOURNOIS`);
 
