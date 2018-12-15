@@ -30,7 +30,7 @@ module.exports.run = async (bot, message, args, ops) => {
     .setColor("0xB40404")
     .setTimestamp()
     .setFooter("TOURNOI SOLO ASCALON");
-    message.guild.channels.find("id", "511210802712412170").sendEmbed(embed);
+    message.guild.channels.find("id", "482932870067912724").sendEmbed(embed);
        //message.channel.send(`<@${message.author.id}> Le tournoi est plein.`); 
       return;
     }
