@@ -5,7 +5,7 @@ module.exports = {
   log: function(message, channel) {
     const joinChannel = channel.member.guild.channels.find('name', 'history-bot');
     joinChannel.send(`[LOG] ${message}`);
-  }
+  },
 
   initsolo: function(message, channel) {
 
@@ -39,7 +39,5 @@ module.exports = {
         Discord.channels.get(channelTeam5).setName('Poule 5');
         Discord.channels.get(channelTeam6).setName('Poule 6');
     }
-  }
-
-  
+  },
 }
