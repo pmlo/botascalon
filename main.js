@@ -37,6 +37,9 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
  const token = process.env.token;
  const tools = require('./function.js');
 
+ const serverStats = {
+   guildID: '511250353430462465',
+
  fs.readdir("./commands/", (err, files) => {
 
    if(err) console.log(err);
