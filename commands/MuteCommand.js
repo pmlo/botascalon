@@ -42,7 +42,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   if(!mutetime) return message.channel.send("Vous n'avez pas précisez le temps.").then(message => message.delete(5000));
 
   await(tomute.addRole(muterole.id));
-  tools.log('PLAYER MUTED ${message.author}', message);
+  tools.log('PLAYER MUTED ' + message.author.name, message);
   message.reply(`<@${tomute.id}> à été mute pour ${ms(ms(mutetime))}`).then(message => message.delete(5000));;
 
   setTimeout(function(){
