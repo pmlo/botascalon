@@ -8,13 +8,15 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   message.delete();
 
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  if(!tomute) return;
+  if(!tomute) {tools.log("CHECK COMMAND MUTE NOT PLAYER FOUND"); return;}
 
-  if(tomute.hasPermission("MANAGE_MESSAGES")) return;
+  if(tomute.hasPermission("MANAGE_MESSAGES")) {tools.log('CHECK COMMAND MUTE NOT PLAYER HAS PERMISSION'); return;}
   let muterole = message.guild.roles.find(`name`, 'muted');
   //start of create role
   if(!muterole){
     try{
+
+      tools.log("CREATE ROLE MUTED....");
 
       muterole = await message.guild.createRole({
         name: "muted",
@@ -28,11 +30,13 @@ module.exports.run = async (bot, message, args, ops, tools) => {
           SPEAK: false
 
         });
+
       });
     }catch(e){
       console.log(e.stack);
     }
   }
+  tools.log("CREATE ROLE MUTED ✅");
   //end of create role
   let mutetime = args[1];
   if(!mutetime) return message.channel.send("Vous n'avez pas précisez le temps.").then(message => message.delete(5000));
