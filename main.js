@@ -37,6 +37,10 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
  const token = process.env.token;
  const tools = require('./function.js');
 
+ //SOLO
+ var numbersolosize = 0;
+ var numbersolomax = 0;
+
  const serverStats = {
    guildID: '511250353430462465',
    totalUsersID: '511251090097045526',
@@ -76,6 +80,8 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
    if(message.channel.type === "dm") return;
 
     let ops = {
+      numbersolosize: numbersolosize,
+      numbersolomax: numbersolomax
     }
 
    let prefix = "a!";
