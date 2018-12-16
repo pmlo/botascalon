@@ -7,7 +7,7 @@ module.exports = {
     joinChannel.send(`[LOG] ${message}`);
   },
 
-  initsolo: function(size) {
+  initsolo: function(size, bot) {
 
     let channelTeam1 = "501124673354858516";
     let channelTeam2 = "502944251026472970";
@@ -17,29 +17,29 @@ module.exports = {
     let channelTeam6 = "502945957705547791";
 
     if(size == 16) {
-      Discord.channels.get(channelTeam1).setName('Poule 1');
-      Discord.channels.get(channelTeam2).setName('Poule 2');
-      Discord.channels.get(channelTeam3).setName('Poule 3');
-      Discord.channels.get(channelTeam4).setName('Poule 4');
+      bot.channels.get(channelTeam1).setName('Poule 1');
+      bot.channels.get(channelTeam2).setName('Poule 2');
+      bot.channels.get(channelTeam3).setName('Poule 3');
+      bot.channels.get(channelTeam4).setName('Poule 4');
       return;
     }
 
     if(size == "20") {
-        Discord.channels.get(channelTeam1).setName('Poule 1');
-        Discord.channels.get(channelTeam2).setName('Poule 2');
-        Discord.channels.get(channelTeam3).setName('Poule 3');
-        Discord.channels.get(channelTeam4).setName('Poule 4');
-        Discord.channels.get(channelTeam5).setName('Poule 5');
+        bot.channels.get(channelTeam1).setName('Poule 1');
+        bot.channels.get(channelTeam2).setName('Poule 2');
+        bot.channels.get(channelTeam3).setName('Poule 3');
+        bot.channels.get(channelTeam4).setName('Poule 4');
+        bot.channels.get(channelTeam5).setName('Poule 5');
         return;
     }
 
     if(size == "24") {
-        Discord.channels.get(channelTeam1).setName('Poule 1');
-        Discord.channels.get(channelTeam2).setName('Poule 2');
-        Discord.channels.get(channelTeam3).setName('Poule 3');
-        Discord.channels.get(channelTeam4).setName('Poule 4');
-        Discord.channels.get(channelTeam5).setName('Poule 5');
-        Discord.channels.get(channelTeam6).setName('Poule 6');
+        bot.channels.get(channelTeam1).setName('Poule 1');
+        bot.channels.get(channelTeam2).setName('Poule 2');
+        bot.channels.get(channelTeam3).setName('Poule 3');
+        bot.channels.get(channelTeam4).setName('Poule 4');
+        bot.channels.get(channelTeam5).setName('Poule 5');
+        bot.channels.get(channelTeam6).setName('Poule 6');
     }
   },
 }

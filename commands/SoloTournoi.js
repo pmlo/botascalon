@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   bot.channels.get(inscriptionsolo).setName("🌀inscription-solo-on");
 
   var sizeMax = args[0];
-  tools.initsolo(sizeMax);
+  tools.initsolo(sizeMax, bot);
 }
 
 module.exports.help = {
