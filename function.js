@@ -13,7 +13,6 @@ module.exports = {
     bot.channels.get(inscriptionsolo).setName("🌀inscription-solo-on");
 
     ops.numbersolomax = size;
-    log(ops.numersolomax + "=" + size, message.channel);
 
     let channelTeam1 = "501124673354858516";
     let channelTeam2 = "502944251026472970";
@@ -27,7 +26,6 @@ module.exports = {
       bot.channels.get(channelTeam2).setName('Poule 2');
       bot.channels.get(channelTeam3).setName('Poule 3');
       bot.channels.get(channelTeam4).setName('Poule 4');
-      log("INIT SOLO SIZE 16", message.channel);
     }
 
     if(size == "20") {
@@ -36,7 +34,7 @@ module.exports = {
         bot.channels.get(channelTeam3).setName('Poule 3');
         bot.channels.get(channelTeam4).setName('Poule 4');
         bot.channels.get(channelTeam5).setName('Poule 5');
-        log("INIT SOLO SIZE 20", message.channel);
+
     }
 
     if(size == "24") {
@@ -46,7 +44,7 @@ module.exports = {
         bot.channels.get(channelTeam4).setName('Poule 4');
         bot.channels.get(channelTeam5).setName('Poule 5');
         bot.channels.get(channelTeam6).setName('Poule 6');
-        log("INIT SOLO SIZE 24", message.channel);
+      
     }
 
     const inscriptionChannel = message.member.guild.channels.find('id', inscriptionsolo);
