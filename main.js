@@ -34,6 +34,7 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
  const fs = require("fs");
  const bot = new Discord.Client({disableEveryone: true});
  bot.commands = new Discord.Collection();
+ const token = process.env.token;
 
  fs.readdir("./commands/", (err, files) => {
 
@@ -106,8 +107,6 @@ bot.on('guildMemberRemove', member => {
     logChannel.send(`[LOG] BOT COUNT CHANGED - ${member.guild.members.filter(m => m.user.bot).size}`);
     logChannel.send(`[LOG] MP MESSAGE SEND TO ${member.user}`);
 });
-
-
 
 
 
