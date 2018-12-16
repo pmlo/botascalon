@@ -13,11 +13,8 @@ module.exports.run = async (bot, message, args, ops, tools) => {
       return;
   }
 
-  let inscriptionsolo = "511210802712412170";
-  bot.channels.get(inscriptionsolo).setName("🌀inscription-solo-on");
-
   var sizeMax = args[0];
-  tools.initsolo(sizeMax, bot);
+  tools.initsolo(sizeMax, bot, ops, message);
 }
 
 module.exports.help = {
