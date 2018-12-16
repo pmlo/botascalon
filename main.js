@@ -35,6 +35,7 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
  const bot = new Discord.Client({disableEveryone: true});
  bot.commands = new Discord.Collection();
  const token = process.env.token;
+ const function = require('./function.js')
 
  fs.readdir("./commands/", (err, files) => {
 
@@ -67,13 +68,16 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
    if(message.author.bot) return;
    if(message.channel.type === "dm") return;
 
+    let ops = {
+    }
+
    let prefix = "a!";
    let messageArray = message.content.split(" ");
    let cmd = messageArray[0];
    let args = messageArray.slice(1);
 
    let commandfile = bot.commands.get(cmd.slice(prefix.length));
-   if(commandfile) commandfile.run(bot,message,args);
+   if(commandfile) commandfile.run(bot,message,args, ops, tools);
 
  });
 
@@ -107,37 +111,6 @@ bot.on('guildMemberRemove', member => {
     logChannel.send(`[LOG] BOT COUNT CHANGED - ${member.guild.members.filter(m => m.user.bot).size}`);
     logChannel.send(`[LOG] MP MESSAGE SEND TO ${member.user}`);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //MESSAGE EVENT

@@ -1,8 +1,7 @@
 const Discord = require("discord.js");
-
 const ms = require("ms");
 
-module.exports.run = async (bot, message, args, ops) => {
+module.exports.run = async (bot, message, args, ops, tools) => {
 
   //!mute @user 1s/m/h/d
 
