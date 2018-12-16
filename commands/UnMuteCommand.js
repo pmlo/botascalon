@@ -17,11 +17,9 @@ module.exports.run = async (bot, message, args, ops, tools) => {
     message.channel.send(`<@${tomute.id}> est unmute !`).then(message => message.delete(5000));
     //LOG
     tools.log('CHECK COMMAND MUTE SEND MESSAGE TO PLAYER');
-} else {
-  return;
 }
 }
 
 module.exports.help = {
-  name: "mute"
+  name: "unmute"
 }
