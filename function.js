@@ -81,7 +81,7 @@ module.exports = {
         roltournoi.setPosition(28).then(updated => console.log(`Role position: ${updated.position}`))
         .catch(console.error);
 
-        message.reply(`set solo complete ${bot.numermaxinscriptionsolo} :white_check_mark:`).then(message => message.delete(5000));
+        message.reply(`set solo complete ${bot.numbersolomax} :white_check_mark:`).then(message => message.delete(5000));
   },
 
   resetsolo: function(bot, ops, message) {
