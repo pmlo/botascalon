@@ -40,6 +40,7 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
  //SOLO
  var numbersolosize = 0;
  var numbersolomax = 0;
+ var soloTournoi = new Map();
 
  const serverStats = {
    guildID: '511250353430462465',
@@ -81,7 +82,8 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
 
     let ops = {
       numbersolosize: numbersolosize,
-      numbersolomax: numbersolomax
+      numbersolomax: numbersolomax,
+      soloTournoi: soloTournoi
     }
 
    let prefix = "a!";

@@ -44,7 +44,7 @@ module.exports = {
         bot.channels.get(channelTeam4).setName('Poule 4');
         bot.channels.get(channelTeam5).setName('Poule 5');
         bot.channels.get(channelTeam6).setName('Poule 6');
-      
+
     }
 
     const inscriptionChannel = message.member.guild.channels.find('id', inscriptionsolo);
