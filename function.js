@@ -106,7 +106,7 @@ module.exports = {
       ops.soloTournoi.clear();
 
       try {
-      const clearTournoi = message.member.guild.channels.find('id', '515948520239267844');
+      const clearTournoi = message.member.guild.channels.find('id', '523632020081999904');
       clearTournoi.bulkDelete(100);
 
 
