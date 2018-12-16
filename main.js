@@ -39,6 +39,10 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
 
  const serverStats = {
    guildID: '511250353430462465',
+   totalUsersID: '511251090097045526',
+   memberCountID: '511251296054149141',
+   botCountID: '511251340119244841'
+ }
 
  fs.readdir("./commands/", (err, files) => {
 
