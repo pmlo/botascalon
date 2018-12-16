@@ -14,10 +14,9 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   }
 
   let inscriptionsolo = "511210802712412170";
-  bot.channels.get(inscriptionsolo).setName(config.name_channel_inscription_solo_on);
+  bot.channels.get(inscriptionsolo).setName("🌀inscription-solo-on");
 
   tools.initsolo(args[0]);
-
 }
 
 module.exports.help = {
