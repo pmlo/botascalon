@@ -84,7 +84,7 @@ module.exports = {
         message.reply(`set solo complete ${bot.numermaxinscriptionsolo} :white_check_mark:`).then(message => message.delete(5000));
   },
 
-  resetsolo: function(bot, ops) {
+  resetsolo: function(bot, ops, message) {
 
     let channelTeam1 = "501124673354858516";
     let channelTeam2 = "502944251026472970";
