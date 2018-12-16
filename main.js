@@ -34,25 +34,18 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
 const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
+const tools = require('./function.js');
+
 bot.commands = new Discord.Collection();
 let token = process.env.token;
-const config = require("./commands/config/config.json");
 
 //INSCRIPTION SOLO
 var numermaxinscriptionsolo = 0;
 var soloTournoi = new Map();
-var isONSOLO = false;
 
 //INSCRIPTION DUOS
 var numermaxinscriptionduo = 0;
 var duoTournoi = new Map();
-var isONDUO = false;
-
-//INSCRIPTION SOLO BUILDFIGHT
-var isONSOLOBUILD = false;
-
-const active = new Map();
-
 
 const serverStats = {
     guildID: '511250353430462465',
@@ -87,20 +80,6 @@ bot.on("ready", async () => {
 
 });
 
-/**
-//MESSAGE REACTION ADD
-bot.on('messageReactionAdd', (reaction, user) => {
-
-    //CHANNEL ID
-    channelID = reaction.message.channel.id;
-    //IF CHANNEL ID = 495909946672807947 && EMOJI IS :notif_discord:
-    if(reaction.emoji.name == ":notif_discord:" && channelID == "495909946672807947") {
-    //CLIENT ID
-    client_id = client.users.get("name", user.username).id;
-    }
-});
-**/
-
 bot.on("message", async message => {
 
     //Return Statements
@@ -108,89 +87,23 @@ bot.on("message", async message => {
   if(message.channel.type === "dm") return;
 
   let ops = {
-      active: active,
       soloTournoi: soloTournoi,
-      isONSOLO: isONSOLO,
       duoTournoi: duoTournoi,
-      isONDUO: isONDUO
   }
 
-  let prefix = config.prefix;
+  let prefix = "a!";
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
-  if(commandfile) commandfile.run(bot,message,args, ops);
+  if(commandfile) commandfile.run(bot,message,args, ops, tools);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 bot.on('guildMemberAdd', member => {
 
     const joinChannel = member.guild.channels.find('name', '👐bienvenue');
     joinChannel.send(`Bienvenue ${member.user}, avant de te divertir sur **ASCALON** je t'invite à lire le règlement . Have Fun🎉🤗 !`);
-
-
-   //member.sendMessage("POUR SOUTENIR LA ASCALON ALLEZ NOUS SUIVRE SUR TWITTER   https://twitter.com/ASCALONCUP");
 
     bot.channels.get(serverStats.totalUsersID).setName(`Total Users : ${member.guild.memberCount}`); // total users
     bot.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`); // total members (not inscued bot)
@@ -200,7 +113,6 @@ bot.on('guildMemberAdd', member => {
     logChannel.send(`[LOG] TOTAL USERS CHANGED + ${member.guild.memberCount}`);
     logChannel.send(`[LOG] MEMBER COUNT CHANGED + ${member.guild.members.filter(m => !m.user.bot).size}`);
     logChannel.send(`[LOG] BOT COUNT CHANGED + ${member.guild.members.filter(m => m.user.bot).size}`);
-    //logChannel.send(`[LOG] MP MESSAGE SEND TO ${member.user}`);
 
     let muterole = member.guild.roles.find(`name`, "💧 Ascalon 💧");
     member.addRole(muterole.id);
@@ -378,7 +290,19 @@ bot.on("message", async message => {
 
 
 
+  /**
+  //MESSAGE REACTION ADD
+  bot.on('messageReactionAdd', (reaction, user) => {
 
+      //CHANNEL ID
+      channelID = reaction.message.channel.id;
+      //IF CHANNEL ID = 495909946672807947 && EMOJI IS :notif_discord:
+      if(reaction.emoji.name == ":notif_discord:" && channelID == "495909946672807947") {
+      //CLIENT ID
+      client_id = client.users.get("name", user.username).id;
+      }
+  });
+  **/
 
 
 

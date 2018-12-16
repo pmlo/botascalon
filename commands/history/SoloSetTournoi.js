@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args, ops) => {
     }
 
     let inscriptionsolo = config.id_channel_inscription_solo;
-    bot.channels.get(inscriptionsolo).setName('🌀inscription-solo-on');
+    bot.channels.get(inscriptionsolo).setName(config.name_channel_inscription_solo_on);
 
     if(args[0] == null) {
         return;

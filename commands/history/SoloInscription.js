@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const config = require("./config/config.json");
 
 module.exports.run = async (bot, message, args, ops) => {
 
@@ -6,7 +7,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
 
     //IF NOT CHANNEL ON
-    if(message.channel.name == "🌀inscription-solo-off") return message.channel.send(`<@${message.author.id}> L'inscription pour le tournoi **ASCALON SOLO** est fermer. `).then(message => message.delete(5000));
+    if(message.channel.name == config.name_channel_inscription_solo_off) return message.channel.send(`<@${message.author.id}> L'inscription pour le tournoi **ASCALON SOLO** est fermer. `).then(message => message.delete(5000));
 
     let arg = message.content.split(" ").slice(1);
     let messages = arg.join(" ");
@@ -50,7 +51,7 @@ module.exports.run = async (bot, message, args, ops) => {
     .setFooter("TOURNOI SOLO ASCALON");
     message.guild.channels.find("id", "511210802712412170").sendEmbed(embed);
 
-    const logChannel = message.member.guild.channels.find('name', 'command-bot');
+    const logChannel = message.member.guild.channels.find('name', 'history-bot');
     logChannel.send(`[LOG] ${ops.soloTournoi.size} / ${bot.numermaxinscriptionsolo}`);
 
     //📛📛
