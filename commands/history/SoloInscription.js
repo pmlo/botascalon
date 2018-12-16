@@ -5,7 +5,6 @@ module.exports.run = async (bot, message, args, ops) => {
 
     message.delete();
 
-
     //IF NOT CHANNEL ON
     if(message.channel.name == config.name_channel_inscription_solo_off) return message.channel.send(`<@${message.author.id}> L'inscription pour le tournoi **ASCALON SOLO** est fermer. `).then(message => message.delete(5000));
 
