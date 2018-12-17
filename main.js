@@ -105,11 +105,6 @@ bot.on('guildMemberAdd', member => {
     bot.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`); // total members (not inscued bot)
     bot.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`); // bot count
 
-    const logChannel = member.guild.channels.find('name', 'history-bot');
-    logChannel.send(`[LOG] TOTAL USERS CHANGED + ${member.guild.memberCount}`);
-    logChannel.send(`[LOG] MEMBER COUNT CHANGED + ${member.guild.members.filter(m => !m.user.bot).size}`);
-    logChannel.send(`[LOG] BOT COUNT CHANGED + ${member.guild.members.filter(m => m.user.bot).size}`);
-
     let muterole = member.guild.roles.find(`name`, "💧 Ascalon 💧");
     member.addRole(muterole.id);
 });
@@ -119,12 +114,6 @@ bot.on('guildMemberRemove', member => {
     bot.channels.get(serverStats.totalUsersID).setName(`Total Users : ${member.guild.memberCount}`); // total users
     bot.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`); // total members (not inscued bot)
     bot.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`); // bot count
-
-    const logChannel = member.guild.channels.find('name', 'history-bot');
-    logChannel.send(`[LOG] TOTAL USERS CHANGED - ${member.guild.memberCount}`);
-    logChannel.send(`[LOG] MEMBER COUNT CHANGED - ${member.guild.members.filter(m => !m.user.bot).size}`);
-    logChannel.send(`[LOG] BOT COUNT CHANGED - ${member.guild.members.filter(m => m.user.bot).size}`);
-    logChannel.send(`[LOG] MP MESSAGE SEND TO ${member.user}`);
 });
 
 
@@ -143,8 +132,6 @@ bot.on("message", async message => {
   let foundInText = false;
   for (var i in blacklisted) { // loops through the blacklisted list
     if(message.channel.name == "👍partenariat" || message.channel.name == "🤝échange-de-pub🤝" || message.member.hasPermission("MANAGE_CHANNELS")) {
-      //  const joinChannel = message.member.guild.channels.find('name', 'history-bot');
-      //  joinChannel.send(`[LOG] BYPASS NOT LINK DISCORD ${message.member.user}`);
         return;
     }
 
@@ -160,62 +147,8 @@ bot.on("message", async message => {
       message.author.send('La pub de discord sur le serveur ASCALON est interdite !');
       //message channel send to author for advertissment
       message.channel.send(`<@${message.author.id}> Bonjour, la pub de serveur discord est interdite. Dernière avertissement avant le ban`).then(message => message.delete(5000));
-      //const joinChannel = message.member.guild.channels.find('name', 'history-bot');
-    //joinChannel.send(`[LOG] REMOVE DISCORD LINK ${message.member.user}`);
     }
-
-    //RESULTAT
-
-    /**if(message.channel.name == "🎲résultat") {
-
-        if (!message.content.includes("=")) {
-            //Message delete
-            message.delete();
-            //send message to author message
-            message.author.send("Bonjour, vous avez essayer de mettre un message qui n'est pas en rapport aux résultats.");
-            } else {
-                message.react("✅");
-                const joinChannel = message.member.guild.channels.find('name', 'history-bot');
-                joinChannel.send(`[LOG] RESULT CONFIRMED ${message.member.user}`);
-            }
-        }**/
-
-/*
-   //INSCRIPTION
-
-    //IF MESSAGE IS "🌀inscription-solo-on"
-    if(message.channel.name == "🌀inscription-solo-on") {
-
-    if (!message.content.includes("Pseudo du joueur IG :") || !message.content.includes("@")) {
-        //Message delete
-        message.delete();
-        //send message to author message
-        message.author.send("Bonjour, vous avez essayer de vous inscire à un tournoi ASCALON Solo, hélas vous n'avez pas respecter le modèle.");
-        message.author.send("Pseudo du joueur IG : @<votre mention>");
-        } else {
-            message.react("✅");
-            message.delete("Pseudo du joueur IG :");
-        }
-
-    }
-    //INSCRIPTION DUO
-
-    if(message.channel.name == "🌀inscription-duo-on") {
-
-        //if message not include "NOM DE TEAM :", "J1", "J2", "@"
-        if (!message.content.includes("NOM DE TEAM") || !message.content.includes("@") || !message.content.includes("J1") || !message.content.includes("J2")) {
-            //Message delete
-            message.delete();
-            //send message to author message
-            message.author.send("Bonjour, vous avez essayer de vous inscire à un tournoi ASCALON Duo, hélas vous n'avez pas respecter le modèle.");
-            message.author.send("Nom de l'équipe :");
-            message.author.send("J1 :               @MENTION");
-            message.author.send("J2 :                @MENTION");
-            } else {
-                message.react("✅");
-            }
-                    } */
-
+  }
     });
 
   bot.login(token);
