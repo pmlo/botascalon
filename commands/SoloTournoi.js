@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   }
 
   var sizeMax = args[0];
-  ops.numbersolomax = sizeMax;
+  bot.numbersolomax = sizeMax;
   tools.initsolo(sizeMax, bot, ops, message);
   const logChannel = message.member.guild.channels.find('name', 'history-bot');
   logChannel.send(`[LOG] ${ops.soloTournoi.size} / ${ops.numbersolomax}`);
