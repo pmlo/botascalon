@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   return message.channel.send(`<@${message.author.name}> Vous êtes déjà inscrit`);
 
   const logChannel = message.member.guild.channels.find('name', 'history-bot');
-  logChannel.send(`[LOG] ${ops.soloTournoi.size} / ${ops.numbersolomax}`);
+  logChannel.send(`[LOG] ${bot.soloTournoi.size} / ${bot.numbersolomax}`);
 
   if(bot.soloTournoi.size >= bot.numbersolomax) {
     var embed = new Discord.RichEmbed()
