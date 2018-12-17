@@ -38,6 +38,9 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   .setTimestamp()
   .setFooter("TOURNOI SOLO ASCALON");
   message.guild.channels.find("id", "511210802712412170").sendEmbed(embed);
+
+  const logChannel = message.member.guild.channels.find('name', 'history-bot');
+  logChannel.send(`[LOG] ${ops.soloTournoi.size} / ${ops.numbersolomax}`);
 }
 
 
