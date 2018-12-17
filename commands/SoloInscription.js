@@ -23,6 +23,21 @@ module.exports.run = async (bot, message, args, ops, tools) => {
     return;
   }
 
+  const joinChannel = message.member.guild.channels.find('name', '🚻equipe-inscrite');
+  joinChannel.send(`Le joueur ${messages} (<@${message.author.id}>) vient de s'inscrire pour le tournoi **ASCALON SOLO** ${ops.soloTournoi.size} / ${ops.numbersolomax}`);
+  ops.soloTournoi.set(`${messages}`, `<@${message.author.name}>`);
+
+  let role = message.guild.roles.find(`name`, `JOUEUR TOURNOIS`);
+  const guildMember = message.member;
+  guildMember.addRole(role.id);
+
+  var embed = new Discord.RichEmbed()
+  .setTitle(`TOURNOI SOLO ASCALON`)
+  .addField(`🔥 Vous êtes inscrit au tournoi ASCALON SOLO ${messages} ! 🔥`, "🕛 N'oubliez pas d'être à l'heure pour le tournoi 🕛")
+  .setColor("0xB40404")
+  .setTimestamp()
+  .setFooter("TOURNOI SOLO ASCALON");
+  message.guild.channels.find("id", "511210802712412170").sendEmbed(embed);
 }
 
 
