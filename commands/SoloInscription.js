@@ -13,9 +13,9 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   return message.channel.send(`<@${message.author.name}> Vous êtes déjà inscrit`);
 
   const logChannel = message.member.guild.channels.find('name', 'history-bot');
-  logChannel.send(`[LOG] ${ops.soloTournoi.size} / ${ops.numbersolomax}`);
+  logChannel.send(`[LOG] ${ops.soloTournoi.size} / ${bot.numbersolomax}`);
 
-  if(ops.soloTournoi.size >= ops.numbersolomax) {
+  if(ops.soloTournoi.size >= bot.numbersolomax) {
     var embed = new Discord.RichEmbed()
     .setTitle(`TOURNOI SOLO ASCALON`)
     .addField(`📛 Vous n'êtes pas inscrit au tournoi ASCALON SOLO ${messages} ! Celui ci est au complet 📛`, "🕛 Vous venez quand même au tournoi, des places se libéreront surêment ! 🕛")
