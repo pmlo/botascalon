@@ -38,7 +38,6 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
  const tools = require('./function.js');
 
  //SOLO
- var numbersolosize = 0;
  var numbersolomax = 0;
  var soloTournoi = new Map();
 
