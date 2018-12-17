@@ -12,8 +12,6 @@ module.exports = {
     let inscriptionsolo = "511210802712412170";
     bot.channels.get(inscriptionsolo).setName("🌀inscription-solo-on");
 
-    ops.numbersolomax = size;
-
     let channelTeam1 = "501124673354858516";
     let channelTeam2 = "502944251026472970";
     let channelTeam3 = "502945786028490753";
