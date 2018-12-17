@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args, ops) => {
     }
 
     if(ops.soloTournoi.size >= ops.numbersolomax) {
-      var embed = new Discord.RichEmbed()
+    var embed = new Discord.RichEmbed()
     .setTitle(`TOURNOI SOLO ASCALON`)
     .addField(`📛 Vous n'êtes pas inscrit au tournoi ASCALON SOLO ${messages} ! Celui ci est au complet 📛`, "🕛 Vous venez quand même au tournoi, des places se libéreront surêment ! 🕛")
     .setColor("0xB40404")
