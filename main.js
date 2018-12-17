@@ -80,7 +80,6 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
    if(message.channel.type === "dm") return;
 
     let ops = {
-      numbersolosize: numbersolosize,
       numbersolomax: numbersolomax,
       soloTournoi: soloTournoi
     }
