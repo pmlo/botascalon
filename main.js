@@ -148,8 +148,8 @@ bot.on("message", async message => {
       //message channel send to author for advertissment
       message.channel.send(`<@${message.author.id}> Bonjour, la pub de serveur discord est interdite. Dernière avertissement avant le ban`).then(message => message.delete(5000));
 
-    });
-  }
+    }
+  });
 
   bot.login(token);
 
