@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   ops.numbersolomax = sizeMax;
   var channelsV = message.channel;
   tools.initsolo(sizeMax, bot, ops, message);
-  tools.log(`${ops.numbersolomax}`, channelsV);
+  tools.log("" + ops.numbersolomax, channelsV);
 }
 
 module.exports.help = {
