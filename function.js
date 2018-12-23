@@ -45,6 +45,8 @@ module.exports = {
 
     }
 
+    bot.numbersolomax=size;
+
     const inscriptionChannel = message.member.guild.channels.find('id', inscriptionsolo);
     inscriptionChannel.send(`Veuillez respecter cette commande pour vous inscrire : a!solo votre pseudo`);
 
