@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   }
 
   var sizeMax = args[0];
-  bot.numbersolomax = sizeMax;
+  bot.numersoloturtlefightmax = sizeMax;
   tools.setturtlefightsolo(sizeMax, bot);
   const logChannel = message.member.guild.channels.find('name', 'history-bot');
   logChannel.send(`[LOG] ${ops.soloTurtleFightTournoi.size} / ${bot.numersoloturtlefightmax}`);

@@ -28,7 +28,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
 
   ops.soloTurtleFightTournoi.set(`${messages}`, `<@${message.author.name}>`);
   const joinChannel = message.member.guild.channels.find('name', '🚻equipe-inscrite');
-  joinChannel.send(`Le joueur ${messages} (<@${message.author.id}>) vient de s'inscrire pour le tournoi **ASCALON SOLO** ${ops.soloTournoi.size} / ${bot.numbersolomax}`);
+  joinChannel.send(`Le joueur ${messages} (<@${message.author.id}>) vient de s'inscrire pour le tournoi **ASCALON SOLO** ${ops.soloTurtleFightTournoi.size} / ${bot.numersoloturtlefightmax}`);
 
   let role = message.guild.roles.find(`name`, `JOUEUR TOURNOIS`);
   const guildMember = message.member;
