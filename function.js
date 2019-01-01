@@ -12,7 +12,7 @@ module.exports = {
     logChannel.send('${message}');
   },
 
-  setsolo : function(size, bot) {
+  setsolo : function(size, bot, message) {
     const inscriptionsolo = "511210802712412170";
     bot.channels.get(inscriptionsolo).setName("🌀inscription-solo-on");
 
