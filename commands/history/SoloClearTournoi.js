@@ -11,9 +11,9 @@ module.exports.run = async (bot, message, args, ops) => {
     let channelTeam1 = "501124673354858516"; let channelTeam2 = "502944251026472970";
     let channelTeam3 = "502945786028490753"; let channelTeam4 = "501124944885710859";
     let channelTeam5 = "502945846493446156"; let channelTeam6 = "502945957705547791";
-    let inscriptionsolo = config.id_channel_inscription_solo;
+    let inscriptionsolo = "511210802712412170";
 
-    bot.channels.get(inscriptionsolo).setName(config.name_channel_inscription_solo_off);
+    bot.channels.get(inscriptionsolo).setName("🌀inscription-solo-off");
 
     bot.channels.get(channelTeam1).setName('Equipe 1 -'); bot.channels.get(channelTeam2).setName('Equipe 2 -');
     bot.channels.get(channelTeam3).setName('Equipe 3 -'); bot.channels.get(channelTeam4).setName('Equipe 4 -');
