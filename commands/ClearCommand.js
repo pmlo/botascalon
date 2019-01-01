@@ -29,9 +29,9 @@ module.exports.run = async (bot, message, args, ops) => {
             console.log('Error while doing Bulk Delete');
             console.log(err);
           });
-      }
-    }
+
   }
+}
 
 module.exports.help = {
     name: "clear"
