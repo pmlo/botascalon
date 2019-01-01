@@ -49,7 +49,7 @@ module.exports = {
     }
   },
 
-  resetsolo : function(bot, ops) {
+  clearsolo : function(bot, ops) {
     const inscriptionsolo = "511210802712412170";
     bot.channels.get(inscriptionsolo).setName("🌀inscription-solo-off");
 

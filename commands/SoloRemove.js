@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
       return;
   }
 
-  tools.resetsolo(bot, ops);
+  tools.clearsolo(bot, ops);
 }
 
 module.exports.help = {
