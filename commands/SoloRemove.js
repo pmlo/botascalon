@@ -12,5 +12,5 @@ module.exports.run = async (bot, message, args, ops, tools) => {
 }
 
 module.exports.help = {
-  name: "initsolo"
+  name: "resetsolo"
 }
