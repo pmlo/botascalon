@@ -41,6 +41,11 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
  var numbersolomax = 0;
  var soloTournoi = new Map();
 
+ //SOLO setbuildfightsolo
+ var numersolobuildfightmax = 0;
+ var soloBuildFightTournoi = new Map();
+
+
  const serverStats = {
    guildID: '511250353430462465',
    totalUsersID: '511251090097045526',
@@ -85,7 +90,9 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
 
     let ops = {
       numbersolomax: numbersolomax,
-      soloTournoi: soloTournoi
+      soloTournoi: soloTournoi,
+      numersolobuildfightmax: numersolobuildfightmax,
+      soloBuildFightTournoi: soloBuildFightTournoi,
     }
 
    let prefix = "a!";
