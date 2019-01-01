@@ -19,8 +19,8 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   const logChannel = message.member.guild.channels.find('name', 'history-bot');
   logChannel.send(`[LOG] ${ops.soloTurtleFightTournoi.size} / ${bot.numersoloturtlefightmax}`);
 
-  const inscription = message.member.guild.channels.find('id', '511210802712412170');
-  inscription.send(`Veuillez éxecuter cette commande : **a!solo votre pseudo** pour vous inscrire !`);
+  const inscription = message.member.guild.channels.find('id', '529654956538462209');
+  inscription.send(`Veuillez éxecuter cette commande : **a!solotf votre pseudo** pour vous inscrire !`);
 }
 
 module.exports.help = {
