@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   let messages = arg.join(" ");
 
   if(ops.soloTournoi.has(`${messages}`) || ops.soloTournoi.has(`<@${message.author.name}>`))
-  return message.channel.send(`<@${message.author.name}> Vous êtes déjà inscrit`);
+  return message.channel.send(`<@${message.author.id}> Vous êtes déjà inscrit au tournoi.`);
 
   const logChannel = message.member.guild.channels.find('name', 'history-bot');
   logChannel.send(`[LOG] ${ops.soloTournoi.size} / ${ops.numbersolomax}`);
