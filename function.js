@@ -148,6 +148,73 @@ module.exports = {
     bot.numersolobuildfightmax = 0;
   },
 
+  setturtlefightsolo : function(size, bot, message) {
+    const inscriptionsolo = "529654956538462209";
+    bot.channels.get(inscriptionsolo).setName("🌀inscription-solo-turtle-fight-on");
+
+    const poule1 = "501124673354858516";
+    const poule2 = "502944251026472970";
+    const poule3 = "502945786028490753";
+    const poule4 = "501124944885710859";
+    const poule5 = "502945846493446156";
+    const poule6 = "502945957705547791";
+
+    if(size == 16) {
+      bot.channels.get(poule1).setName("Poule 1");
+      bot.channels.get(poule2).setName("Poule 2");
+      bot.channels.get(poule3).setName("Poule 3");
+      bot.channels.get(poule4).setName("Poule 4");
+      return;
+    }
+    if(size == 20) {
+      bot.channels.get(poule1).setName("Poule 1");
+      bot.channels.get(poule2).setName("Poule 2");
+      bot.channels.get(poule3).setName("Poule 3");
+      bot.channels.get(poule4).setName("Poule 4");
+      bot.channels.get(poule5).setName("Poule 5");
+      return;
+    }
+    if(size == 24) {
+      bot.channels.get(poule1).setName("Poule 1");
+      bot.channels.get(poule2).setName("Poule 2");
+      bot.channels.get(poule3).setName("Poule 3");
+      bot.channels.get(poule4).setName("Poule 4");
+      bot.channels.get(poule5).setName("Poule 5");
+      bot.channels.get(poule6).setName("Poule 6");
+      return;
+    }
+    bot.channels.get(poule1).setName("Poule 1");
+    bot.channels.get(poule2).setName("Poule 2");
+    bot.channels.get(poule3).setName("Poule 3");
+    bot.channels.get(poule4).setName("Poule 4");
+  },
+  clearturtlefightsolo : function(bot, ops, message) {
+    const inscriptionsolo = "529654956538462209";
+    bot.channels.get(inscriptionsolo).setName("🌀inscription-solo-turtle-fight-off");
+
+    const equipeinscrite = message.member.guild.channels.find('name', '🚻equipe-inscrite');
+    const inscriptionsoloedt = message.member.guild.channels.find('id', '529654956538462209');
+    equipeinscrite.bulkDelete(20);
+    inscriptionsoloedt.bulkDelete(30);
+
+    const poule1 = "501124673354858516";
+    const poule2 = "502944251026472970";
+    const poule3 = "502945786028490753";
+    const poule4 = "501124944885710859";
+    const poule5 = "502945846493446156";
+    const poule6 = "502945957705547791";
+
+    bot.channels.get(poule1).setName("Equipe 1 -");
+    bot.channels.get(poule2).setName("Equipe 2 -");
+    bot.channels.get(poule3).setName("Equipe 3 -");
+    bot.channels.get(poule4).setName("Equipe 4 -");
+    bot.channels.get(poule5).setName("Equipe 5 -");
+    bot.channels.get(poule6).setName("Equipe 6 -");
+
+    ops.soloBuildFightTournoi.clear();
+    bot.numersolobuildfightmax = 0;
+  },
+
 
 
 

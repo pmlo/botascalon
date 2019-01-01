@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   logChannel.send(`[LOG] ${ops.soloTournoi.size} / ${bot.numbersolomax}`);
 
   const inscription = message.member.guild.channels.find('id', '511210802712412170');
-  inscription.send(`Veuillez éxecuter cette commande : a!solo votre pseudo pour vous inscrire !`);
+  inscription.send(`Veuillez éxecuter cette commande : **a!solo votre pseudo** pour vous inscrire !`);
 }
 
 module.exports.help = {

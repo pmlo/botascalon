@@ -14,15 +14,15 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   }
 
   var sizeMax = args[0];
-  bot.numersolobuildfightmax = sizeMax;
-  tools.setbuildfightsolo(sizeMax, bot);
+  bot.numbersolomax = sizeMax;
+  tools.setturtlefightsolo(sizeMax, bot);
   const logChannel = message.member.guild.channels.find('name', 'history-bot');
-  logChannel.send(`[LOG] ${ops.soloBuildFightTournoi.size} / ${bot.numersolobuildfightmax}`);
+  logChannel.send(`[LOG] ${ops.soloTurtleFightTournoi.size} / ${bot.numersoloturtlefightmax}`);
 
-  const inscription = message.member.guild.channels.find('id', '529674447859482654');
-  inscription.send(`Veuillez éxecuter cette commande : **a!solobf votre pseudo** pour vous inscrire !`);
+  const inscription = message.member.guild.channels.find('id', '511210802712412170');
+  inscription.send(`Veuillez éxecuter cette commande : **a!solo votre pseudo** pour vous inscrire !`);
 }
 
 module.exports.help = {
-  name: "initsolobuildfight"
+  name: "initsoloturtlefight"
 }

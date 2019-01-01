@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   let arg = message.content.split(" ").slice(1);
   let messages = arg.join(" ");
 
-  if(ops.soloTournoi.has(`${messages}`) || ops.soloTournoi.has(`<@${message.author.name}>`))
+  if(ops.soloBuildFightTournoi.has(`${messages}`) || ops.soloBuildFightTournoi.has(`<@${message.author.name}>`))
   return message.channel.send(`<@${message.author.id}> Vous êtes déjà inscrit au tournoi.`);
 
   const logChannel = message.member.guild.channels.find('name', 'history-bot');

@@ -45,6 +45,10 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
  var numersolobuildfightmax = 0;
  var soloBuildFightTournoi = new Map();
 
+ //SOLO TURTLE fight
+ var numersoloturtlefightmax = 0;
+ var soloTurtleFightTournoi = new Map();
+
 
  const serverStats = {
    guildID: '511250353430462465',
@@ -79,7 +83,10 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
 
    soloNumber = 0;
    numbersolomax = 0;
+   numersolobuildfightmax = 0;
+   numersoloturtlefightmax = 0;
    soloTournoi.clear();
+   soloBuildFightTournoi.clear();
 
    //bot.user.setGame("on SourceCade!");
  });
@@ -93,6 +100,8 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
       soloTournoi: soloTournoi,
       numersolobuildfightmax: numersolobuildfightmax,
       soloBuildFightTournoi: soloBuildFightTournoi,
+      soloTurtleFightTournoi: soloTurtleFightTournoi,
+      numersoloturtlefightmax: numersoloturtlefightmax,
     }
 
    let prefix = "a!";
