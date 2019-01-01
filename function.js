@@ -80,8 +80,6 @@ module.exports = {
     bot.numbersolomax = 0;
   },
 
-
-
   setbuildfightsolo : function(size, bot, message) {
     const inscriptionsolo = "529674447859482654";
     bot.channels.get(inscriptionsolo).setName("🌀inscription-solo-buildfight-on");
@@ -125,7 +123,7 @@ module.exports = {
 
   clearbuildfightsolo : function(bot, ops, message) {
     const inscriptionsolo = "529674447859482654";
-    bot.channels.get(inscriptionsolo).setName("🌀inscription-solo-buildfight-on");
+    bot.channels.get(inscriptionsolo).setName("🌀inscription-solo-buildfight-off");
 
     const equipeinscrite = message.member.guild.channels.find('name', '🚻equipe-inscrite');
     const inscriptionsoloedt = message.member.guild.channels.find('id', '529674447859482654');
