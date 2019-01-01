@@ -40,7 +40,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   .setColor("0xB40404")
   .setTimestamp()
   .setFooter("TOURNOI SOLO BUILD FIGHT ASCALON");
-  message.guild.channels.find("id", "511210802712412170").sendEmbed(embed);
+  message.guild.channels.find("id", "529674447859482654").sendEmbed(embed);
 
   logChannel.send(`[LOG] ${ops.soloBuildFightTournoi.size} / ${ops.numersolobuildfightmax}`);
 }

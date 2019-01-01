@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
     .setColor("0xB40404")
     .setTimestamp()
     .setFooter("TOURNOI SOLO TURTLE FIGHT ASCALON");
-    message.guild.channels.find("id", "511210802712412170").sendEmbed(embed);
+    message.guild.channels.find("id", "529654956538462209").sendEmbed(embed);
     return;
   }
 
@@ -40,7 +40,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   .setColor("0xB40404")
   .setTimestamp()
   .setFooter("TOURNOI SOLO TURTLE FIGHT ASCALON");
-  message.guild.channels.find("id", "511210802712412170").sendEmbed(embed);
+  message.guild.channels.find("id", "529654956538462209").sendEmbed(embed);
 
   logChannel.send(`[LOG] ${ops.soloTurtleFightTournoi.size} / ${ops.numersoloturtlefightmax}`);
 }
