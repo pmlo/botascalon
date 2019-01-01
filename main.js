@@ -38,6 +38,7 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
  const tools = require('./function.js');
 
  //SOLO
+ var soloNumber = 0;
  var numbersolomax = 0;
  var soloTournoi = new Map();
 
@@ -71,6 +72,10 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
    console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
 
    bot.user.setActivity("Obéir à mon maître", {type: "WATCHING"});
+
+   soloNumber = 0;
+   numbersolomax = 0;
+   soloTournoi.clear();
 
    //bot.user.setGame("on SourceCade!");
  });
