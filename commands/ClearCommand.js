@@ -16,9 +16,12 @@ module.exports.run = async (bot, message, args, ops) => {
         return;
     }
 
-    const fetched = await message.channel.fetchMessages({limit: args[0]});
+    var deleted = args[0];
+    message.delete(delete);
+
+    /*const fetched = await message.channel.fetchMessages({limit: args[0]});
       message.channel.bulkDelete(fetched)
-        .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+        .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));*/
 /*
     if(args[0] == "full") {
 
