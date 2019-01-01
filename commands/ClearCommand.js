@@ -16,6 +16,10 @@ module.exports.run = async (bot, message, args, ops) => {
         return;
     }
 
+    const fetched = await message.channel.fetchMessages({limit: args[0]});
+      message.channel.bulkDelete(fetched)
+        .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+/*
     if(args[0] == "full") {
 
         try {
@@ -97,9 +101,9 @@ module.exports.run = async (bot, message, args, ops) => {
             console.log(e.stack);
         }
         return;
-    }
+    }*/
 
-    message.channel.bulkDelete(args[0]);
+    //message.channel.bulkDelete(args[0]);
 
     /*let messagecount = parseInt(args[0]) || 1;
 
