@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   message.delete();
 
   if(message.channel.name == "🌀inscription-solo-off")
-  return message.channel.send(`<@${message.author.id}> L'inscription pour le tournoi **ASCALON SOLO** est fermer. `).then(message => message.delete(5000));
+  return message.channel.send(`<@${message.author.id}> L'inscription pour le tournoi **ASCALON SOLO** est fermer.`).then(message => message.delete(5000));
 
   let arg = message.content.split(" ").slice(1);
   let messages = arg.join(" ");
@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   const logChannel = message.member.guild.channels.find('name', 'history-bot');
   logChannel.send(`[LOG] ${ops.soloTournoi.size} / ${ops.numbersolomax}`);
 
-  if(ops.soloTournoi.size >= ops.numbersolomax) {
+  if(bot.soloTournoi.size >= bot.numbersolomax) {
     var embed = new Discord.RichEmbed()
     .setTitle(`TOURNOI SOLO ASCALON`)
     .addField(`📛 Vous n'êtes pas inscrit au tournoi ASCALON SOLO ${messages} ! Celui ci est au complet 📛`, "🕛 Vous venez quand même au tournoi, des places se libéreront surêment ! 🕛")
@@ -28,7 +28,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
 
   const joinChannel = message.member.guild.channels.find('name', '🚻equipe-inscrite');
   joinChannel.send(`Le joueur ${messages} (<@${message.author.id}>) vient de s'inscrire pour le tournoi **ASCALON SOLO** ${ops.soloTournoi.size} / ${ops.numbersolomax}`);
-  ops.soloTournoi.set(`${messages}`, `<@${message.author.name}>`);
+  bot.soloTournoi.set(`${messages}`, `<@${message.author.name}>`);
 
   let role = message.guild.roles.find(`name`, `JOUEUR TOURNOIS`);
   const guildMember = message.member;

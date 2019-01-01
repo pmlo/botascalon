@@ -25,8 +25,8 @@ module.exports.run = async (bot, message, args, ops) => {
 
     try {
     const clearTournoi = message.member.guild.channels.find('id', '515948520239267844');
+    
     clearTournoi.bulkDelete(100);
-
 
     const clearEquipeInscriteTournoi = message.member.guild.channels.find('id', '482932870067912724');
 
