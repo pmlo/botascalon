@@ -7,6 +7,44 @@ module.exports = {
     joinChannel.send(`[LOG] ${message}`);
   },
 
+  failed: function(message, channel) {
+    const logChannel = channel.member.guild.channels.find('id', channel.id);
+    logChannel.send('${message}');
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   initsolo: function(size, bot, ops, message) {
 
     let inscriptionsolo = "511210802712412170";
