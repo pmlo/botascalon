@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args, ops) => {
     }
 
     var deleted = args[0];
-    message.delete(delete);
+    message.delete(deleted);
 
     /*const fetched = await message.channel.fetchMessages({limit: args[0]});
       message.channel.bulkDelete(fetched)
