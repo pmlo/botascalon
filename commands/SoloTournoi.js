@@ -18,6 +18,9 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   tools.setsolo(sizeMax, bot);
   const logChannel = message.member.guild.channels.find('name', 'history-bot');
   logChannel.send(`[LOG] ${ops.soloTournoi.size} / ${bot.numbersolomax}`);
+
+  const logChannel = message.member.guild.channels.find('id', '511210802712412170');
+  logChannel.send(`Veuillez éxecuter cette commande : a!solo votre pseudo pour vous inscrire !`);
 }
 
 module.exports.help = {
