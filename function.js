@@ -54,7 +54,7 @@ module.exports = {
     bot.channels.get(inscriptionsolo).setName("🌀inscription-solo-off");
 
     const equipeinscrite = message.member.guild.channels.find('name', '🚻equipe-inscrite');
-    const inscriptionsoloedt = message.member.guild.channels.find('name', '🚻equipe-inscrite');
+    const inscriptionsoloedt = message.member.guild.channels.find('id', '511210802712412170');
     equipeinscrite.bulkDelete(20);
     inscriptionsoloedt.bulkDelete(30);
 
