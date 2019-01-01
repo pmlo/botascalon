@@ -74,7 +74,7 @@ module.exports = {
 
     ops.soloTournoi.clear();
     bot.numbersolomax = 0;
-  }
+  },
 
 
 
