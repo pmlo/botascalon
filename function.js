@@ -153,7 +153,7 @@ module.exports = {
     bot.channels.get(inscriptionsolo).setName("🌀inscription-solo-turtle-fight-on");
 
     const poule1 = "501124673354858516";
-    const poule2 = "502944251026472970";
+  /*  const poule2 = "502944251026472970";
     const poule3 = "502945786028490753";
     const poule4 = "501124944885710859";
     const poule5 = "502945846493446156";
@@ -173,8 +173,8 @@ module.exports = {
       bot.channels.get(poule4).setName("Poule 4");
       bot.channels.get(poule5).setName("Poule 5");
       return;
-    }
-    if(size == 24) {
+    }*/
+  /*  if(size == 24) {
       bot.channels.get(poule1).setName("Poule 1");
       bot.channels.get(poule2).setName("Poule 2");
       bot.channels.get(poule3).setName("Poule 3");
@@ -182,11 +182,11 @@ module.exports = {
       bot.channels.get(poule5).setName("Poule 5");
       bot.channels.get(poule6).setName("Poule 6");
       return;
-    }
-    bot.channels.get(poule1).setName("Poule 1");
-    bot.channels.get(poule2).setName("Poule 2");
-    bot.channels.get(poule3).setName("Poule 3");
-    bot.channels.get(poule4).setName("Poule 4");
+    }*/
+    bot.channels.get(poule1).setName("Turtle Fight");
+  //  bot.channels.get(poule2).setName("Poule 2");
+    //bot.channels.get(poule3).setName("Poule 3");
+    //bot.channels.get(poule4).setName("Poule 4");
   },
   clearturtlefightsolo : function(bot, ops, message) {
     const inscriptionsolo = "529654956538462209";

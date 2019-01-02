@@ -87,6 +87,7 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
    numersoloturtlefightmax = 0;
    soloTournoi.clear();
    soloBuildFightTournoi.clear();
+   soloTurtleFightTournoi.clear();
 
    //bot.user.setGame("on SourceCade!");
  });
