@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
             // Logging the number of messages deleted on both the channel and console.
             message.channel.sendMessage("Deletion of messages successful. Total messages deleted: "+messagesDeleted);
-            console.log('Deletion of messages successful. Total messages deleted: '+messagesDeleted).then(message => message.delete(5000))
+            console.log('Deletion of messages successful. Total messages deleted: '+messagesDeleted)
           })
           .catch(err => {
             console.log('Error while doing Bulk Delete');
