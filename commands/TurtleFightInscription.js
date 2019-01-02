@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
 
   if(ops.soloTurtleFightTournoi.size >= bot.numersoloturtlefightmax) {
     var embed = new Discord.RichEmbed()
-    .setTitle(`TOURNOI SOLO ASCALON`)
+    .setTitle(`TOURNOI SOLO TURTLE FIGHT ASCALON`)
     .addField(`📛 Vous n'êtes pas inscrit au tournoi ASCALON SOLO TURTLE FIGHT ${messages} ! Celui ci est au complet 📛`, "🕛 Vous venez quand même au tournoi, des places se libéreront surêment ! 🕛")
     .setColor("0xB40404")
     .setTimestamp()
@@ -36,7 +36,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
 
   var embed = new Discord.RichEmbed()
   .setTitle(`TOURNOI SOLO ASCALON`)
-  .addField(`🔥 Vous êtes inscrit au tournoi ASCALON SOLO ${messages} ! 🔥`, "🕛 N'oubliez pas d'être à l'heure pour le tournoi 🕛")
+  .addField(`🔥 Vous êtes inscrit au tournoi ASCALON TURTLE FIGHT SOLO ${messages} ! 🔥`, "🕛 N'oubliez pas d'être à l'heure pour le tournoi 🕛")
   .setColor("0xB40404")
   .setTimestamp()
   .setFooter("TOURNOI SOLO TURTLE FIGHT ASCALON");

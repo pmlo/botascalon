@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
 
   if(ops.soloBuildFightTournoi.size >= bot.numersolobuildfightmax) {
     var embed = new Discord.RichEmbed()
-    .setTitle(`TOURNOI SOLO ASCALON`)
+    .setTitle(`TOURNOI SOLO BUILD FIGHT ASCALON`)
     .addField(`📛 Vous n'êtes pas inscrit au tournoi ASCALON SOLO BUILD FIGHT ${messages} ! Celui ci est au complet 📛`, "🕛 Vous venez quand même au tournoi, des places se libéreront surêment ! 🕛")
     .setColor("0xB40404")
     .setTimestamp()
@@ -35,7 +35,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   guildMember.addRole(role.id);
 
   var embed = new Discord.RichEmbed()
-  .setTitle(`TOURNOI SOLO ASCALON`)
+  .setTitle(`TOURNOI SOLO BUILD FIGHT ASCALON`)
   .addField(`🔥 Vous êtes inscrit au tournoi ASCALON SOLO BUILD FIGHT ${messages} ! 🔥`, "🕛 N'oubliez pas d'être à l'heure pour le tournoi 🕛")
   .setColor("0xB40404")
   .setTimestamp()

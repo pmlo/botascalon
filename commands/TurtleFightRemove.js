@@ -9,6 +9,8 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   }
 
   tools.clearturtlefightsolo(bot, ops, message);
+
+  message.channel.send("Solo turtle fight reset ✅").then(message => message.delete(5000));
 }
 
 module.exports.help = {
