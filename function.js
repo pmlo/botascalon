@@ -211,8 +211,8 @@ module.exports = {
     bot.channels.get(poule5).setName("Equipe 5 -");
     bot.channels.get(poule6).setName("Equipe 6 -");
 
-    ops.soloBuildFightTournoi.clear();
-    bot.numersolobuildfightmax = 0;
+    ops.soloTurtleFightTournoi.clear();
+    bot.numersoloturtlefightmax = 0;
   },
 
 
