@@ -8,6 +8,9 @@ module.exports.run = async (bot, message, args, ops, tools) => {
 
     if(ops.soloTurtleFightTournoi.has(`${messages}`)) {
       ops.soloTurtleFightTournoi.delete(`${messages}`);
+      //ROLE REMOVE
+      let muterole = member.guild.roles.find(`name`, "JOUEUR TOURNOIS");
+      member.removeRole(muterole.id);
     }
     return;
 }

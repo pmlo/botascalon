@@ -51,6 +51,33 @@ module.exports = {
     bot.channels.get(poule2).setName("Poule 2");
     bot.channels.get(poule3).setName("Poule 3");
     bot.channels.get(poule4).setName("Poule 4");
+
+    //CREATE ROLE
+    try{
+
+        roletournoi = await message.guild.createRole({
+          name: "JOUEUR TOURNOIS",
+          color: "#00ff00",
+          permissions:[]
+        })
+
+
+      }catch(e){
+        console.log(e.stack);
+
+    }
+
+    let roltournoi = message.guild.roles.find(`name`, "JOUEUR TOURNOIS");
+
+    roltournoi.setMentionable(true, 'Role needs to be pinged')
+    .then(updated => console.log(`Role mentionable: ${updated.mentionable}`))
+    .catch(console.error);
+
+    roltournoi.setPosition(28).then(updated => console.log(`Role position: ${updated.position}`))
+        .catch(console.error);
+
+        let roletournoilol = member.guild.roles.find(`name`, "JOUEUR TOURNOIS");
+        member.addRole(roletournoilol.id);
   },
 
   clearsolo : function(bot, ops, message) {
@@ -61,6 +88,25 @@ module.exports = {
     const inscriptionsoloedt = message.member.guild.channels.find('id', '511210802712412170');
     equipeinscrite.bulkDelete(20);
     inscriptionsoloedt.bulkDelete(30);
+
+    //ROLE JOUEUR TOURNOI DELETE
+    let joueurtournoi = message.guild.roles.find(`name`, "JOUEUR TOURNOIS");
+
+        joueurtournoi.delete('delete role')
+        .then(deleted => console.log(`Deleted role ${deleted.name}`))
+        .catch(console.error);
+
+        //PERMISSION ASCALON ROLE | SEND MESSAGE  : false
+    try {
+          let muterole = message.guild.roles.find(`name`, "💧 Ascalon 💧");
+
+          inscriptionChannel.overwritePermissions(muterole, {
+          SEND_MESSAGES: false
+        });
+
+      } catch(e){
+        console.log(e.stack);
+      }
 
     const poule1 = "501124673354858516";
     const poule2 = "502944251026472970";
@@ -119,6 +165,33 @@ module.exports = {
     bot.channels.get(poule2).setName("Poule 2");
     bot.channels.get(poule3).setName("Poule 3");
     bot.channels.get(poule4).setName("Poule 4");
+
+    //CREATE ROLE
+    try{
+
+        roletournoi = await message.guild.createRole({
+          name: "JOUEUR TOURNOIS",
+          color: "#00ff00",
+          permissions:[]
+        })
+
+
+      }catch(e){
+        console.log(e.stack);
+
+    }
+
+    let roltournoi = message.guild.roles.find(`name`, "JOUEUR TOURNOIS");
+
+    roltournoi.setMentionable(true, 'Role needs to be pinged')
+    .then(updated => console.log(`Role mentionable: ${updated.mentionable}`))
+    .catch(console.error);
+
+    roltournoi.setPosition(28).then(updated => console.log(`Role position: ${updated.position}`))
+        .catch(console.error);
+
+    let roletournoilol = member.guild.roles.find(`name`, "JOUEUR TOURNOIS");
+    member.addRole(roletournoilol.id);
   },
 
   clearbuildfightsolo : function(bot, ops, message) {
@@ -129,6 +202,25 @@ module.exports = {
     const inscriptionsoloedt = message.member.guild.channels.find('id', '529674447859482654');
     equipeinscrite.bulkDelete(20);
     inscriptionsoloedt.bulkDelete(30);
+
+    //ROLE JOUEUR TOURNOI DELETE
+    let joueurtournoi = message.guild.roles.find(`name`, "JOUEUR TOURNOIS");
+
+        joueurtournoi.delete('delete role')
+        .then(deleted => console.log(`Deleted role ${deleted.name}`))
+        .catch(console.error);
+
+        //PERMISSION ASCALON ROLE | SEND MESSAGE  : false
+    try {
+          let muterole = message.guild.roles.find(`name`, "💧 Ascalon 💧");
+
+          inscriptionChannel.overwritePermissions(muterole, {
+          SEND_MESSAGES: false
+        });
+
+      } catch(e){
+        console.log(e.stack);
+      }
 
     const poule1 = "501124673354858516";
     const poule2 = "502944251026472970";
@@ -187,6 +279,33 @@ module.exports = {
   //  bot.channels.get(poule2).setName("Poule 2");
     //bot.channels.get(poule3).setName("Poule 3");
     //bot.channels.get(poule4).setName("Poule 4");
+
+    //CREATE ROLE
+    try{
+
+        roletournoi = await message.guild.createRole({
+          name: "JOUEUR TOURNOIS",
+          color: "#00ff00",
+          permissions:[]
+        })
+
+
+      }catch(e){
+        console.log(e.stack);
+
+    }
+
+    let roltournoi = message.guild.roles.find(`name`, "JOUEUR TOURNOIS");
+
+    roltournoi.setMentionable(true, 'Role needs to be pinged')
+    .then(updated => console.log(`Role mentionable: ${updated.mentionable}`))
+    .catch(console.error);
+
+    roltournoi.setPosition(28).then(updated => console.log(`Role position: ${updated.position}`))
+        .catch(console.error);
+
+    let roletournoilol = member.guild.roles.find(`name`, "JOUEUR TOURNOIS");
+    member.addRole(roletournoilol.id);
   },
   clearturtlefightsolo : function(bot, ops, message) {
     const inscriptionsolo = "529654956538462209";
@@ -196,6 +315,25 @@ module.exports = {
     const inscriptionsoloedt = message.member.guild.channels.find('id', '529654956538462209');
     equipeinscrite.bulkDelete(20);
     inscriptionsoloedt.bulkDelete(30);
+
+    //ROLE JOUEUR TOURNOI DELETE
+    let joueurtournoi = message.guild.roles.find(`name`, "JOUEUR TOURNOIS");
+
+        joueurtournoi.delete('delete role')
+        .then(deleted => console.log(`Deleted role ${deleted.name}`))
+        .catch(console.error);
+
+        //PERMISSION ASCALON ROLE | SEND MESSAGE  : false
+    try {
+          let muterole = message.guild.roles.find(`name`, "💧 Ascalon 💧");
+
+          inscriptionChannel.overwritePermissions(muterole, {
+          SEND_MESSAGES: false
+        });
+
+      } catch(e){
+        console.log(e.stack);
+      }
 
     const poule1 = "501124673354858516";
     const poule2 = "502944251026472970";
