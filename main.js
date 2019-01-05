@@ -178,15 +178,15 @@ bot.on("message", async message => {
 
   bot.on('message', async message => {
 
-    if(message.author.bot) return;
+    if(!message.author.bot) return;
 
     //if(message.channel.type !== "text") {
 
-  if (message.channelType.toUpperCase() !== 'text')﻿ {
+  //if (message.channelType.toUpperCase() !== 'text')﻿ {
 
-      let active  = await db.fetch(`support_${message.author.id}`);
+      let active = await db.fetch(`support_${message.author.id}`);
 
-      let guild = bot.guilds.get(`473833367029153794`);
+      let guild = bot.guilds.get(serverStats.guildID);
 
       let channel, found = true;
 
@@ -289,7 +289,7 @@ if(support) {
 
   return message.channel.send(embed);
 
-}
+//}
 
 
 
