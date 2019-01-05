@@ -158,6 +158,7 @@ bot.on("message", async message => {
         //bot.sendMessage(531194057515597827, `**ID** : ${idDm} || Author : ${message.author.name} || message : ` + str);
         dmMessage.set(`${idDm}`, `${message.author.id}`);
         message.channel.sendMessage("Merci d'avoir contacté le support **ASCALON** ! Nous vous répondrons le plus vite possible !");
+        return;
   }
 
 
