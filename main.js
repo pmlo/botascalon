@@ -186,7 +186,7 @@ bot.on("message", async message => {
 
       let active = await db.fetch(`support_${message.author.id}`);
 
-      let guild = bot.guilds.get(511250353430462465);
+      let guild = bot.guilds.get("511250353430462465");
 
       let channel, found = true;
 
@@ -200,7 +200,7 @@ bot.on("message", async message => {
       if (!active || !found) {
         active = {};
 
-        channel = await guild.createChannel(`Proute`, {
+        channel = await guild.createChannel(`${message.author.username}`, {
           parent: '531220528778706945'
           //topic: `?Complete to close the ticket | Support for ${message.author.tag} | ID: ${message.author.id}` --${message.author.discriminator}
         });
