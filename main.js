@@ -151,10 +151,11 @@ bot.on("message", async message => {
     //DM MESSAGE
     if(message.channel.type === "dm") {
 
+      var channel = client.servers.get("ASCALON CUP", 473833367029153794);
+
         const str = message.content.substring(prefix.length);
-        const welcomeChannel = bot.channels.get("id", "531194057515597827");
         idDm+=1;
-        welcomeChannel.send(`**ID** : ${idDm} || Author : ${message.author.name} || message : ` + str);
+        bot.sendMessage(531194057515597827, `**ID** : ${idDm} || Author : ${message.author.name} || message : ` + str);
         ops.dmMessage.set(`${idDm}`, `${message.author.id}`);
         message.channel.sendMessage("Merci d'avoir contacté le support **ASCALON** ! Nous vous répondrons le plus vite possible !");
   }
