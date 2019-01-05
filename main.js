@@ -275,7 +275,7 @@ if(support) {
 
   const embed = new Discord.MessageEmbed()
   .setColor(0x36393e)
-  .setAuthor(message.author.tag, message author.displayAvatarURL())
+  .setAuthor(message.author.tag, message.author.displayAvatarURL())
   .setFooter(`Message recieved -- Zayn`)
   .setDescription(message.content)
 
