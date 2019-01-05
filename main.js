@@ -165,6 +165,8 @@ bot.on("message", async message => {
 
 bot.on("message", async message => {
 
+  if(message.channel.type === "dm") return;
+
 
     // Part 1 : checking & removing the text
     //1 blacklisted words
