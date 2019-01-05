@@ -141,32 +141,9 @@ bot.on('guildMemberRemove', member => {
     bot.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`); // bot count
 });
 
-
-bot.on("message", async message => {
-
-    let prefix = "a! "
-
-    //DM MESSAGE
-    if(message.channel.type === "dm") {
-
-       //var channel = bot.servers.get("ASCALON CUP", 473833367029153794);
-
-        const str = message.content.substring(message.length);
-        idDm+=1;
-        //bot.sendMessage(531194057515597827, `**ID** : ${idDm} || Author : ${message.author.name} || message : ` + str);
-        dmMessage.set(`${idDm}`, `${message.author.id}`);
-        message.channel.sendMessage("Merci d'avoir contacté le support **ASCALON** ! Nous vous répondrons le plus vite possible !");
-        return;
-  }
-
-});
-
-
-
 bot.on("message", async message => {
 
   if(message.channel.type === "dm") return;
-
 
     // Part 1 : checking & removing the text
     //1 blacklisted words
