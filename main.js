@@ -202,7 +202,7 @@ bot.on("message", async message => {
           parent: 'categoryID',
           topic: `?Complete to close the ticket | Support for ${message.author.tag} | ID: ${message.author.id}`
         });*/
-        channel = guild.createChannel('new-general', 'text')
+        channel = message.guild.createChannel('new-general', 'text')
         .then(console.log)
         .catch(console.error);
       }
