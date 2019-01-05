@@ -180,7 +180,7 @@ bot.on("message", async message => {
 
     if(message.author.bot) return;
 
-    if(message.channel.type === "dm") {
+    if(message.channel.type === "text") {
 
     //if(message.channelType.toUpperCase() == 'dm') {
 
@@ -201,7 +201,7 @@ bot.on("message", async message => {
         active = {};
 
         channel = await guild.createChannel(`${message.author.username}--${message.author.discriminator}`, {
-          parent: 'categoryID',
+          parent: '531220528778706945',
           topic: `?Complete to close the ticket | Support for ${message.author.tag} | ID: ${message.author.id}`
         });
 
