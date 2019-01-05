@@ -35,7 +35,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   guildMember.addRole(role.id);
 
   var embed = new Discord.RichEmbed()
-  .setTitle(`TOURNOI SOLO ASCALON`)
+  .setTitle(`TOURNOI SOLO TURTLE FIGHT ASCALON`)
   .addField(`🔥 Vous êtes inscrit au tournoi ASCALON TURTLE FIGHT SOLO ${messages} ! 🔥`, "🕛 N'oubliez pas d'être à l'heure pour le tournoi 🕛")
   .setColor("0xB40404")
   .setTimestamp()
