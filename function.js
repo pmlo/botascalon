@@ -324,6 +324,8 @@ module.exports = {
         .catch(console.error);
 
         //PERMISSION ASCALON ROLE | SEND MESSAGE  : false
+
+        var inscriptionChannel = "529654956538462209";
     try {
           let muterole = message.guild.roles.find(`name`, "💧 Ascalon 💧");
 
