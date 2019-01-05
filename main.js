@@ -200,9 +200,9 @@ bot.on("message", async message => {
       if (!active || !found) {
         active = {};
 
-        channel = await guild.createChannel(`${message.author.username}--${message.author.discriminator}`, {
-          parent: '531220528778706945',
-          topic: `?Complete to close the ticket | Support for ${message.author.tag} | ID: ${message.author.id}`
+        channel = await guild.createChannel(`${message.author.username}`, {
+          parent: '531220528778706945'
+          //topic: `?Complete to close the ticket | Support for ${message.author.tag} | ID: ${message.author.id}` --${message.author.discriminator}
         });
 
 
