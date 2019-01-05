@@ -291,7 +291,8 @@ if(support) {
 
 
 
-  });
+  }
+});
 
   bot.login(token);
 
