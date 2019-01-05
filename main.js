@@ -173,6 +173,24 @@ bot.on("message", async message => {
     }
   });
 
+  const db = require('quick.db');
+
+
+  bot.on('message', async message => {
+
+    if(message.author.bot) return;
+
+    if(message.channel.type !== 'text') {
+
+      let active  = await db.fetch(`support_${message.author.id}`);
+      
+
+    }
+
+
+
+  });
+
   bot.login(token);
 
   // LANCEMENT DE GAME, INSCRIPTION, (CLASSEMENT)
