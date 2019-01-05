@@ -198,10 +198,13 @@ bot.on("message", async message => {
       if (!active || !found) {
         active = {};
 
-        channel = await message.guild.createChannel(`${message.author.username}--${message.author.discriminator}`, {
+        /*channel = await message.guild.createChannel(`${message.author.username}--${message.author.discriminator}`, {
           parent: 'categoryID',
           topic: `?Complete to close the ticket | Support for ${message.author.tag} | ID: ${message.author.id}`
-        });
+        });*/
+        channel = guild.createChannel('new-general', 'text')
+        .then(console.log)
+        .catch(console.error);
       }
 
       let author = message.author;
