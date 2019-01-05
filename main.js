@@ -151,7 +151,7 @@ bot.on("message", async message => {
     //DM MESSAGE
     if(message.channel.type === "dm") {
 
-      var channel = client.servers.get("ASCALON CUP", 473833367029153794);
+       var channel = bot.servers.get("ASCALON CUP", 473833367029153794);
 
         const str = message.content.substring(prefix.length);
         idDm+=1;
