@@ -96,6 +96,7 @@ module.exports = {
         .then(deleted => console.log(`Deleted role ${deleted.name}`))
         .catch(console.error);
 
+var inscriptionChannel = "511210802712412170";
         //PERMISSION ASCALON ROLE | SEND MESSAGE  : false
     try {
           let muterole = message.guild.roles.find(`name`, "💧 Ascalon 💧");
@@ -214,6 +215,7 @@ module.exports = {
     try {
           let muterole = message.guild.roles.find(`name`, "💧 Ascalon 💧");
 
+          var inscriptionChannel = "529674447859482654";
           inscriptionChannel.overwritePermissions(muterole, {
           SEND_MESSAGES: false
         });
