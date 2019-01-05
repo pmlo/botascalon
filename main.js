@@ -182,7 +182,7 @@ bot.on("message", async message => {
 
     //if(message.channel.type !== "text") {
 
-  //if (message.channelType.toUpperCase() !== 'text')﻿ {
+  if (message.channelType.toUpperCase() !== 'text')﻿ {
 
       let active = await db.fetch(`support_${message.author.id}`);
 
