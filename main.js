@@ -142,8 +142,6 @@ bot.on('guildMemberRemove', member => {
 });
 
 
-//MESSAGE EVENT
-
 bot.on("message", async message => {
 
     let prefix = "a! "
@@ -153,7 +151,7 @@ bot.on("message", async message => {
 
        //var channel = bot.servers.get("ASCALON CUP", 473833367029153794);
 
-        const str = message.content.substring(prefix.length);
+        const str = message.content.substring(message.length);
         idDm+=1;
         //bot.sendMessage(531194057515597827, `**ID** : ${idDm} || Author : ${message.author.name} || message : ` + str);
         dmMessage.set(`${idDm}`, `${message.author.id}`);
@@ -161,6 +159,11 @@ bot.on("message", async message => {
         return;
   }
 
+});
+
+
+
+bot.on("message", async message => {
 
 
     // Part 1 : checking & removing the text
