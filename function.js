@@ -55,7 +55,7 @@ module.exports = {
     //CREATE ROLE
     try{
 
-        roletournoi = await message.guild.createRole({
+        roletournoi =  message.guild.createRole({
           name: "JOUEUR TOURNOIS",
           color: "#00ff00",
           permissions:[]
@@ -169,7 +169,7 @@ module.exports = {
     //CREATE ROLE
     try{
 
-        roletournoi = await message.guild.createRole({
+        roletournoi =  message.guild.createRole({
           name: "JOUEUR TOURNOIS",
           color: "#00ff00",
           permissions:[]
@@ -283,7 +283,7 @@ module.exports = {
     //CREATE ROLE
     try{
 
-        roletournoi = await message.guild.createRole({
+        roletournoi =  message.guild.createRole({
           name: "JOUEUR TOURNOIS",
           color: "#00ff00",
           permissions:[]
