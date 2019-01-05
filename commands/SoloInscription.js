@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 module.exports.run = async (bot, message, args, ops, tools) => {
 
+
   message.delete();
 
   if(message.channel.name == "🌀inscription-solo-off")

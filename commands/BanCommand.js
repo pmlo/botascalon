@@ -2,6 +2,8 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args, ops, tools) => {
 
+
+
     //si l'argument 0 ou 1 (a!ban args[0] and args[1])
     if(args[0] == null || args[1] == null) {
 

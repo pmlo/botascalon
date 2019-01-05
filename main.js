@@ -49,6 +49,9 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
  var numersoloturtlefightmax = 0;
  var soloTurtleFightTournoi = new Map();
 
+//DM MESSAGE
+var dmMessage = new Map();
+var idDm = 0;
 
  const serverStats = {
    guildID: '511250353430462465',
@@ -89,6 +92,7 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
    soloBuildFightTournoi.clear();
    soloTurtleFightTournoi.clear();
 
+
    //bot.user.setGame("on SourceCade!");
  });
 
@@ -103,6 +107,8 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
       soloBuildFightTournoi: soloBuildFightTournoi,
       soloTurtleFightTournoi: soloTurtleFightTournoi,
       numersoloturtlefightmax: numersoloturtlefightmax,
+      dmMessage: dmMessage,
+      idDm: idDm,
     }
 
    let prefix = "a!";
@@ -140,7 +146,19 @@ bot.on('guildMemberRemove', member => {
 
 bot.on("message", async message => {
 
-    //INSCRIPTION SOLO
+    let prefix = "a! "
+
+    //DM MESSAGE
+    if(message.channel.type === "dm") {
+
+        const str = message.content.substring(prefix.length);
+        const welcomeChannel = bot.channels.get("id", "531194057515597827");
+        idDm+=1;
+        welcomeChannel.sendMessage(`**ID** : ${idDm} || Author : ${message.author.name} || message : ` + str);
+        ops.dmMessage.set(`${idDm}`, `${message.author.id}`);
+        message.channel.sendMessage("Merci d'avoir contacté le support **ASCALON** ! Nous vous répondrons le plus vite possible !");
+  }
+
 
 
     // Part 1 : checking & removing the text
@@ -166,6 +184,7 @@ bot.on("message", async message => {
       message.author.send('La pub de discord sur le serveur ASCALON est interdite !');
       //message channel send to author for advertissment
       message.channel.send(`<@${message.author.id}> Bonjour, la pub de serveur discord est interdite. Dernière avertissement avant le ban`).then(message => message.delete(5000));
+
 
     }
   });
