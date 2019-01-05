@@ -184,7 +184,7 @@ bot.on("message", async message => {
 
       let active  = await db.fetch(`support_${message.author.id}`);
 
-      let guild = bot.guilds.get(message.guild.id);
+      let guild = bot.guilds.get('guildID');
 
       let channel, found = true;
 
