@@ -156,7 +156,7 @@ bot.on("message", async message => {
         const str = message.content.substring(prefix.length);
         idDm+=1;
         //bot.sendMessage(531194057515597827, `**ID** : ${idDm} || Author : ${message.author.name} || message : ` + str);
-        ops.dmMessage.set(`${idDm}`, `${message.author.id}`);
+        dmMessage.set(`${idDm}`, `${message.author.id}`);
         message.channel.sendMessage("Merci d'avoir contacté le support **ASCALON** ! Nous vous répondrons le plus vite possible !");
   }
 
