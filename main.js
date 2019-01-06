@@ -177,7 +177,7 @@ bot.on("message", async message => {
 
       const newChannel = new Discord.RichEmbed()
       .setColor(0x36393e)
-      .setAuthor(author.tag,message.member.user.avatarURL)
+      .setAuthor(author.tag)
       .setFooter('Support Ticket Created')
       .addField('User', author)
       addField('ID', author.id)
@@ -186,7 +186,7 @@ bot.on("message", async message => {
 
       const newTicket = new Discord.RichEmbed()
       .setColor(0x36393e)
-      .setAuthor(`Hello, ${author.tag}`, message.member.user.avatarURL)
+      .setAuthor(`Hello, ${author.tag}`)
       .setFooter('Support Ticket Created')
 
       await channel.send(newTicket);
@@ -201,14 +201,14 @@ bot.on("message", async message => {
 
     const dm = new Discord.MessageEmbed()
     .setColor(0x36393e)
-    .setAuthor(`Thanks you, ${message.author.tag}`,message.member.user.avatarURL)
+    .setAuthor(`Thanks you, ${message.author.tag}`)
     setFooter(`Your message has been sent -- A staff member will be in contact soon`)
 
     await message.author.send(dm);
 
     const embed = new Discord.RichEmbed()
     .setColor(0x36393e)
-    .setAuthor(message.author.tag, message.member.user.avatarURL)
+    .setAuthor(message.author.tag)
     .setDescription(message.content)
     .setFooter(`Message Recieved -- ${message.author.tag}`)
 
@@ -232,7 +232,7 @@ bot.on("message", async message => {
 
         const complete = new Discord.RichEmbed()
         .setColor(0x36393e)
-        .setAuthor(`Hey, ${supportUser.tag}`, supportUser.avatarURL())
+        .setAuthor(`Hey, ${supportUser.tag}`)
         .setFooter('Ticket Closed -- Zayn')
         .setDescription('*Your ticket has been marked as **complete**. If you wish to reopen this.')
 
@@ -246,7 +246,7 @@ bot.on("message", async message => {
 
     const embed = new Discord.RichEmbed()
     .setColor(0x36393e)
-    .setAuthor(message.author.tag, message.author.avatarURL())
+    .setAuthor(message.author.tag)
     .setFooter(`Message Recieved -- Zayn`)
     .setDescription(message.content)
 
