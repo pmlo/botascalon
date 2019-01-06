@@ -290,8 +290,8 @@ bot.on("message", async message => {
 
     await message.author.send(dm);*/
 
-    author.send(":flag_mf: Votre message a été envoyé");
-    author.send(":flag_lr: Your message has been sent");
+    message.author.send(":flag_mf: Votre message a été envoyé");
+    message.author.send(":flag_lr: Your message has been sent");
 
     const embed = new Discord.RichEmbed()
     .setColor(0x36393e)
