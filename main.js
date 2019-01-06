@@ -36,6 +36,7 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
  bot.commands = new Discord.Collection();
  const token = process.env.token;
  const tools = require('./function.js');
+ const db = require('quick.db');
 
  //SOLO
  var numbersolomax = 0;
@@ -143,7 +144,116 @@ bot.on('guildMemberRemove', member => {
 
 bot.on("message", async message => {
 
-  if(message.channel.type === "dm") return;
+  if(message.author.bot) return;
+
+  if(message.channel.type !== 'text') {
+
+    let active = await db.fetch(`support_${message.author.id}`);
+
+    let guild = bot.guilds.get('473833367029153794');
+
+    let channel, found = true;
+
+    try {
+      if(active) bot.channels.get(active.channelID).guild;
+    }catch(e) {
+      found = false;
+    }
+
+    if(!active || !found) {
+
+      active = {};
+
+      channel = await guild.channels.create(`${message.author.username}-${message.author.discriminator}`, {
+        parent: '531220528778706945',
+        topic: `?complete to close the ticket | Support for ${message.author.tag} | ID : ${message.author.id}`
+      });
+
+      let author = message.author;
+
+      const newChannel = new Discord.MessageEmbed()
+      .setColor(0x36393e)
+      .setAuthor(author.tag,author.avatarURL())
+      .setFooter('Support Ticket Created')
+      .addField('User', author)
+      addField('ID', author.id)
+
+      await channel.send(newChannel);
+
+      const newTicket = new Discord.MessageEmbed()
+      .setColor(0x36393e)
+      .setAuthor(`Hello, ${author.tag}`, author.avatarURL())
+      .setFooter('Support Ticket Created')
+
+      await channel.send(newTicket);
+
+      active.channelID = channel.id;
+      active.targetID = author.id;
+
+    }
+
+
+    channel = bot.channels.get(active.channelID);
+
+    const dm = new Discord.MessageEmbed()
+    .setColor(0x36393e)
+    .setAuthor(`Thanks you, ${message.author.tag}`, message.author.avatarURL())
+    setFooter(`Your message has been sent -- A staff member will be in contact soon`)
+
+    await message.author.send(dm);
+
+    const embed = new Discord.MessageEmbed()
+    .setColor(0x36393e)
+    .setAuthor(message.author.tag, message.author.avatarURL())
+    .setDescription(message.content)
+    .setFooter(`Message Recieved -- ${message.author.tag}`)
+
+    await channel.send(embed);
+
+    db.set(`support_${message.author.id}`, active);
+    db.set(`supportChannel_${channel.id}`, message.author.id);
+    return;
+  }
+
+  let support = await db.fetch(`supportChannel_${message.channel.id}`);
+
+  if(support) {
+
+    support = await db.fetch(`support_${support}`);
+
+    let supportUser = bot.users.get(support.targetID);
+    if(!supportUser) return message.channel.delete();
+
+    if(message.content.toLowerCase() == '?complete') {
+
+        const complete = new Discord.MessageEmbed()
+        .setColor(0x36393e)
+        .setAuthor(`Hey, ${supportUser.tag}`, supportUser.avatarURL())
+        .setFooter('Ticket Closed -- Zayn')
+        .setDescription('*Your ticket has been marked as **complete**. If you wish to reopen this.')
+
+        supportUser.send(complete);
+
+        message.channel.delete();
+
+        db.delete(`support_${support.targetID}`);
+
+          }
+
+    const embed = new Discord.MessageEmbed()
+    .setColor(0x36393e)
+    .setAuthor(message.author.tag, message.author.avatarURL())
+    .setFooter(`Message Recieved -- Zayn`)
+    .setDescription(message.content)
+
+    bot.users.get(support.targetID).send(embed)
+
+    message.delete();
+
+    embed.setFooter(`Message Sent -- ${supportUser.tag}`).setDescription(message.content);
+
+    return message.channel.send(embed);
+  }
 
     // Part 1 : checking & removing the text
     //1 blacklisted words
@@ -173,135 +283,6 @@ bot.on("message", async message => {
     }
   });
 
-  const db = require('quick.db');
-
-
-  bot.on('message', async message => {
-
-  //  if(!message.author.bot) return;
-
-    if(message.channel.type !== "text") {
-
-//  if (message.channelType.toUpperCase() !== 'text')﻿ {
-
-      let active = await db.fetch(`support_${message.author.id}`);
-
-      let guild = bot.guilds.get('473833367029153794');
-
-      let channel, found = true;
-
-      try {
-        if(active) bot.channels.get(active.channelID).guild;
-
-      } catch(e) {
-        found = false;
-      }
-
-      if (!active || !found) {
-        active = {};
-
-        /*channel = await guild.createChannel(`${message.author.name} Bonjour`, '531220528778706945', [{
-          id: guild,
-          deny: ['MANAGE_MESSAGES'],
-          allow: ['SEND_MESSAGES']
-        }])
-        .then(console.log)
-        .catch(console.error);*/
-
-      let author = message.author;
-
-      channel = await guild.createChannel(`${author.name}--ticket`);
-
-      channel = await channel.setParent('531220528778706945');
-
-      const newChannel = new Discord.RichEmbed()
-      .setColor(0x36393e)
-      .setAuthor(author.tag)
-      .setFooter('Support Ticket Created')
-      .addField('User', message.author)
-      .addField('ID', author.id)
-
-      await channel.send(newChannel);
-
-      const newTicket = new Discord.RichEmbed()
-      .setColor(0x36393e)
-      .setAuthor(`Hello ${author.tag}`)
-      .setFooter('Support Ticket')
-
-      await author.send(newTicket);
-
-      active.channelID = channel.id;
-      active.targetID = author.id;
-
-
-    channel = bot.channels.get(active.channelID);
-
-    const dm = new Discord.RichEmbed()
-    .setColor(0x36393e)
-    .setAuthor(`Thanks you, ${author.tag}`)
-    .setFooter(`Your message has been sent -- a staff member will be in contact soon`)
-
-    await message.author.send(dm);
-
-    const embed = new Discord.RichEmbed()
-    .setColor(0x36393e)
-    .setAuthor(author.tag)
-    .setDescription(message.content)
-    .setFooter(`Message Recieved -- ${author.tag}`)
-
-
-    await channel.send(embed);
-
-    db.set(`support_${author.id}`, active);
-    db.set(`supportChannel${channel.id}`, author.id);
-    return;
-}
-
-let support = await db.fetch(`supportChannel_${message.channel.id}`);
-
-if(support) {
-
-  support = await db.fetch(`support_${support}`);
-
-  let supportUser = bot.users.get(support.targetID);
-  if(!supportUser) return message.channel.delete();
-
-  if(message.content.toLowerCase() == '?complete') {
-
-    const complete = new Discord.RichEmbed()
-    .setColor(0x36393e)
-    .setAuthor(`Hey, ${supportUser.tag}`)
-    .setFooter('Ticket Cloed -- Zayn')
-    .setDescription('*Your ticket has been marked as **complete**. If you wish to reopen this, or create a new one, please send a message to bot.')
-
-    supportUser.send(complete);
-
-    message.channel.delete();
-
-    db.delete(`support_${support.targetID}`);
-  }
-
-  const embed = new Discord.RichEmbed()
-  .setColor(0x36393e)
-  .setAuthor(message.author.tag)
-  .setFooter(`Message recieved -- Zayn`)
-  .setDescription(message.content)
-
-  bot.users.get(support.targetID).send(embed);
-
-  message.delete({timeout : 1000});
-
-  embed.setFooter(`Message Sent -- ${supportUser.tag}`).setDescription(message.content);
-
-  return message.channel.send(embed);
-
-}
-
-
-
-  }
-});
-
   bot.login(token);
 
   // LANCEMENT DE GAME, INSCRIPTION, (CLASSEMENT)
@@ -323,6 +304,135 @@ if(support) {
 
 
 
+/**
+
+bot.on('message', async message => {
+
+//  if(!message.author.bot) return;
+
+  if(message.channel.type !== "text") {
+
+//  if (message.channelType.toUpperCase() !== 'text')﻿ {
+
+    let active = await db.fetch(`support_${message.author.id}`);
+
+    let guild = bot.guilds.get('473833367029153794');
+
+    let channel, found = true;
+
+    try {
+      if(active) bot.channels.get(active.channelID).guild;
+
+    } catch(e) {
+      found = false;
+    }
+
+    if (!active || !found) {
+      active = {};
+
+      /*channel = await guild.createChannel(`${message.author.name} Bonjour`, '531220528778706945', [{
+        id: guild,
+        deny: ['MANAGE_MESSAGES'],
+        allow: ['SEND_MESSAGES']
+      }])
+      .then(console.log)
+      .catch(console.error);
+
+    let author = message.author;
+
+    channel = await guild.createChannel(`${author.name}--ticket`);
+
+    channel = await channel.setParent('531220528778706945');
+
+    const newChannel = new Discord.RichEmbed()
+    .setColor(0x36393e)
+    .setAuthor(author.tag)
+    .setFooter('Support Ticket Created')
+    .addField('User', message.author)
+    .addField('ID', author.id)
+
+    await channel.send(newChannel);
+
+    const newTicket = new Discord.RichEmbed()
+    .setColor(0x36393e)
+    .setAuthor(`Hello ${author.tag}`)
+    .setFooter('Support Ticket')
+
+    await author.send(newTicket);
+
+    active.channelID = channel.id;
+    active.targetID = author.id;
+
+
+  channel = bot.channels.get(active.channelID);
+
+  const dm = new Discord.RichEmbed()
+  .setColor(0x36393e)
+  .setAuthor(`Thanks you, ${author.tag}`)
+  .setFooter(`Your message has been sent -- a staff member will be in contact soon`)
+
+  await message.author.send(dm);
+
+  const embed = new Discord.RichEmbed()
+  .setColor(0x36393e)
+  .setAuthor(author.tag)
+  .setDescription(message.content)
+  .setFooter(`Message Recieved -- ${author.tag}`)
+
+
+  await channel.send(embed);
+
+  db.set(`support_${author.id}`, active);
+  db.set(`supportChannel${channel.id}`, author.id);
+  return;
+}
+
+let support = await db.fetch(`supportChannel_${message.channel.id}`);
+
+if(support) {
+
+support = await db.fetch(`support_${support}`);
+
+let supportUser = bot.users.get(support.targetID);
+if(!supportUser) return message.channel.delete();
+
+if(message.content.toLowerCase() == '?complete') {
+
+  const complete = new Discord.RichEmbed()
+  .setColor(0x36393e)
+  .setAuthor(`Hey, ${supportUser.tag}`)
+  .setFooter('Ticket Cloed -- Zayn')
+  .setDescription('*Your ticket has been marked as **complete**. If you wish to reopen this, or create a new one, please send a message to bot.')
+
+  supportUser.send(complete);
+
+  message.channel.delete();
+
+  db.delete(`support_${support.targetID}`);
+}
+
+const embed = new Discord.RichEmbed()
+.setColor(0x36393e)
+.setAuthor(message.author.tag)
+.setFooter(`Message recieved -- Zayn`)
+.setDescription(message.content)
+
+bot.users.get(support.targetID).send(embed);
+
+message.delete({timeout : 1000});
+
+embed.setFooter(`Message Sent -- ${supportUser.tag}`).setDescription(message.content);
+
+return message.channel.send(embed);
+
+}
+
+
+
+}
+});
+
+**/
 
 
 
