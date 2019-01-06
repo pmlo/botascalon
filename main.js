@@ -177,7 +177,7 @@ bot.on("message", async message => {
 
       const newChannel = new Discord.RichEmbed()
       .setColor(0x36393e)
-      .setAuthor(author.tag,author.avatarURL())
+      .setAuthor(author.tag,message.member.user.avatarURL)
       .setFooter('Support Ticket Created')
       .addField('User', author)
       addField('ID', author.id)
@@ -186,7 +186,7 @@ bot.on("message", async message => {
 
       const newTicket = new Discord.RichEmbed()
       .setColor(0x36393e)
-      .setAuthor(`Hello, ${author.tag}`, author.avatarURL())
+      .setAuthor(`Hello, ${author.tag}`, message.member.user.avatarURL)
       .setFooter('Support Ticket Created')
 
       await channel.send(newTicket);
@@ -201,14 +201,14 @@ bot.on("message", async message => {
 
     const dm = new Discord.MessageEmbed()
     .setColor(0x36393e)
-    .setAuthor(`Thanks you, ${message.author.tag}`, message.author.avatarURL())
+    .setAuthor(`Thanks you, ${message.author.tag}`,message.member.user.avatarURL)
     setFooter(`Your message has been sent -- A staff member will be in contact soon`)
 
     await message.author.send(dm);
 
     const embed = new Discord.RichEmbed()
     .setColor(0x36393e)
-    .setAuthor(message.author.tag, message.author.avatarURL())
+    .setAuthor(message.author.tag, message.member.user.avatarURL)
     .setDescription(message.content)
     .setFooter(`Message Recieved -- ${message.author.tag}`)
 
