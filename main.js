@@ -265,12 +265,15 @@ bot.on("message", async message => {
 
       await channel.send(newChannel);
 
-      const newTicket = new Discord.RichEmbed()
+      /*const newTicket = new Discord.RichEmbed()
       .setColor(0x36393e)
       .setAuthor(`Hello, ${author.tag}`)
       .setFooter('Support Ticket Created')
 
-      await author.send(newTicket);
+      await author.send(newTicket);*/
+
+      author.send(":flag_mf: Merci d'avoir contacté le support ! Un membre du staff va vous contactez dans les plus brefs délais");
+      author.send(":flag_lr: Thank you for contacting the support ! A member of the staff will contact you as soon as possible");
 
       active.channelID = channel.id;
       active.targetID = author.id;
@@ -280,12 +283,15 @@ bot.on("message", async message => {
 
     channel = bot.channels.get(active.channelID);
 
-    const dm = new Discord.RichEmbed()
+    /*const dm = new Discord.RichEmbed()
     .setColor(0x36393e)
     .setAuthor(`Thanks you, ${message.author.tag}`)
     .setFooter(`Your message has been sent -- A staff member will be in contact soon`)
 
-    await message.author.send(dm);
+    await message.author.send(dm);*/
+
+    author.send(":flag_mf: Votre message a été envoyé");
+    author.send(":flag_lr: Your message has been sent");
 
     const embed = new Discord.RichEmbed()
     .setColor(0x36393e)
@@ -311,13 +317,13 @@ bot.on("message", async message => {
 
     if(message.content.toLowerCase() == '?complete') {
 
-        const complete = new Discord.RichEmbed()
+        /*const complete = new Discord.RichEmbed()
         .setColor(0x36393e)
         .setAuthor(`Hey, ${supportUser.tag}`)
-        .setFooter('Ticket Closed -- Zayn')
+        .setFooter('Ticket Closed')
         .setDescription('*Your ticket has been marked as **complete**. If you wish to reopen this.')
 
-        supportUser.send(complete);
+        supportUser.send(complete);*/
 
         message.channel.delete();
 
@@ -325,13 +331,14 @@ bot.on("message", async message => {
         return;
           }
 
-    const embed = new Discord.RichEmbed()
+    /*const embed = new Discord.RichEmbed()
     .setColor(0x36393e)
     .setAuthor(message.author.tag)
     .setFooter(`Message Recieved -- Zayn`)
-    .setDescription(message.content)
+    .setDescription(message.content)*/
 
-    bot.users.get(support.targetID).send(embed)
+    bot.users.get(support.targetID).send(message.content)
+    //bot.users.get(support.targetID).send(embed)
 
     message.delete();
 
