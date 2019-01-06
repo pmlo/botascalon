@@ -188,29 +188,29 @@ bot.on("message", async message => {
           });
 
           channel.overwritePermissions(moderationrole, {
-          CREATE_INSTANT_INVITE: false,
-          KICK_MEMBERS: false,
-          BAN_MEMBERS: false,
-          ADMINISTRATOR: false,
-          MANAGE_CHANNELS: false,
-          MANAGE_GUILD: false,
-          ADD_REACTIONS: false,
-          VIEW_AUDIT_LOG: false,
-          VIEW_CHANNEL: false,
-          SEND_MESSAGES: false
+          CREATE_INSTANT_INVITE: true,
+          KICK_MEMBERS: true,
+          BAN_MEMBERS: true,
+          ADMINISTRATOR: true,
+          MANAGE_CHANNELS: true,
+          MANAGE_GUILD: true,
+          ADD_REACTIONS: true,
+          VIEW_AUDIT_LOG: true,
+          VIEW_CHANNEL: true,
+          SEND_MESSAGES: true
         });
 
         channel.overwritePermissions(respmodorole, {
-        CREATE_INSTANT_INVITE: false,
-        KICK_MEMBERS: false,
-        BAN_MEMBERS: false,
-        ADMINISTRATOR: false,
-        MANAGE_CHANNELS: false,
-        MANAGE_GUILD: false,
-        ADD_REACTIONS: false,
-        VIEW_AUDIT_LOG: false,
-        VIEW_CHANNEL: false,
-        SEND_MESSAGES: false
+        CREATE_INSTANT_INVITE: true,
+        KICK_MEMBERS: true,
+        BAN_MEMBERS: true,
+        ADMINISTRATOR: true,
+        MANAGE_CHANNELS: true,
+        MANAGE_GUILD: true,
+        ADD_REACTIONS: true,
+        VIEW_AUDIT_LOG: true,
+        VIEW_CHANNEL: true,
+        SEND_MESSAGES: true
       });
 
         } catch(e){
