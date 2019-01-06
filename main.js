@@ -208,11 +208,11 @@ bot.on("message", async message => {
         .then(console.log)
         .catch(console.error);*/
 
-        channel = await guild.createChannel(`${message.author.name} Ticket`);
-
-        channel = await channel.setParent('531220528778706945');
-
       let author = message.author;
+
+      channel = await guild.createChannel(`${author.name}--ticket`);
+
+      channel = await channel.setParent('531220528778706945');
 
       const newChannel = new Discord.RichEmbed()
       .setColor(0x36393e)
