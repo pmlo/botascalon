@@ -216,7 +216,7 @@ bot.on("message", async message => {
 
       const newChannel = new Discord.RichEmbed()
       .setColor(0x36393e)
-      .setAuthor(author.tag, author.displayAvatarURL())
+      .setAuthor(author.tag)
       .setFooter('Support Ticket Created')
       .addField('User', message.author)
       .addField('ID', author.id)
@@ -225,7 +225,7 @@ bot.on("message", async message => {
 
       const newTicket = new Discord.RichEmbed()
       .setColor(0x36393e)
-      .setAuthor(`Hello ${author.tag}`, author.displayAvatarURL())
+      .setAuthor(`Hello ${author.tag}`)
       .setFooter('Support Ticket')
 
       await author.send(newTicket);
@@ -238,14 +238,14 @@ bot.on("message", async message => {
 
     const dm = new Discord.RichEmbed()
     .setColor(0x36393e)
-    .setAuthor(`Thanks you, ${message.author.tag}`, message.author.displayAvatarURL())
+    .setAuthor(`Thanks you, ${message.author.tag}`)
     .setFooter(`Your message has been sent -- a staff member will be in contact soon`)
 
     await message.author.send(dm);
 
     const embed = new Discord.RichEmbed()
     .setColor(0x36393e)
-    .setAuthor(message.author.tag, message.author.displayAvatarURL())
+    .setAuthor(message.author.tag)
     .setDescription(message.content)
     .setFooter(`Message Recieved -- ${message.author.tag}`)
 
@@ -270,7 +270,7 @@ if(support) {
 
     const complete = new Discord.RichEmbed()
     .setColor(0x36393e)
-    .setAuthor(`Hey, ${supportUser.tag}`, supportUser.displayAvatarURL())
+    .setAuthor(`Hey, ${supportUser.tag}`)
     .setFooter('Ticket Cloed -- Zayn')
     .setDescription('*Your ticket has been marked as **complete**. If you wish to reopen this, or create a new one, please send a message to bot.')
 
@@ -283,7 +283,7 @@ if(support) {
 
   const embed = new Discord.RichEmbed()
   .setColor(0x36393e)
-  .setAuthor(message.author.tag, message.author.displayAvatarURL())
+  .setAuthor(message.author.tag)
   .setFooter(`Message recieved -- Zayn`)
   .setDescription(message.content)
 
