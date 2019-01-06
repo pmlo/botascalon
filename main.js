@@ -289,7 +289,7 @@ if(support) {
 
   return message.channel.send(embed);
 
-//}
+}
 
 
 
