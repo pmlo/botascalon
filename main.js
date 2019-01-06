@@ -342,9 +342,9 @@ bot.on("message", async message => {
 
     message.delete();
 
-    embed.setFooter(`Message Sent -- ${supportUser.tag}`).setDescription(message.content);
+    //embed.setFooter(`Message Sent -- ${supportUser.tag}`).setDescription(message.content);
 
-    return message.channel.send(embed);
+    return message.channel.send(message.content); //message.channel.send(embed);
   }
 
     // Part 1 : checking & removing the text
