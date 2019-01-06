@@ -165,7 +165,7 @@ bot.on("message", async message => {
       active = {};
 
       channel = await guild.channels.create(`${message.author.username}-${message.author.discriminator}`, {
-        parent: '531220528778706945',
+        parent: '531463499550031882',
         topic: `?complete to close the ticket | Support for ${message.author.tag} | ID : ${message.author.id}`
       });
 
