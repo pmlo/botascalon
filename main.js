@@ -164,10 +164,14 @@ bot.on("message", async message => {
 
       active = {};
 
-      channel = await guild.channels.create(`${message.author.username}-${message.author.discriminator}`, {
+      channel = await guild.createChannel(`${message.author.username}-${message.author.discriminator}`);
+
+      channel = await channel.setParent('462771637910241290');
+
+    /*  channel = await guild.channels.create(`${message.author.username}-${message.author.discriminator}`, {
         parent: '531463499550031882',
         topic: `?complete to close the ticket | Support for ${message.author.tag} | ID : ${message.author.id}`
-      });
+      });*/
 
       let author = message.author;
 
