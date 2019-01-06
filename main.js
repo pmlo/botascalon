@@ -199,7 +199,7 @@ bot.on("message", async message => {
 
     channel = bot.channels.get(active.channelID);
 
-    const dm = new Discord.MessageEmbed()
+    const dm = new Discord.RichEmbed()
     .setColor(0x36393e)
     .setAuthor(`Thanks you, ${message.author.tag}`)
     setFooter(`Your message has been sent -- A staff member will be in contact soon`)
