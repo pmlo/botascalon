@@ -83,7 +83,7 @@ var idDm = 0;
  bot.on("ready", async () => {
    console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
 
-   bot.user.setActivity("Obéir à mon maître", {type: "WATCHING"});
+   //bot.user.setActivity("Obéir à mon maître", {type: "WATCHING"});
 
    soloNumber = 0;
    numbersolomax = 0;
