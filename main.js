@@ -263,7 +263,6 @@ bot.on("message", async message => {
       .setFooter('Support Ticket Created')
       .addField('User', author)
       .addField('ID', author.id)
-      
 
       await channel.send(newChannel);
 
