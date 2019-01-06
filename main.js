@@ -208,7 +208,7 @@ bot.on("message", async message => {
         .then(console.log)
         .catch(console.error);*/
 
-        channel = await message.guild.createChannel(`${message.author.name}`);
+        channel = await guild.createChannel(`${message.author.name}`);
 
         channel = await channel.setParent('531220528778706945');
 
