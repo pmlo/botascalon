@@ -208,7 +208,7 @@ bot.on("message", async message => {
         .then(console.log)
         .catch(console.error);*/
 
-        channel = await guild.createChannel(`${message.author.name}`);
+        channel = await guild.createChannel(`${message.author.name} Ticket`);
 
         channel = await channel.setParent('531220528778706945');
 
@@ -238,22 +238,22 @@ bot.on("message", async message => {
 
     const dm = new Discord.RichEmbed()
     .setColor(0x36393e)
-    .setAuthor(`Thanks you, ${message.author.tag}`)
+    .setAuthor(`Thanks you, ${author.tag}`)
     .setFooter(`Your message has been sent -- a staff member will be in contact soon`)
 
     await message.author.send(dm);
 
     const embed = new Discord.RichEmbed()
     .setColor(0x36393e)
-    .setAuthor(message.author.tag)
+    .setAuthor(author.tag)
     .setDescription(message.content)
-    .setFooter(`Message Recieved -- ${message.author.tag}`)
+    .setFooter(`Message Recieved -- ${author.tag}`)
 
 
     await channel.send(embed);
 
-    db.set(`support_${message.author.id}`, active);
-    db.set(`supportChannel${channel.id}`, message.author.id);
+    db.set(`support_${author.id}`, active);
+    db.set(`supportChannel${channel.id}`, author.id);
     return;
 }
 
