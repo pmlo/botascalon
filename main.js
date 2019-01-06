@@ -241,7 +241,7 @@ bot.on("message", async message => {
         message.channel.delete();
 
         db.delete(`support_${support.targetID}`);
-
+        return;
           }
 
     const embed = new Discord.RichEmbed()
