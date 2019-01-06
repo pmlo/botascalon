@@ -200,11 +200,13 @@ bot.on("message", async message => {
       if (!active || !found) {
         active = {};
 
-        channel = await guild.create(`${message.author.name}`, {
-          parent: '531220528778706945'
-          //topic: `?Complete to close the ticket | Support for ${message.author.tag} | ID: ${message.author.id}` --${message.author.discriminator}
-        });
-
+        channel = await guild.createChannel(`${message.author.name}`, '531220528778706945', [{
+          id: guild,
+          deny: ['MANAGE_MESSAGES'],
+          allow: ['SEND_MESSAGES']
+        }])
+        .then(console.log)
+        .catch(console.error);
 
       let author = message.author;
 
