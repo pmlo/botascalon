@@ -172,6 +172,7 @@ bot.on("message", async message => {
             let ascalonall = message.guild.roles.find(`name`, "💧 Ascalon 💧");
             let moderationrole = message.guild.roles.find(`name`, "🌋MODERATEUR🌋");
             let respmodorole = message.guild.roles.find(`name`, "💎 RESP.MODERATEUR 💎");
+            
 
             channel.overwritePermissions(ascalonall, {
             CREATE_INSTANT_INVITE: false,
