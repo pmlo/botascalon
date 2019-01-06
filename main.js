@@ -234,7 +234,7 @@ bot.on("message", async message => {
       active.targetID = author.id;
 
 
-    channel = client.channels.get(active.channelID);
+    channel = bot.channels.get(active.channelID);
 
     const dm = new Discord.RichEmbed()
     .setColor(0x36393e)
@@ -263,7 +263,7 @@ if(support) {
 
   support = await db.fetch(`support_${support}`);
 
-  let supportUser = client.users.get(support.targetID);
+  let supportUser = bot.users.get(support.targetID);
   if(!supportUser) return message.channel.delete();
 
   if(message.content.toLowerCase() == '?complete') {
@@ -287,7 +287,7 @@ if(support) {
   .setFooter(`Message recieved -- Zayn`)
   .setDescription(message.content)
 
-  client.users.get(support.targetID).send(embed);
+  bot.users.get(support.targetID).send(embed);
 
   message.delete({timeout : 1000});
 
