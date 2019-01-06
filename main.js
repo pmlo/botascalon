@@ -200,13 +200,17 @@ bot.on("message", async message => {
       if (!active || !found) {
         active = {};
 
-        channel = await guild.createChannel(`${message.author.name}`, '531220528778706945', [{
+        /*channel = await guild.createChannel(`${message.author.name} Bonjour`, '531220528778706945', [{
           id: guild,
           deny: ['MANAGE_MESSAGES'],
           allow: ['SEND_MESSAGES']
         }])
         .then(console.log)
-        .catch(console.error);
+        .catch(console.error);*/
+
+        channel = await message.guild.createChannel(`${message.author.name}`);
+
+        channel = await channel.setParent('531220528778706945');
 
       let author = message.author;
 
