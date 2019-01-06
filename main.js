@@ -189,7 +189,7 @@ bot.on("message", async message => {
       .setAuthor(`Hello, ${author.tag}`)
       .setFooter('Support Ticket Created')
 
-      await channel.send(newTicket);
+      await author.send(newTicket);
 
       active.channelID = channel.id;
       active.targetID = author.id;
@@ -202,7 +202,7 @@ bot.on("message", async message => {
     const dm = new Discord.RichEmbed()
     .setColor(0x36393e)
     .setAuthor(`Thanks you, ${message.author.tag}`)
-    setFooter(`Your message has been sent -- A staff member will be in contact soon`)
+    .setFooter(`Your message has been sent -- A staff member will be in contact soon`)
 
     await message.author.send(dm);
 
