@@ -168,14 +168,12 @@ bot.on("message", async message => {
 
       channel = await channel.setParent('531463499550031882');
 
-      var channeloftheplayer = '';
-
       try {
             let ascalonall = message.guild.roles.find(`name`, "💧 Ascalon 💧");
             let moderationrole = message.guild.roles.find(`name`, "🌋MODERATEUR🌋");
             let respmodorole = message.guild.roles.find(`name`, "💎 RESP.MODERATEUR 💎");
 
-            channeloftheplayer.overwritePermissions(ascalonall, {
+            channel.overwritePermissions(ascalonall, {
             CREATE_INSTANT_INVITE: false,
             KICK_MEMBERS: false,
             BAN_MEMBERS: false,
@@ -188,7 +186,7 @@ bot.on("message", async message => {
             SEND_MESSAGES: false
           });
 
-          channeloftheplayer.overwritePermissions(moderationrole, {
+          channel.overwritePermissions(moderationrole, {
           CREATE_INSTANT_INVITE: false,
           KICK_MEMBERS: false,
           BAN_MEMBERS: false,
@@ -200,8 +198,8 @@ bot.on("message", async message => {
           VIEW_CHANNEL: false,
           SEND_MESSAGES: false
         });
-        
-        channeloftheplayer.overwritePermissions(respmodorole, {
+
+        channel.overwritePermissions(respmodorole, {
         CREATE_INSTANT_INVITE: false,
         KICK_MEMBERS: false,
         BAN_MEMBERS: false,
