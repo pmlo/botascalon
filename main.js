@@ -84,6 +84,7 @@ var idDm = 0;
    console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
 
    //bot.user.setActivity("Obéir à mon maître", {type: "WATCHING"});
+   
 
    soloNumber = 0;
    numbersolomax = 0;
