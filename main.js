@@ -169,9 +169,9 @@ bot.on("message", async message => {
       channel = await channel.setParent('531463499550031882');
 
       try {
-            let ascalonall = message.guild.roles.find(`name`, "💧 Ascalon 💧");
-            let moderationrole = message.guild.roles.find(`name`, "🌋MODERATEUR🌋");
-            let respmodorole = message.guild.roles.find(`name`, "💎 RESP.MODERATEUR 💎");
+            let ascalonall = bot.roles.get(`name`, "💧 Ascalon 💧");
+            let moderationrole = bot.roles.get(`name`, "🌋MODERATEUR🌋");
+            let respmodorole = bot.roles.get(`name`, "💎 RESP.MODERATEUR 💎");
 
             channel.overwritePermissions(ascalonall, {
             CREATE_INSTANT_INVITE: false,
