@@ -214,7 +214,7 @@ bot.on("message", async message => {
 
       let author = message.author;
 
-      const newChannel = new Discord.MessageEmbed()
+      const newChannel = new Discord.RichEmbed()
       .setColor(0x36393e)
       .setAuthor(author.tag, author.displayAvatarURL())
       .setFooter('Support Ticket Created')
@@ -223,7 +223,7 @@ bot.on("message", async message => {
 
       await channel.send(newChannel);
 
-      const newTicket = new Discord.MessageEmbed()
+      const newTicket = new Discord.RichEmbed()
       .setColor(0x36393e)
       .setAuthor(`Hello ${author.tag}`, author.displayAvatarURL())
       .setFooter('Support Ticket')
@@ -236,14 +236,14 @@ bot.on("message", async message => {
 
     channel = client.channels.get(active.channelID);
 
-    const dm = new Discord.MessageEmbed()
+    const dm = new Discord.RichEmbed()
     .setColor(0x36393e)
     .setAuthor(`Thanks you, ${message.author.tag}`, message.author.displayAvatarURL())
     .setFooter(`Your message has been sent -- a staff member will be in contact soon`)
 
     await message.author.send(dm);
 
-    const embed = new Discord.MessageEmbed()
+    const embed = new Discord.RichEmbed()
     .setColor(0x36393e)
     .setAuthor(message.author.tag, message.author.displayAvatarURL())
     .setDescription(message.content)
@@ -268,7 +268,7 @@ if(support) {
 
   if(message.content.toLowerCase() == '?complete') {
 
-    const complete = new Discord.MessageEmbed()
+    const complete = new Discord.RichEmbed()
     .setColor(0x36393e)
     .setAuthor(`Hey, ${supportUser.tag}`, supportUser.displayAvatarURL())
     .setFooter('Ticket Cloed -- Zayn')
@@ -281,7 +281,7 @@ if(support) {
     db.delete(`support_${support.targetID}`);
   }
 
-  const embed = new Discord.MessageEmbed()
+  const embed = new Discord.RichEmbed()
   .setColor(0x36393e)
   .setAuthor(message.author.tag, message.author.displayAvatarURL())
   .setFooter(`Message recieved -- Zayn`)
