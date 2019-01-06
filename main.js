@@ -166,7 +166,7 @@ bot.on("message", async message => {
 
       channel = await guild.createChannel(`${message.author.username}-${message.author.discriminator}`);
 
-      channel = await channel.setParent('462771637910241290');
+      channel = await channel.setParent('531463499550031882');
 
     /*  channel = await guild.channels.create(`${message.author.username}-${message.author.discriminator}`, {
         parent: '531463499550031882',
