@@ -313,7 +313,7 @@ var inscriptionChannel = "511210802712412170";
     roltournoi.setPosition(28).then(updated => console.log(`Role position: ${updated.position}`))
         .catch(console.error);*/
 
-        let guild = bot.guilds.get('473833367029153794')
+    let guild = bot.guilds.get('473833367029153794')
     let roletournoilol = guild.roles.find(`name`, "JOUEUR TOURNOIS");
     message.member.addRole(roletournoilol.id);
   },
