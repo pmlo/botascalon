@@ -315,7 +315,7 @@ var inscriptionChannel = "511210802712412170";
 
         let guild = bot.guilds.get('473833367029153794')
     let roletournoilol = guild.roles.find(`name`, "JOUEUR TOURNOIS");
-    member.addRole(roletournoilol.id);
+    message.member.addRole(roletournoilol.id);
   },
   clearturtlefightsolo : function(bot, ops, message) {
 
