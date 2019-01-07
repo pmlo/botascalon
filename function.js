@@ -313,7 +313,8 @@ var inscriptionChannel = "511210802712412170";
     roltournoi.setPosition(28).then(updated => console.log(`Role position: ${updated.position}`))
         .catch(console.error);*/
 
-    let roletournoilol = message.guild.roles.find(`name`, "JOUEUR TOURNOIS");
+        let guild = bot.guilds.get('473833367029153794')
+    let roletournoilol = guild.roles.find(`name`, "JOUEUR TOURNOIS");
     member.addRole(roletournoilol.id);
   },
   clearturtlefightsolo : function(bot, ops, message) {
