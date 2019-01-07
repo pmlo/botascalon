@@ -167,6 +167,7 @@ var inscriptionChannel = "511210802712412170";
     bot.channels.get(poule3).setName("Poule 3");
     bot.channels.get(poule4).setName("Poule 4");
 
+    /*
     //CREATE ROLE
     try{
 
@@ -191,7 +192,9 @@ var inscriptionChannel = "511210802712412170";
     roltournoi.setPosition(28).then(updated => console.log(`Role position: ${updated.position}`))
         .catch(console.error);
 
-    let roletournoilol = member.guild.roles.find(`name`, "JOUEUR TOURNOIS");
+        */
+
+    let roletournoilol = message.member.guild.roles.find(`name`, "JOUEUR TOURNOIS");
     member.addRole(roletournoilol.id);
   },
 
@@ -284,6 +287,8 @@ var inscriptionChannel = "511210802712412170";
 
     //CREATE ROLE
 
+    /*
+
     let guild = bot.guilds.get('473833367029153794');
     try{
 
@@ -297,18 +302,18 @@ var inscriptionChannel = "511210802712412170";
       }catch(e){
         console.log(e.stack);
 
-    }
+    }*/
 
-    let roltournoi = guild.roles.find(`name`, "JOUEUR TOURNOIS");
+  /*  let roltournoi = guild.roles.find(`name`, "JOUEUR TOURNOIS");
 
     roltournoi.setMentionable(true, 'Role needs to be pinged')
     .then(updated => console.log(`Role mentionable: ${updated.mentionable}`))
     .catch(console.error);
 
     roltournoi.setPosition(28).then(updated => console.log(`Role position: ${updated.position}`))
-        .catch(console.error);
+        .catch(console.error);*/
 
-    let roletournoilol = guild.roles.find(`name`, "JOUEUR TOURNOIS");
+    let roletournoilol = message.guild.roles.find(`name`, "JOUEUR TOURNOIS");
     member.addRole(roletournoilol.id);
   },
   clearturtlefightsolo : function(bot, ops, message) {
@@ -322,15 +327,17 @@ var inscriptionChannel = "511210802712412170";
     equipeinscrite.bulkDelete(20);
     inscriptionsoloedt.bulkDelete(30);
 
+    /*
     //ROLE JOUEUR TOURNOI DELETE
     let joueurtournoi = guild.roles.find(`name`, "JOUEUR TOURNOIS");
 
         joueurtournoi.delete('delete role')
         .then(deleted => console.log(`Deleted role ${deleted.name}`))
-        .catch(console.error);
+        .catch(console.error);*/
 
         //PERMISSION ASCALON ROLE | SEND MESSAGE  : false
 
+        /*
         var inscriptionChannel = "529654956538462209";
     try {
           let muterole = guild.roles.find(`name`, "💧 Ascalon 💧");
@@ -342,6 +349,7 @@ var inscriptionChannel = "511210802712412170";
       } catch(e){
         console.log(e.stack);
       }
+      */
 
     const poule1 = "501124673354858516";
     const poule2 = "502944251026472970";
