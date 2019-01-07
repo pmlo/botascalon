@@ -283,9 +283,11 @@ var inscriptionChannel = "511210802712412170";
     //bot.channels.get(poule4).setName("Poule 4");
 
     //CREATE ROLE
+
+    let guild = bot.guilds.get('473833367029153794');
     try{
 
-        roletournoi =  message.guild.createRole({
+        roletournoi =  guild.createRole({
           name: "JOUEUR TOURNOIS",
           color: "#00ff00",
           permissions:[]
@@ -297,7 +299,7 @@ var inscriptionChannel = "511210802712412170";
 
     }
 
-    let roltournoi = message.guild.roles.find(`name`, "JOUEUR TOURNOIS");
+    let roltournoi = guild.roles.find(`name`, "JOUEUR TOURNOIS");
 
     roltournoi.setMentionable(true, 'Role needs to be pinged')
     .then(updated => console.log(`Role mentionable: ${updated.mentionable}`))
@@ -306,10 +308,12 @@ var inscriptionChannel = "511210802712412170";
     roltournoi.setPosition(28).then(updated => console.log(`Role position: ${updated.position}`))
         .catch(console.error);
 
-    let roletournoilol = member.guild.roles.find(`name`, "JOUEUR TOURNOIS");
+    let roletournoilol = guild.roles.find(`name`, "JOUEUR TOURNOIS");
     member.addRole(roletournoilol.id);
   },
   clearturtlefightsolo : function(bot, ops, message) {
+
+    let guild = bot.guilds.get('473833367029153794');
     const inscriptionsolo = "529654956538462209";
     bot.channels.get(inscriptionsolo).setName("🌀inscription-solo-turtle-fight-off");
 
@@ -319,7 +323,7 @@ var inscriptionChannel = "511210802712412170";
     inscriptionsoloedt.bulkDelete(30);
 
     //ROLE JOUEUR TOURNOI DELETE
-    let joueurtournoi = message.guild.roles.find(`name`, "JOUEUR TOURNOIS");
+    let joueurtournoi = guild.roles.find(`name`, "JOUEUR TOURNOIS");
 
         joueurtournoi.delete('delete role')
         .then(deleted => console.log(`Deleted role ${deleted.name}`))
@@ -329,7 +333,7 @@ var inscriptionChannel = "511210802712412170";
 
         var inscriptionChannel = "529654956538462209";
     try {
-          let muterole = message.guild.roles.find(`name`, "💧 Ascalon 💧");
+          let muterole = guild.roles.find(`name`, "💧 Ascalon 💧");
 
           inscriptionChannel.overwritePermissions(muterole, {
           SEND_MESSAGES: false
