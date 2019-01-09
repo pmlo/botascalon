@@ -250,68 +250,33 @@ var inscriptionChannel = "511210802712412170";
     bot.channels.get(inscriptionsolo).setName("🌀inscription-solo-turtle-fight-on");
 
     const poule1 = "501124673354858516";
-  /*  const poule2 = "502944251026472970";
-    const poule3 = "502945786028490753";
-    const poule4 = "501124944885710859";
-    const poule5 = "502945846493446156";
-    const poule6 = "502945957705547791";
-
-    if(size == 16) {
-      bot.channels.get(poule1).setName("Poule 1");
-      bot.channels.get(poule2).setName("Poule 2");
-      bot.channels.get(poule3).setName("Poule 3");
-      bot.channels.get(poule4).setName("Poule 4");
-      return;
-    }
-    if(size == 20) {
-      bot.channels.get(poule1).setName("Poule 1");
-      bot.channels.get(poule2).setName("Poule 2");
-      bot.channels.get(poule3).setName("Poule 3");
-      bot.channels.get(poule4).setName("Poule 4");
-      bot.channels.get(poule5).setName("Poule 5");
-      return;
-    }*/
-  /*  if(size == 24) {
-      bot.channels.get(poule1).setName("Poule 1");
-      bot.channels.get(poule2).setName("Poule 2");
-      bot.channels.get(poule3).setName("Poule 3");
-      bot.channels.get(poule4).setName("Poule 4");
-      bot.channels.get(poule5).setName("Poule 5");
-      bot.channels.get(poule6).setName("Poule 6");
-      return;
-    }*/
     bot.channels.get(poule1).setName("Turtle Fight");
-  //  bot.channels.get(poule2).setName("Poule 2");
-    //bot.channels.get(poule3).setName("Poule 3");
-    //bot.channels.get(poule4).setName("Poule 4");
+
 
     //CREATE ROLE
-
-    /*
 
     let guild = bot.guilds.get('473833367029153794');
     try{
 
-        roletournoi =  guild.createRole({
+        roletournoi =  message.guild.createRole({
           name: "JOUEUR TOURNOIS",
           color: "#00ff00",
           permissions:[]
         })
-
-
       }catch(e){
         console.log(e.stack);
 
-    }*/
+    }
 
-  /*  let roltournoi = guild.roles.find(`name`, "JOUEUR TOURNOIS");
+    let roltournoi = message.guild.roles.find(`name`, "JOUEUR TOURNOIS");
 
     roltournoi.setMentionable(true, 'Role needs to be pinged')
     .then(updated => console.log(`Role mentionable: ${updated.mentionable}`))
     .catch(console.error);
 
+    //ROLE TOURNOI UPDATE POSITION 28
     roltournoi.setPosition(28).then(updated => console.log(`Role position: ${updated.position}`))
-        .catch(console.error);*/
+        .catch(console.error);
 
     let guild = bot.guilds.get('473833367029153794')
     let roletournoilol = guild.roles.find(`name`, "JOUEUR TOURNOIS");
