@@ -252,10 +252,8 @@ var inscriptionChannel = "511210802712412170";
     const poule1 = "501124673354858516";
     bot.channels.get(poule1).setName("Turtle Fight");
 
-
     //CREATE ROLE
 
-    let guild = bot.guilds.get('473833367029153794');
     try{
 
         roletournoi =  message.guild.createRole({
