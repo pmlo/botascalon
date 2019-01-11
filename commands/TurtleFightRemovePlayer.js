@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
       ops.soloTurtleFightTournoi.delete(`${messages}`);
       //ROLE REMOVE
       let muterole = message.member.guild.roles.find(`name`, "JOUEUR TOURNOIS");
-      member.removeRole(muterole.id);
+      message.member.removeRole(muterole.id);
 
       const joinChannel = message.member.guild.channels.find('name', '🚻equipe-inscrite');
       joinChannel.send(`Le joueur ${messages} vient de se désinscrire pour le tournoi **ASCALON SOLO TURTLE FIGHT** ${ops.soloTurtleFightTournoi.size} / ${bot.numersoloturtlefightmax}`);

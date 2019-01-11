@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 module.exports.run = async (bot, message, args, ops, tools) => {
-    
+
 
   message.delete();
 
@@ -11,8 +11,11 @@ module.exports.run = async (bot, message, args, ops, tools) => {
       ops.soloTournoi.delete(`${messages}`);
 
       //ROLE REMOVE
-      let muterole = member.guild.roles.find(`name`, "JOUEUR TOURNOIS");
-      member.removeRole(muterole.id);
+      let muterole = message.member.guild.roles.find(`name`, "JOUEUR TOURNOIS");
+      message.member.removeRole(muterole.id);
+
+      const joinChannel = message.member.guild.channels.find('name', '🚻equipe-inscrite');
+      joinChannel.send(`Le joueur ${messages} vient de se désinscrire pour le tournoi **ASCALON SOLO** ${ops.soloTournoi.size} / ${bot.numbersolomax}`);
     }
     return;
 }
