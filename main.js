@@ -273,7 +273,7 @@ bot.on("message", async message => {
 
       await author.send(newTicket);*/
 
-      author.send(":flag_mf: Merci d'avoir contacté le support ! Un membre du staff va vous contactez dans les plus brefs délais \n :flag_lr: Thank you for contacting the support ! A member of the staff will contact you as soon as possible");
+      author.send(":flag_mf: Merci d'avoir contacté le support ! Un membre du staff va vous contactez dans les plus brefs délais \n:flag_lr: Thank you for contacting the support ! A member of the staff will contact you as soon as possible");
     //  author.send(":flag_lr: Thank you for contacting the support ! A member of the staff will contact you as soon as possible");
 
       active.channelID = channel.id;
@@ -291,8 +291,8 @@ bot.on("message", async message => {
 
     await message.author.send(dm);*/
 
-    message.author.send(":flag_mf: Votre message a été envoyé");
-    message.author.send(":flag_lr: Your message has been sent");
+    message.author.send(":flag_mf: Votre message a été envoyé \n:flag_lr: Your message has been sent");
+  //  message.author.send(":flag_lr: Your message has been sent");
 
     const embed = new Discord.RichEmbed()
     .setColor(0x36393e)
@@ -374,6 +374,25 @@ bot.on("message", async message => {
 
 
     }
+
+    let recrutementteam = ["Nom de l'équipe (avec brève description mais facultatif) :", "Plateforme :","Âge minimum (indiquer l'âge minimum si nécessaire) :","Rôles disponibles (joueur, coach, modérateur, manager,etc...) :","Objectif (snipe, tournoi, fun, ...) :","K/D minimum (indiquer le K/D minimum si nécessaire) :", "Nombre de top 1 minimum : (indiquer le top 1 minimum si nécessaire) :"]
+    let noFound = false;
+
+    //CHANNEL RECRUTEMENT TEAM
+    /*if(message.channel.id == "501869668919803904") {
+      if(message.member.hasPermission("ADMINISTRATOR")) {
+          return;
+      }
+      if (!message.content.toLowerCase().includes(recrutementteam[i].toLowerCase())) noFound = true;
+
+      if(noFound) {
+        message.delete();
+
+        message.author.send("Bonjour !\n \nVotre message dans le channel #💀recrutement-team ne respecte pas le modèle donné \n \n Nous t'invitons à respecter le modèle ci-dessous lors de votre prochain post\n \n __Voici le formulaire à respecter pour publier son annonce : __ \n \n ```Nom de l'équipe (avec brève description mais facultatif) :\nPlateforme :\nÂge minimum (indiquer l'âge minimum si nécessaire) :\nRôles disponibles (joueur, coach, modérateur, manager,etc...) :\nObjectif (snipe, tournoi, fun, ...) :\nK/D minimum (indiquer le K/D minimum si nécessaire) :```\n \nÂ bientôt !");
+
+
+      }
+    }*/
   });
 
   bot.login(token);
