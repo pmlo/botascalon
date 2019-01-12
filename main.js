@@ -156,9 +156,9 @@ bot.on("message", async message => {
 
   //CHANNEL RECRUTEMENT TEAM
   if(message.channel.id == "533728518434062341") {
-    if(message.member.hasPermission("ADMINISTRATOR")) {
+  /*  if(message.member.hasPermission("ADMINISTRATOR")) {
         return;
-    }
+    }*/
     if (!message.content.toLowerCase().includes(recrutementteam[i].toLowerCase())) noFound = true;
 
     if(noFound) {
