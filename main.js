@@ -37,6 +37,7 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
  const token = process.env.token;
  const tools = require('./function.js');
  const db = require('quick.db');
+ const ms = require("ms");
 
  //SOLO
  var numbersolomax = 0;
@@ -53,6 +54,9 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
 //DM MESSAGE
 var dmMessage = new Map();
 var idDm = 0;
+
+//CHANNEL RECRUTEMENT
+var channelRec = new Map();
 
  const serverStats = {
    guildID: '511250353430462465',
@@ -95,6 +99,7 @@ var idDm = 0;
    soloTurtleFightTournoi.clear();
 
 
+
    //bot.user.setGame("on SourceCade!");
  });
 
@@ -111,6 +116,7 @@ var idDm = 0;
       numersoloturtlefightmax: numersoloturtlefightmax,
       dmMessage: dmMessage,
       idDm: idDm,
+      channelRec: channelRec,
     }
 
    let prefix = "a!";
@@ -375,11 +381,11 @@ bot.on("message", async message => {
 
     }
 
-    let recrutementteam = ["Nom de l'équipe (avec brève description mais facultatif) :", "Plateforme :","Âge minimum (indiquer l'âge minimum si nécessaire) :","Rôles disponibles (joueur, coach, modérateur, manager,etc...) :","Objectif (snipe, tournoi, fun, ...) :","K/D minimum (indiquer le K/D minimum si nécessaire) :", "Nombre de top 1 minimum : (indiquer le top 1 minimum si nécessaire) :"]
+    let recrutementteam = ["Nom de l'équipe :", "Plateforme :","Âge minimum :","Rôles disponibles :","Objectif :","K/D minimum :", "Nombre de top1 minimum :"]
     let noFound = false;
 
     //CHANNEL RECRUTEMENT TEAM
-    /*if(message.channel.id == "501869668919803904") {
+    if(message.channel.id == "501869668919803904") {
       if(message.member.hasPermission("ADMINISTRATOR")) {
           return;
       }
@@ -388,11 +394,32 @@ bot.on("message", async message => {
       if(noFound) {
         message.delete();
 
-        message.author.send("Bonjour !\n \nVotre message dans le channel ne respecte pas le modèle donné \n \n Nous t'invitons à respecter le modèle ci-dessous lors de votre prochain post\n \n __Voici le formulaire à respecter pour publier son annonce : __ \n \n ```Nom de l'équipe (avec brève description mais facultatif) :\nPlateforme :\nÂge minimum (indiquer l'âge minimum si nécessaire) :\nRôles disponibles (joueur, coach, modérateur, manager,etc...) :\nObjectif (snipe, tournoi, fun, ...) :\nK/D minimum (indiquer le K/D minimum si nécessaire) :```\n \nÂ bientôt !");
+        message.author.send("Bonjour !\n \nVotre message dans le channel recrutement team ne respecte pas le modèle donné \n \n Nous t'invitons à respecter le modèle ci-dessous lors de votre prochain post\n \n __Voici le formulaire à respecter pour publier son annonce : __ \n \n ```Nom de l'équipe (avec brève description mais facultatif) :\nPlateforme :\nÂge minimum (indiquer l'âge minimum si nécessaire) :\nRôles disponibles (joueur, coach, modérateur, manager,etc...) :\nObjectif (snipe, tournoi, fun, ...) :\nK/D minimum (indiquer le K/D minimum si nécessaire) :```\n \nÂ bientôt !");
 
+
+
+        var mutetime = '1d';
+
+        channelRec.set(`${message.author.name}`, `${mutetime}`);
 
       }
-    }*/
+
+      setTimeout(function(){
+        if(channelRec.has(`${message.author.name}`)) {
+        channelRec.soloTurtleFightTournoi.delete(`${messages}`);
+        }
+      }, ms(mutetime));
+
+      if(channelRec.has(`${message.author.name}`)) {
+
+        message.delete();
+
+        message.author.send("Bonjour !\n \n Il y a un détail d'un jour entre channel message de recrutement team.");
+        return;
+      }
+    }
+
+
   });
 
   bot.login(token);
