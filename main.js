@@ -385,7 +385,7 @@ bot.on("message", async message => {
     let noFound = false;
 
     //CHANNEL RECRUTEMENT TEAM
-    if(message.channel.id == "501869668919803904") {
+    if(message.channel.id == "533728518434062341") {
       if(message.member.hasPermission("ADMINISTRATOR")) {
           return;
       }
