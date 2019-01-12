@@ -151,7 +151,7 @@ bot.on('guildMemberRemove', member => {
 
 bot.on("message", async message => {
 
-  let recrutementteam = [`Nom de l'équipe :`, 'Plateforme :','Âge minimum :','Rôles disponibles :','Objectif :','K/D minimum :', 'Nombre de top1 minimum :']
+  let recrutementteam = [`Nom de l'équipe :`]//, 'Plateforme :','Âge minimum :','Rôles disponibles :','Objectif :','K/D minimum :', 'Nombre de top1 minimum :']
   let noFound = false;
 
   //CHANNEL RECRUTEMENT TEAM
@@ -159,7 +159,7 @@ bot.on("message", async message => {
   /*  if(message.member.hasPermission("ADMINISTRATOR")) {
         return;
     }*/
-    if (!message.content.toLowerCase().includes(recrutementteam.toLowerCase())) noFound = true;
+    if (!message.content.toLowerCase().includes(recrutementteam[i].toLowerCase())) noFound = true;
 
     if(noFound) {
       message.delete();
