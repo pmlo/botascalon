@@ -160,9 +160,6 @@ bot.on("message", async message => {
         return;
     }*/
     for (var i in blacklisted) { // loops through the blacklisted list
-      if(message.channel.name == "👍partenariat" || message.channel.name == "🤝échange-de-pub🤝" || message.member.hasPermission("MANAGE_CHANNELS")) {
-          return;
-      }
 
       if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
     }
