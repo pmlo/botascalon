@@ -159,7 +159,7 @@ bot.on("message", async message => {
   /*  if(message.member.hasPermission("ADMINISTRATOR")) {
         return;
     }*/
-    if (!message.content.toLowerCase().includes(recrutementteam[i].toLowerCase())) noFound = true;
+    if (!message.content.toLowerCase().includes(recrutementteam.toLowerCase())) noFound = true;
 
     if(noFound) {
       message.delete();
