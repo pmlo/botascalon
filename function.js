@@ -382,7 +382,7 @@ var inscriptionChannel = "511210802712412170";
 
         joueurtournoi.delete('delete role')
         .then(deleted => console.log(`Deleted role ${deleted.name}`))
-        .catch(console.error);*/
+        .catch(console.error);
 
         //PERMISSION ASCALON ROLE | SEND MESSAGE  : false
 
