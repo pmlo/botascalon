@@ -280,6 +280,7 @@ var inscriptionChannel = "511210802712412170";
     let roletournoilol = guild.roles.find(`name`, "JOUEUR TOURNOIS");
     message.member.addRole(roletournoilol.id);
   },
+
   clearturtlefightsolo : function(bot, ops, message) {
 
     let guild = bot.guilds.get('473833367029153794');
@@ -291,17 +292,17 @@ var inscriptionChannel = "511210802712412170";
     equipeinscrite.bulkDelete(20);
     inscriptionsoloedt.bulkDelete(30);
 
-    /*
+
     //ROLE JOUEUR TOURNOI DELETE
     let joueurtournoi = guild.roles.find(`name`, "JOUEUR TOURNOIS");
 
         joueurtournoi.delete('delete role')
         .then(deleted => console.log(`Deleted role ${deleted.name}`))
-        .catch(console.error);*/
+        .catch(console.error);
 
         //PERMISSION ASCALON ROLE | SEND MESSAGE  : false
 
-        /*
+
         var inscriptionChannel = "529654956538462209";
     try {
           let muterole = guild.roles.find(`name`, "💧 Ascalon 💧");
@@ -313,7 +314,7 @@ var inscriptionChannel = "511210802712412170";
       } catch(e){
         console.log(e.stack);
       }
-      */
+
 
     const poule1 = "501124673354858516";
     const poule2 = "502944251026472970";
@@ -331,6 +332,112 @@ var inscriptionChannel = "511210802712412170";
 
     ops.soloTurtleFightTournoi.clear();
     bot.numersoloturtlefightmax = 0;
+  },
+
+  setduo : function (bot,ops,message) {
+    const inscriptionsolo = "488462538283941910";
+    bot.channels.get(inscriptionsolo).setName("🌀inscription-duo-on");
+
+    try{
+
+        roletournoi =  message.guild.createRole({
+          name: "JOUEUR TOURNOIS",
+          color: "#00ff00",
+          permissions:[]
+        })
+      }catch(e){
+        console.log(e.stack);
+
+    }
+
+    let roltournoi = message.guild.roles.find(`name`, "JOUEUR TOURNOIS");
+
+    roltournoi.setMentionable(true, 'Role needs to be pinged')
+    .then(updated => console.log(`Role mentionable: ${updated.mentionable}`))
+    .catch(console.error);
+
+    //ROLE TOURNOI UPDATE POSITION 28
+    roltournoi.setPosition(28).then(updated => console.log(`Role position: ${updated.position}`))
+    .catch(console.error);
+
+    let guild = bot.guilds.get('473833367029153794')
+    let roletournoilol = guild.roles.find(`name`, "JOUEUR TOURNOIS");
+    message.member.addRole(roletournoilol.id);
+  },
+
+  clearduo : function (bot,ops, message) {
+
+    let guild = bot.guilds.get('473833367029153794');
+    const inscriptionsolo = "488462538283941910";
+    bot.channels.get(inscriptionsolo).setName("🌀inscription-duo-on");
+
+    const equipeinscrite = message.member.guild.channels.find('name', '🚻equipe-inscrite');
+    const inscriptionsoloedt = message.member.guild.channels.find('id', '488462538283941910');
+    equipeinscrite.bulkDelete(20);
+    inscriptionsoloedt.bulkDelete(30);
+
+
+    //ROLE JOUEUR TOURNOI DELETE
+    let joueurtournoi = guild.roles.find(`name`, "JOUEUR TOURNOIS");
+
+        joueurtournoi.delete('delete role')
+        .then(deleted => console.log(`Deleted role ${deleted.name}`))
+        .catch(console.error);*/
+
+        //PERMISSION ASCALON ROLE | SEND MESSAGE  : false
+
+        /*
+        var inscriptionChannel = "488462538283941910";
+    try {
+          let muterole = guild.roles.find(`name`, "💧 Ascalon 💧");
+
+          inscriptionChannel.overwritePermissions(muterole, {
+          SEND_MESSAGES: false
+        });
+
+      } catch(e){
+        console.log(e.stack);
+      }
+
+
+    const poule1 = "501124673354858516";
+    const poule2 = "502944251026472970";
+    const poule3 = "502945786028490753";
+    const poule4 = "501124944885710859";
+    const poule5 = "502945846493446156";
+    const poule6 = "502945957705547791";
+    const poule7 = "502946007634673666";
+    const poule8 = "502946036428439572";
+    const poule9 = "502946085145149464";
+    const poule10 = "502946189499432971";
+    const poule11 = "502946284064342026";
+    const poule12 = "502946333045424134"
+    const poule13 = "502946388686929920";
+    const poule14 = "502946460279635988";
+    const poule15 = "502946556186722306";
+    const poule16 = "502946621332520981"
+
+    bot.channels.get(poule1).setName("Equipe 1 -");
+    bot.channels.get(poule2).setName("Equipe 2 -");
+    bot.channels.get(poule3).setName("Equipe 3 -");
+    bot.channels.get(poule4).setName("Equipe 4 -");
+    bot.channels.get(poule5).setName("Equipe 5 -");
+    bot.channels.get(poule6).setName("Equipe 6 -");
+
+    bot.channels.get(poule7).setName("Equipe 7 -");
+    bot.channels.get(poule8).setName("Equipe 8 -");
+    bot.channels.get(poule9).setName("Equipe 9 -");
+    bot.channels.get(poule10).setName("Equipe 10 -");
+    bot.channels.get(poule11).setName("Equipe 11 -");
+    bot.channels.get(poule12).setName("Equipe 12 -");
+
+    bot.channels.get(poule13).setName("Equipe 13 -");
+    bot.channels.get(poule14).setName("Equipe 14 -");
+    bot.channels.get(poule15).setName("Equipe 15 -");
+    bot.channels.get(poule16).setName("Equipe 16 -");
+
+
+
   },
 
 
