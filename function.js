@@ -386,7 +386,7 @@ var inscriptionChannel = "511210802712412170";
 
         //PERMISSION ASCALON ROLE | SEND MESSAGE  : false
 
-        /*
+        
         var inscriptionChannel = "488462538283941910";
     try {
           let muterole = guild.roles.find(`name`, "💧 Ascalon 💧");
