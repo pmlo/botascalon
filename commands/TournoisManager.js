@@ -41,8 +41,7 @@ four (duo)
           var sizeMax = args[0];
           bot.numbersolomax = sizeMax;
           tools.setsolo(sizeMax, bot);
-        }).catch(err -> {
-          console.log(err);
+        });
 
         break;
       }
