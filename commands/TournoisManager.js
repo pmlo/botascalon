@@ -26,7 +26,7 @@ const embed = new Discord.RichEmbed()
       const reaction = collected.first();
 
       switch (reaction.emoji.name) {
-        case '👍':
+        case 'thumbsup':
         msg.channel.awaitMessage(filter, {
           max: 1,
           time: 10000
