@@ -6,15 +6,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
 'four'].includes(reaction.emoji.name) && user.id == message.author.id;
 
 const embed = new Discord.RichEmbed()
-.setTitle('Tournois')
-.setDescription(`
-
-one (solo)
-two (solo buildfight)
-three (solo turtle fight)
-four (duo)
-
-  `)
+  .setTitle('Tournois')
   .setColor(0xdd9323)
   .setFooter(`ID : ${message.author.id}`);
 
