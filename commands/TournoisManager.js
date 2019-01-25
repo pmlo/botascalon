@@ -17,7 +17,7 @@ const embed = new Discord.RichEmbed()
     msg.react(':three:');
     msg.react(':four:');
 
-    msg.awaitReaction(filter,{
+    msg.awaitReactions(filter,{
       max: 1,
       time: 30000,
       errors: ['time']
