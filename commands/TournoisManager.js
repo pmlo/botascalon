@@ -22,17 +22,17 @@ const embed = new Discord.RichEmbed()
       time: 30000,
       errors: ['time']
     }).then(collected => {
+      message.channel.send("check 2");
       const reaction = collected.first();
 
       switch (reaction.emoji.name) {
         case '👍':
-        message.channel.awaitMessage(filter, {
+        msg.channel.awaitMessage(filter, {
           max: 1,
           time: 10000
         }).then(collected => {
-          var sizeMax = args[0];
-          bot.numbersolomax = sizeMax;
-          tools.setsolo(sizeMax, bot);
+          message.channel.send("check 2");
+
         });
 
         break;
