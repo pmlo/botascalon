@@ -20,10 +20,10 @@ four (duo)
 
   message.channel.send(embed).then(msg => {
 
-    await msg.react('one');
-    await msg.react('two');
-    await msg.react('three');
-    await mdg.react('four');
+    msg.react('one');
+    msg.react('two');
+    msg.react('three');
+    mdg.react('four');
 
     msg.awaitReaction(filter,{
       max: 1,
