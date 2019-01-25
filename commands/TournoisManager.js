@@ -15,7 +15,7 @@ const embed = new Discord.RichEmbed()
     msg.react('one');
     msg.react('two');
     msg.react('three');
-    mdg.react('four');
+    msg.react('four');
 
     msg.awaitReaction(filter,{
       max: 1,
