@@ -12,10 +12,10 @@ const embed = new Discord.RichEmbed()
 
   message.channel.send(embed).then(msg => {
 
-    msg.react(':one:');
-    msg.react(':two:');
-    msg.react(':three:');
-    msg.react(':four:');
+    msg.react('1️⃣');
+    msg.react('2️⃣');
+    msg.react('3️⃣');
+    msg.react('4️⃣');
 
     msg.awaitReactions(filter,{
       max: 1,
@@ -25,7 +25,7 @@ const embed = new Discord.RichEmbed()
       const reaction = collected.first();
 
       switch (reaction.emoji.name) {
-        case 'one':
+        case '1️⃣':
         message.channel.awaitMessage(filter, {
           max: 1,
           time: 10000
