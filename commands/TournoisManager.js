@@ -12,10 +12,10 @@ const embed = new Discord.RichEmbed()
 
   message.channel.send(embed).then(msg => {
 
-    msg.react('one');
-    msg.react('two');
-    msg.react('three');
-    msg.react('four');
+    msg.react(':one:');
+    msg.react(':two:');
+    msg.react(':three:');
+    msg.react(':four:');
 
     msg.awaitReaction(filter,{
       max: 1,
