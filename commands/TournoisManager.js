@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   const filter = (reaction, user) => ['one', 'two','three',
 'four'].includes(reaction.emoji.name) && user.id == message.author.id;
 
-const embed = new RichEmbed()
+const embed = new Discord.RichEmbed()
 .setTitle('Tournois')
 .setDescription(`
 

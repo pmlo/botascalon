@@ -86,7 +86,6 @@ var channelRec = new Map();
 
  bot.on("ready", async () => {
    console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-   console.log(`${bot.guilds.forEach()}`);
 
    //bot.user.setActivity("Obéir à mon maître", {type: "WATCHING"});
 
