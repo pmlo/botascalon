@@ -132,14 +132,14 @@ var channelRec = new Map();
 bot.on('guildMemberAdd', member => {
 
     const joinChannel = member.guild.channels.find('name', '👐bienvenue');
-    //joinChannel.send(`Bienvenue ${member.user}, avant de te divertir sur **ASCALON** je t'invite à lire le règlement . Have Fun🎉🤗 !`);
+    joinChannel.send(`Bienvenue ${member.user}, avant de te divertir sur **ASCALON** je t'invite à lire le règlement . Have Fun🎉🤗 !`);
 
-    let embed = new Discord.RichEmbed()
+    /*let embed = new Discord.RichEmbed()
         .setColor('#33cc33')
-        .setDescription('Bienvenue ' + member.user + ", avant de te divertir sur ASCALON je t'invite à lire le règlement . Have Fun🎉🤗 !")
+        .setDescription('Bienvenue ' + member.user.name + ", avant de te divertir sur ASCALON je t'invite à lire le règlement . Have Fun🎉🤗 !")
         .setFooter('Nous sommes désormais ' + member.guild.memberCount)
 
-        joinChannel.send(embed);
+        joinChannel.send(embed);*/
 
     bot.channels.get(serverStats.totalUsersID).setName(`Total Users : ${member.guild.memberCount}`); // total users
     bot.channels.get(serverStats.memberCountID).setName(`Member Count : ${member.guild.members.filter(m => !m.user.bot).size}`); // total members (not inscued bot)
