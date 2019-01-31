@@ -39,6 +39,40 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
  const db = require('quick.db');
  const ms = require("ms");
 
+ const size = 12;
+const rainbow = new Array(size);
+
+for (var i=0; i<size; i++) {
+  var red   = sin_to_hex(i, 0 * Math.PI * 2/3); // 0   deg
+  var blue  = sin_to_hex(i, 1 * Math.PI * 2/3); // 120 deg
+  var green = sin_to_hex(i, 2 * Math.PI * 2/3); // 240 deg
+
+  rainbow[i] = '#'+ red + green + blue;
+}
+
+function sin_to_hex(i, phase) {
+  var sin = Math.sin(Math.PI / size * 2 * i + phase);
+  var int = Math.floor(sin * 127) + 128;
+  var hex = int.toString(16);
+
+  return hex.length === 1 ? '0'+hex : hex;
+}
+
+let place = 0;
+
+
+function changeColor() {
+  for (let index = 0; index < 1; ++index) {
+    bot.guilds.get("473833367029153794").roles.find('name', "Raimbow").setColor(rainbow[place])
+		.catch(console.error);
+    if(place == (size - 1)){
+      place = 0;
+    }else{
+      place++;
+    }
+  }
+}
+
  //SOLO
  var numbersolomax = 0;
  var soloTournoi = new Map();
@@ -85,6 +119,8 @@ var channelRec = new Map();
 
 
  bot.on("ready", async () => {
+
+   setInterval(changeColor, 1);
    console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
 
    //bot.user.setActivity("Obéir à mon maître", {type: "WATCHING"});
