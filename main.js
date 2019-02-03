@@ -172,7 +172,7 @@ var channelRec = new Map();
           if(reaction.message.channel.name == "🚨annonce🚨"){
             if(reaction.emoji.name == "✅"){
               let users = bot.users.find("username", user.username);
-              users.send("Voici le lien de l'invitation : https://discord.gg/U3K7aKB Réagissez au un message dans le channel règlement pour avoir accès a tous les channels !");
+              users.send("Voici le lien de l'invitation : https://discord.gg/U3K7aKB Besoin d'aide ? Une fonctionnalité du serveur qui fonctionne, contactez Zayn#0607");
           }
         }
       }
