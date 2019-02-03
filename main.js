@@ -165,6 +165,19 @@ var channelRec = new Map();
 
  });
 
+ bot.on('messageReactionAdd', (reaction, user) => {
+
+        if (user.id !== bot.user.id) {
+
+          if(reaction.message.channel.name == "🚨annonce🚨"){
+            if(reaction.emoji.name == "✅"){
+              let users = bot.users.find("username", user.username);
+              users.send("Voici le lien de l'invitation : https://discord.gg/U3K7aKB Réagissez au un message dans le channel règlement pour avoir accès a tous les channels !");
+          }
+        }
+      }
+    });
+
 bot.on('guildMemberAdd', member => {
 
     const joinChannel = member.guild.channels.find('name', '👐bienvenue');
