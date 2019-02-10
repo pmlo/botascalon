@@ -165,7 +165,15 @@ var channelRec = new Map();
 
  });
 
- bot.on('messageReactionAdd', (reaction, user) => {
+ bot.on("message", async message => {
+  if(message.channel.name == "🛒-boutique") {
+    let role = message.guild.roles.find(r => r.name === "Notif Boutique");
+    message.send("-" + role);
+  }
+});
+
+
+ /*bot.on('messageReactionAdd', (reaction, user) => {
 
         if (user.id !== bot.user.id) {
 
@@ -176,7 +184,7 @@ var channelRec = new Map();
           }
         }
       }
-    });
+    });*/
 
 bot.on('guildMemberAdd', member => {
 
