@@ -165,12 +165,6 @@ var channelRec = new Map();
 
  });
 
- bot.on("message", async message => {
-  if(message.channel.name == "🛒-boutique") {
-    let role = message.guild.roles.find(r => r.name === "Notif Boutique");
-    message.channel.send("-" + role);
-  }
-});
 
 
  /*bot.on('messageReactionAdd', (reaction, user) => {
