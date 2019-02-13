@@ -104,7 +104,9 @@ function changeColor() {
 
    //bot.user.setActivity("Obéir à mon maître", {type: "WATCHING"});
 
-   bot.user.setGame("Mp for support ! ", 'https://twitter.com/ZaynMC_YT');
+   client.user.setPresence({ game: { name: '@ZaynMC_YT' }, status: 'idle' })
+  .then(console.log)
+  .catch(console.error);
 
    //bot.user.setGame("on SourceCade!");
  });
