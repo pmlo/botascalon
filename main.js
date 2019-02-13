@@ -104,7 +104,7 @@ function changeColor() {
 
    //bot.user.setActivity("Obéir à mon maître", {type: "WATCHING"});
 
-   bot.user.setActivity('@ZaynMC_YT', {type: "WATCHING"});
+   bot.user.setActivity('@ZaynMC_YT', {type: "LISTENING"});
 
    bot.user.setGame("@ZaynMC_YT");
  });
