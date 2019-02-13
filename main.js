@@ -60,7 +60,6 @@ function sin_to_hex(i, phase) {
 
 let place = 0;
 
-
 function changeColor() {
   for (let index = 0; index < 1; ++index) {
     bot.guilds.get("473833367029153794").roles.find('name', "Raimbow").setColor(rainbow[place])
@@ -72,26 +71,6 @@ function changeColor() {
     }
   }
 }
-
- //SOLO
- var numbersolomax = 0;
- var soloTournoi = new Map();
-
- //SOLO setbuildfightsolo
- var numersolobuildfightmax = 0;
- var soloBuildFightTournoi = new Map();
-
- //SOLO TURTLE fight
- var numersoloturtlefightmax = 0;
- var soloTurtleFightTournoi = new Map();
-
-//DM MESSAGE
-var dmMessage = new Map();
-var idDm = 0;
-
-//CHANNEL RECRUTEMENT
-var channelRec = new Map();
-
  const serverStats = {
    guildID: '511250353430462465',
    totalUsersID: '511251090097045526',
@@ -125,16 +104,7 @@ var channelRec = new Map();
 
    //bot.user.setActivity("Obéir à mon maître", {type: "WATCHING"});
 
-
-   soloNumber = 0;
-   numbersolomax = 0;
-   numersolobuildfightmax = 0;
-   numersoloturtlefightmax = 0;
-   soloTournoi.clear();
-   soloBuildFightTournoi.clear();
-   soloTurtleFightTournoi.clear();
-
-
+   client.user.setGame("Mp for support ! ", 'https://twitter.com/ZaynMC_YT');
 
    //bot.user.setGame("on SourceCade!");
  });
