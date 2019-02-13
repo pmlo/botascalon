@@ -125,6 +125,45 @@ function changeColor() {
 
  });
 
+ bot.on('messageReactionAdd', (reaction, user) => {
+
+  if (user.id !== bot.user.id) {
+
+    if(reaction.message.channel.name == "🌀annonce-tournoi-solo"){
+      if(reaction.emoji.name == "✅"){
+        let users = bot.users.find("username", user.username);
+        if(reaction.count > 17) {
+          reaction.remove(user);
+          users.send("Le tournoi est complet !");
+          return;
+        }
+        console.log('ADD TOURNOI TO ' + user.username);
+        let role = reaction.message.guild.roles.find(r => r.name === "JOUEUR TOURNOIS");
+
+        role.setMentionable(true, 'Role needs to be pinged')
+        .then(updated => console.log(`Role mentionable: ${updated.mentionable}`))
+        .catch(console.error);
+
+        // Set the position of the role
+        role.setPosition(8)
+        .then(updated => console.log(`Role position: ${updated.position}`))
+        .catch(console.error);
+
+          console.log(`Nope, noppers, nadda.`);
+          let id = users.id;
+          let member = reaction.message.member.guild.members.get(id);
+          member.addRole(role);
+          users.send(`Bonjour ${users} !\n\nVotre inscription au tournoi solo à été bien pris en compte !`);
+
+          const joinChannel = message.member.guild.channels.find('name', 'log-bot');
+    joinChannel.send(`[LOG] USER ${user.username} vient de s'inscrire au tournoi ! ` + reaction.count - 1);
+
+      }
+    }
+}
+});
+
+
 bot.on('guildMemberAdd', member => {
 
     const joinChannel = member.guild.channels.find('name', '👐bienvenue');
