@@ -14,7 +14,7 @@ console.log(e.stack);
 }
 
   try {
-            let channel = bot.channels.find('name', 'SOLO TOURNOI');
+            let channel = bot.channels.find('name', '🌀inscription-solo-off');
             let ascalonall = message.guild.roles.find(`name`, "JOUEUR TOURNOIS");
 
 
@@ -50,7 +50,7 @@ console.log(e.stack);
 
         let heure = collected1.first().content;
 
-      const solotournoi = message.member.guild.channels.find('name', '🌀annonce-tournoi-solo');
+      const solotournoi = message.member.guild.channels.find('name', '🌀inscription-solo-off');
       solotournoi.send(`📣 ANNONCE TOURNOI 📣\nMode : **SOLO**\nPlatforme : **TOUS [Pc, Xbox, PS4]**\nDate du tournoi : ${date} à ${heure}\n \nComment s'inscire ? Il suffit juste de réagir avec cette réaction ✅ au message !`).then(msg => {
         msg.react("✅");
       });
