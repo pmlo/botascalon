@@ -105,7 +105,7 @@ function changeColor() {
    //bot.user.setActivity("Obéir à mon maître", {type: "WATCHING"});
 
    bot.user.setGame('@ZaynMC_YT', {type: "WATCHING"});
-   bot.user.setStatus('idle');
+   bot.user.setStatus('dnd');
 
    //bot.user.setGame("on SourceCade!");
  });
