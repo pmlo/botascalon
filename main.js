@@ -153,7 +153,7 @@ bot.on("message", async message => {
 
   //CHANNEL RECRUTEMENT TEAM
   if(message.channel.id == "501869668919803904") {
-    if(message.member.hasPermission("ADMINISTRATOR")) {
+    if(message.member.hasPermissions("ADMINISTRATOR")) {
         return;
     }
 
