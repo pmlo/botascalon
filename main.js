@@ -104,7 +104,7 @@ function changeColor() {
 
    //bot.user.setActivity("Obéir à mon maître", {type: "WATCHING"});
 
-   client.user.setPresence({ game: { name: '@ZaynMC_YT' }, status: 'idle' })
+   bot.user.setPresence({ game: { name: '@ZaynMC_YT' }, status: 'idle' })
   .then(console.log)
   .catch(console.error);
 
