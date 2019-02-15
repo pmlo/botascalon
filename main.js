@@ -163,6 +163,29 @@ function changeColor() {
 }
 });
 
+bot.on('messageReactionAdd', (reaction, user) => {
+
+  if (user.id !== bot.user.id) {
+
+    if(reaction.message.channel.name == "🌀inscription-solo-off"){
+      if(reaction.emoji.name == "✅"){
+        let users = bot.users.find("username", user.username);
+        console.log('REMOVE TOURNOI TO ' + user.username);
+        let role = reaction.message.guild.roles.find(r => r.name === "JOUEUR TOURNOIS");
+
+          console.log(`Nope, noppers, nadda.`);
+          let id = users.id;
+          let member = reaction.message.member.guild.members.get(id);
+          member.removeRole(role);
+          users.send(`Bonjour ${users} !\n\nVotre désinscription au tournoi solo à été bien pris en compte !`);
+
+          const joinChannel = bot.channels.find('name', 'log-bot');
+        joinChannel.send(`[LOG] USER ${users} vient de désinscrire au tournoi ! `);
+
+      }
+    }
+}
+});
 
 bot.on('guildMemberAdd', member => {
 
