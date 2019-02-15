@@ -156,7 +156,7 @@ function changeColor() {
           users.send(`Bonjour ${users} !\n\nVotre inscription au tournoi solo à été bien pris en compte !`);
 
           const joinChannel = bot.channels.find('name', 'log-bot');
-        joinChannel.send(`[LOG] USER ${users} vient de s'inscrire au tournoi ! ` + reaction.count - 1);
+        joinChannel.send(`[LOG] USER ${users} vient de s'inscrire au tournoi ! `);
 
       }
     }
