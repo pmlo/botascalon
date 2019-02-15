@@ -13,20 +13,6 @@ console.log(e.stack);
 
 }
 
-  try {
-            let channel = bot.channels.find('name', '🌀inscription-solo-off');
-            let ascalonall = message.guild.roles.find(`name`, "JOUEUR TOURNOIS");
-
-
-            channel.overwritePermissions(message.guild.roles.find(`name`, "JOUEUR TOURNOIS"), {
-              SEND_MESSAGES: false
-            })
-            .then(updated => console.log(updated.permissionOverwrites.get(message.author.id)))
-            .catch(console.error);
-} catch(e){
-          console.log(e.stack);
-        }
-
   const filter = m => m.author.id == message.author.id;
   message.reply("Choissez la date (exemple : 01/01/2000)").then(r => delete(10000));
   message.channel.awaitMessages(filter, {max: 1,time: 10000})
