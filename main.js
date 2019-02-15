@@ -155,8 +155,8 @@ function changeColor() {
           member.addRole(role);
           users.send(`Bonjour ${users} !\n\nVotre inscription au tournoi solo à été bien pris en compte !`);
 
-          const joinChannel = bot.channels.find('name', '🌀inscription-solo-off');
-        joinChannel.send(`[LOG] USER ${user.username} vient de s'inscrire au tournoi ! ` + reaction.count - 1);
+          const joinChannel = bot.channels.find('name', 'log-bot');
+        joinChannel.send(`[LOG] USER ${users} vient de s'inscrire au tournoi ! ` + reaction.count - 1);
 
       }
     }
