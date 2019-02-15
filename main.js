@@ -129,7 +129,7 @@ function changeColor() {
 
   if (user.id !== bot.user.id) {
 
-    if(reaction.message.channel.name == "🌀annonce-tournoi-solo"){
+    if(reaction.message.channel.name == "🌀inscription-solo-off"){
       if(reaction.emoji.name == "✅"){
         let users = bot.users.find("username", user.username);
         if(reaction.count > 17) {
