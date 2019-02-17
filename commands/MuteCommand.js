@@ -43,11 +43,41 @@ module.exports.run = async (bot, message, args, ops, tools) => {
 
   await(tomute.addRole(muterole.id));
   tools.log('PLAYER MUTED ' + message.author.name, message);
-  message.reply(`<@${tomute.id}> à été mute pour ${ms(ms(mutetime))}`).then(message => message.delete(5000));;
+  //message.reply(`<@${tomute.id}> à été mute pour ${ms(ms(mutetime))}`).then(message => message.delete(5000));;
+
+  message.channel.send({embed: {
+    color: 3447003,
+    author: {
+      name: "ASCALON BOT",
+      icon_url: "https://i.imgur.com/r1T3PbX.png"
+    },
+    title: `Le joueur ${tomute.user.username} est mute pour ${ms(ms(mutetime))}`,
+    timestamp: new Date(),
+    footer: {
+      icon_url: "https://i.imgur.com/318H4Xw.png",
+      text: "© Created by Zayn#0607"
+    }
+  }
+}).then(message => message.delete(30000));
 
   setTimeout(function(){
     tomute.removeRole(muterole.id);
-    message.channel.send(`<@${tomute.id}> est unmute !`).then(message => message.delete(5000));;
+    //message.channel.send(`<@${tomute.id}> est unmute !`).then(message => message.delete(5000));;
+
+    message.channel.send({embed: {
+      color: 3447003,
+      author: {
+        name: "ASCALON BOT",
+        icon_url: "https://i.imgur.com/r1T3PbX.png"
+      },
+      title: `Le joueur ${tomute.user.username} est unmute !`,
+      timestamp: new Date(),
+      footer: {
+        icon_url: "https://i.imgur.com/318H4Xw.png",
+        text: "© Created by Zayn#0607"
+      }
+    }
+  }).then(message => message.delete(30000));
   }, ms(mutetime));
 
 

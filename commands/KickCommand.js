@@ -42,6 +42,21 @@ module.exports.run = async (bot, message, args, ops) => {
     const logChannel = message.member.guild.channels.find('name', 'history-bot');
     logChannel.send(`[LOG] BOT KICK ${rUser} ${message.author}`);
 
+    message.channel.send({embed: {
+        color: 3447003,
+        author: {
+          name: "ASCALON BOT",
+          icon_url: "https://i.imgur.com/r1T3PbX.png"
+        },
+        title: `Le joueur ${tomute.user.username} est kick !`,
+        timestamp: new Date(),
+        footer: {
+          icon_url: "https://i.imgur.com/318H4Xw.png",
+          text: "© Created by Zayn#0607"
+        }
+      }
+    }).then(message => message.delete(30000));
+
 
     let kickchannel = message.guild.channels.find(`name`, "history-bot");
     if(!kickchannel) return;
