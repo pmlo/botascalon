@@ -6,10 +6,10 @@ module.exports.run = async (bot, message, args, ops) => {
 
     const embed = new Discord.RichEmbed()
   .setTitle("Commands du bot")
-  .setAuthor("Zayn", "https://imgur.com/1bzA7Ht.png")
+  .setAuthor("Zayn", "https://i.imgur.com/318H4Xw.png")
 
   .setColor(0x00AE86)
-  .setFooter("Créer par Zayn", "https://imgur.com/1bzA7Ht.png")
+  .setFooter("Créer par Zayn", "https://i.imgur.com/318H4Xw.png")
   .setThumbnail("https://i.imgur.com/3ubvmFE.png")
 
   .setTimestamp()
