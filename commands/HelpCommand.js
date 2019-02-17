@@ -6,11 +6,11 @@ module.exports.run = async (bot, message, args, ops) => {
 
     const embed = new Discord.RichEmbed()
   .setTitle("Commands du bot")
-  .setAuthor("Zayn", "https://imgur.com/a/piqpgDh")
+  .setAuthor("Zayn", "./images/author_images.png")
 
   .setColor(0x00AE86)
-  .setFooter("Créer par Zayn", "https://imgur.com/a/piqpgDh")
-  .setThumbnail("https://imgur.com/a/Dm3s5x8")
+  .setFooter("Créer par Zayn", "./images/author_images.png")
+  .setThumbnail("./images/pp.png")
 
   .setTimestamp()
   .addField("a!ban @User Raison","Cette commande permet de ban un joueur du serveur.", true)
