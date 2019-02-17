@@ -35,18 +35,13 @@ var self = module.exports = {
     },
     store: (channel) => {
 
-        self.fortniteAPI.login().then(() => {
-            self.fortniteAPI
-                .getStore("fr")
-                .then(store => {
-                    store.storefronts.forEach(function(storefront) {
-                        if(storefront.name == "BRDailyStorefront") //|| storefront.name == "BRDailyStorefront"
-                            channel.send("" + storefront.catalogEntries[0]);
-                    });
-                })
-                .catch(err => {
-                    console.log(err);
-                });
+        self.fortniteAPI
+        .getStore("fr")
+        .then(store => {
+            console.log(store);
+        })
+        .catch(err => {
+            console.log(err);
         });
     }
 
