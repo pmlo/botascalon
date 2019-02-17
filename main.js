@@ -211,7 +211,11 @@ bot.on('guildMemberRemove', member => {
 bot.on("message", async message => {
 
   if(message.content == "store svp") {
-    fortnite.store(message.channel);
+    const  fortnite  =  require("fortnite-9812")
+ 
+fortnite.brNews()
+.then(news  =>  console.log(news))
+.catch(err  =>  console.eror(err))
   }
 
   let recrutementteam = [`Nom de l'équipe`, 'Plateforme','Âge minimum','Rôles disponibles','Objectif','K/D minimum', 'Nombre de top1 minimum']
