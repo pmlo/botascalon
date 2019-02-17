@@ -90,8 +90,8 @@ module.exports.run = async (bot, message, args, ops, tools) => {
     let banchannel = message.guild.channels.find('name', 'sanction_modération');
     let banchannelsanction = message.guild.channels.find(`id`, "509790654113644571");
 
-    const joinChannel = message.member.guild.channels.find('name', 'history-bot');
-  joinChannel.send({embed: {
+    const log = message.member.guild.channels.find('name', 'history-bot');
+    log.send({embed: {
     color: 3447003,
     author: {
       name: "ASCALON BOT",
