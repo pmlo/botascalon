@@ -209,15 +209,6 @@ bot.on('guildMemberRemove', member => {
 
 bot.on("message", async message => {
 
-  if(message.content == "store svp") {
-    const  fortnite  =  require("fortnite-9812")
-
-     
-    fortnite.shop("fr")
-    .then(shop  =>  console.error(shop))
-    .catch(err  =>  console.error(err))
-  }
-
   let recrutementteam = [`Nom de l'équipe`, 'Plateforme','Âge minimum','Rôles disponibles','Objectif','K/D minimum', 'Nombre de top1 minimum']
   let noFound = false;
 
