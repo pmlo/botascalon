@@ -81,8 +81,8 @@ module.exports.run = async (bot, message, args, ops, tools) => {
     tomute.removeRole(muterole.id);
     //message.channel.send(`<@${tomute.id}> est unmute !`).then(message => message.delete(5000));;
 
-    const joinChannel = message.member.guild.channels.find('name', 'history-bot');
-  joinChannel.send({embed: {
+    const log = message.member.guild.channels.find('name', 'history-bot');
+    log.send({embed: {
     color: 3447003,
     author: {
       name: "ASCALON BOT",
