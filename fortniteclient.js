@@ -1,6 +1,7 @@
 
 const email = process.env.email;
 const password = process.env.password;
+const Fortnite = require("fortnite-api");
 
 var self = module.exports = {
 
