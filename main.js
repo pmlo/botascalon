@@ -211,10 +211,10 @@ bot.on("message", async message => {
 
   if(message.content == "store svp") {
     const  fortnite  =  require("fortnite-9812")
-    var  lang  =  "en"// it can be one of ["en", "de"]
+
      
-    fortnite.shop(lang)
-    .then(shop  =>  message.channel.send(shop))
+    fortnite.shop("fr")
+    .then(shop  =>  console.error(shop))
     .catch(err  =>  console.error(err))
   }
 
