@@ -20,29 +20,13 @@ var self = module.exports = {
 
         self.fortniteAPI.login().then(() => {
             self.fortniteAPI
-                .getFortniteNews("fr")
-                .then(news => {
-                    var newsArr = [];
-                    for (var i = 0, len = news.br.length; i < len; i++) {
-                        newsArr.push([news.br[i].title, news.br[i].body]);
-                    }
-                    channel.send({embed: Embed.formatNews(newsArr)});
-                })
-                .catch(err => {
-                    console.log(err);
-                });
-        });
-    },
-    store: (channel) => {
-
-        self.fortniteAPI
-        .getStore("fr")
-        .then(store => {
-            console.log(store);
-        })
-        .catch(err => {
-            console.log(err);
-        });
+            .getFortniteNews("en")
+            .then(news => {
+                console.log(news);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }
 
 }
