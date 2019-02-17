@@ -19,7 +19,9 @@ module.exports.run = async (bot, message, args, ops) => {
 
   .addField("a!mute @User 1s/m/h/d", "Cette command permet de mute un joueur sur un temps défini, il est impossible de mute permanent quelqu'un.", true)
 
-  .addField("a!unmute @User", "Cette commande permet d'unmute un joueur, il est impossible d'unmute une personne non mute.")
+  .addField("a!unmute @User", "Cette commande permet d'unmute un joueur, il est impossible d'unmute une personne non mute.", true)
+
+  .addField("a!sondage <votre question>", "Cette commande permet de faire un sondage a choix multiples (2).", true)
 
   .addBlankField(true)
  

@@ -7,15 +7,16 @@ module.exports.run = async (bot, message, args, ops) => {
         return;
     }
 
+    const logChannel = message.member.guild.channels.find('name', 'history-bot');
+    logChannel.send(`[LOG] SAY MESSAGE BY ${message.author.name}`);
+
     let arg = message.content.split(" ").slice(1);
     let botmessage = arg.join(" ");
 
     message.delete();
     message.channel.send(botmessage);
 
-    const logChannel = message.member.guild.channels.find('name', 'history-bot');
-    logChannel.send(`[LOG] SAY MESSAGE BY ${message.author.name}`);
-
+    
 }
 
 module.exports.help = {
