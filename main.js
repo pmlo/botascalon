@@ -290,7 +290,7 @@ bot.on("message", async message => {
 
       try {
             let ascalonall = guild.roles.find(`name`, "💧 Ascalon 💧");
-            let moderationrole = guild.roles.find(`name`, "🌋MODERATEUR🌋");
+            let moderationrole = guild.roles.find(`name`, "🌀 Modérateur 🌀");
             let respmodorole = guild.roles.find(`name`, "staff");
 
 
