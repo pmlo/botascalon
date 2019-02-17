@@ -211,10 +211,11 @@ bot.on("message", async message => {
 
   if(message.content == "store svp") {
     const  fortnite  =  require("fortnite-9812")
- 
-fortnite.brNews()
-.then(news  =>  console.log(news))
-.catch(err  =>  console.eror(err))
+    var  lang  =  "en"// it can be one of ["en", "de"]
+     
+    fortnite.shop(lang)
+    .then(shop  =>  message.channel.send(shop))
+    .catch(err  =>  console.error(err))
   }
 
   let recrutementteam = [`Nom de l'équipe`, 'Plateforme','Âge minimum','Rôles disponibles','Objectif','K/D minimum', 'Nombre de top1 minimum']
