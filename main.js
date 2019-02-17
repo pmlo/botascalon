@@ -38,6 +38,7 @@ MANAGE_EMOJIS *	0x40000000	Allows management and editing of emojis
  const tools = require('./function.js');
  const db = require('quick.db');
  const ms = require("ms");
+ var fortnite = require('./fortniteclient');
 
  const size = 12;
 const rainbow = new Array(size);
@@ -208,6 +209,10 @@ bot.on('guildMemberRemove', member => {
 });
 
 bot.on("message", async message => {
+
+  if(message.content == "store svp") {
+    fortnite.store();
+  }
 
   let recrutementteam = [`Nom de l'équipe`, 'Plateforme','Âge minimum','Rôles disponibles','Objectif','K/D minimum', 'Nombre de top1 minimum']
   let noFound = false;
