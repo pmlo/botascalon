@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
   .setColor(0x00AE86)
   .setFooter("Créer par Zayn", "./images/author_images.png")
-  .setThumbnail("./images/pp.png")
+  .setThumbnail("https://imgur.com/a/nBaORZa.png")
 
   .setTimestamp()
   .addField("a!ban @User Raison","Cette commande permet de ban un joueur du serveur.", true)
