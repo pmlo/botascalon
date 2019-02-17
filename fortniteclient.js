@@ -33,15 +33,15 @@ var self = module.exports = {
                 });
         });
     },
-    store: () => {
+    store: (channel) => {
 
         self.fortniteAPI.login().then(() => {
             self.fortniteAPI
                 .getStore("fr")
                 .then(store => {
                     store.storefronts.forEach(function(storefront) {
-                        if(storefront.name == "BRWeeklyStorefront" ) //|| storefront.name == "BRDailyStorefront"
-                            console.log(storefront.catalogEntries[0]);
+                        if(storefront.name == "BRDailyStorefront") //|| storefront.name == "BRDailyStorefront"
+                            channel.send("" + storefront.catalogEntries[0]);
                     });
                 })
                 .catch(err => {
