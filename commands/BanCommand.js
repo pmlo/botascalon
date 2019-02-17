@@ -97,7 +97,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
       name: "ASCALON BOT",
       icon_url: "https://i.imgur.com/r1T3PbX.png"
     },
-    title: `Le joueur ${rUser} à été banni, raison ${rreason}`,
+    title: `Le joueur ${rUser.displayName} à été banni, raison ${rreason}`,
     timestamp: new Date(),
     footer: {
       icon_url: "https://i.imgur.com/318H4Xw.png",
