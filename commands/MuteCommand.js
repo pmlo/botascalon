@@ -45,6 +45,23 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   tools.log('PLAYER MUTED ' + message.author.name, message);
   //message.reply(`<@${tomute.id}> à été mute pour ${ms(ms(mutetime))}`).then(message => message.delete(5000));;
 
+  const joinChannel = message.member.guild.channels.find('name', 'history-bot');
+  joinChannel.send({embed: {
+    color: 3447003,
+    author: {
+      name: "ASCALON BOT",
+      icon_url: "https://i.imgur.com/r1T3PbX.png"
+    },
+    title: `Le joueur ${tomute.user.username} à été mute pour ${ms(ms(mutetime))}`,
+    timestamp: new Date(),
+    footer: {
+      icon_url: "https://i.imgur.com/318H4Xw.png",
+      text: "© Created by Zayn#0607"
+    }
+  }
+});
+
+
   message.channel.send({embed: {
     color: 3447003,
     author: {
@@ -63,6 +80,22 @@ module.exports.run = async (bot, message, args, ops, tools) => {
   setTimeout(function(){
     tomute.removeRole(muterole.id);
     //message.channel.send(`<@${tomute.id}> est unmute !`).then(message => message.delete(5000));;
+
+    const joinChannel = message.member.guild.channels.find('name', 'history-bot');
+  joinChannel.send({embed: {
+    color: 3447003,
+    author: {
+      name: "ASCALON BOT",
+      icon_url: "https://i.imgur.com/r1T3PbX.png"
+    },
+    title: `Le joueur ${tomute.user.username} à été unmute`,
+    timestamp: new Date(),
+    footer: {
+      icon_url: "https://i.imgur.com/318H4Xw.png",
+      text: "© Created by Zayn#0607"
+    }
+  }
+});
 
     message.channel.send({embed: {
       color: 3447003,

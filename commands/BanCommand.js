@@ -72,7 +72,7 @@ module.exports.run = async (bot, message, args, ops, tools) => {
           name: "ASCALON BOT",
           icon_url: "https://i.imgur.com/r1T3PbX.png"
         },
-        title: `Le joueur ${member.user.username} est banni, raison : ${rreason} !`,
+        title: `Le joueur ${rUser} est banni, raison : ${rreason} !`,
         timestamp: new Date(),
         footer: {
           icon_url: "https://i.imgur.com/318H4Xw.png",
@@ -90,6 +90,22 @@ module.exports.run = async (bot, message, args, ops, tools) => {
     let banchannel = message.guild.channels.find('name', 'sanction_modération');
     let banchannelsanction = message.guild.channels.find(`id`, "509790654113644571");
 
+    const joinChannel = message.member.guild.channels.find('name', 'history-bot');
+  joinChannel.send({embed: {
+    color: 3447003,
+    author: {
+      name: "ASCALON BOT",
+      icon_url: "https://i.imgur.com/r1T3PbX.png"
+    },
+    title: `Le joueur ${rUser} à été banni, raison ${rreason}`,
+    timestamp: new Date(),
+    footer: {
+      icon_url: "https://i.imgur.com/318H4Xw.png",
+      text: "© Created by Zayn#0607"
+    }
+  }
+});
+
     if(!banchannel) return;
 
 
@@ -99,6 +115,8 @@ module.exports.run = async (bot, message, args, ops, tools) => {
     if(!banchannelsanction) return;
     message.delete();
     banchannelsanction.send(reportEmbed);
+
+
 }
 
 module.exports.help = {

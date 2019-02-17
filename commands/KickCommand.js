@@ -48,7 +48,7 @@ module.exports.run = async (bot, message, args, ops) => {
           name: "ASCALON BOT",
           icon_url: "https://i.imgur.com/r1T3PbX.png"
         },
-        title: `Le joueur ${tomute.user.username} est kick !`,
+        title: `Le joueur ${rUser} est kick !`,
         timestamp: new Date(),
         footer: {
           icon_url: "https://i.imgur.com/318H4Xw.png",

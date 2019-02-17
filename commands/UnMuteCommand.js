@@ -14,9 +14,25 @@ module.exports.run = async (bot, message, args, ops, tools) => {
     //LOG
     tools.log('CHECK COMMAND MUTE REMOVE ROLE', message);
     //SEND MESSAGE FOR VALID UNMUTE
-    message.channel.send(`<@${tomute.id}> est unmute !`).then(message => message.delete(5000));
+    //message.channel.send(`<@${tomute.id}> est unmute !`).then(message => message.delete(5000));
     //LOG
     tools.log('CHECK COMMAND MUTE SEND MESSAGE TO PLAYER', message);
+
+    const joinChannel = message.member.guild.channels.find('name', 'history-bot');
+  joinChannel.send({embed: {
+    color: 3447003,
+    author: {
+      name: "ASCALON BOT",
+      icon_url: "https://i.imgur.com/r1T3PbX.png"
+    },
+    title: `Le joueur ${tomute.user.username} à été unmute`,
+    timestamp: new Date(),
+    footer: {
+      icon_url: "https://i.imgur.com/318H4Xw.png",
+      text: "© Created by Zayn#0607"
+    }
+  }
+});
 }
 }
 
