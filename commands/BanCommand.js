@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+let _function = require("../function.js");
 
 module.exports.run = async (bot, message, args, ops, tools) => {
 
@@ -59,62 +60,15 @@ module.exports.run = async (bot, message, args, ops, tools) => {
 
     let rreason = args.join(" ").slice(22);
 
-    let reportEmbed = new Discord.RichEmbed()
-    .setDescription("Ban")
-    .setColor("#15f153")
-    .addField("Ban User", `${rUser}`)
-    .addField("Ban par", `${message.author}`)
-    .addField("Raison du ban", rreason);
-
-    message.channel.send({embed: {
-        color: 3447003,
-        author: {
-          name: "ASCALON BOT",
-          icon_url: "https://i.imgur.com/r1T3PbX.png"
-        },
-        title: `Le joueur ${rUser} est banni, raison : ${rreason} !`,
-        timestamp: new Date(),
-        footer: {
-          icon_url: "https://i.imgur.com/318H4Xw.png",
-          text: "© Created by Zayn#0607"
-        }
-      }
-    }).then(message => message.delete(30000));
-
-
     message.guild.member(member).ban(rreason);
 
-    const joinChannel = message.member.guild.channels.find('name', 'history-bot');
-    joinChannel.send(`[LOG] USER ${rUser} BANNED by ${message.author} for reason ${rreason}`);
+    //`Le joueur ${rUser.displayName} (${rUser}) à été banni par ${message.author.name}, raison ${rreason}`
 
-    let banchannel = message.guild.channels.find('name', 'sanction_modération');
-    let banchannelsanction = message.guild.channels.find(`id`, "509790654113644571");
-
-    const log = message.member.guild.channels.find('name', 'history-bot');
-    log.send({embed: {
-    color: 3447003,
-    author: {
-      name: "ASCALON BOT",
-      icon_url: "https://i.imgur.com/r1T3PbX.png"
-    },
-    title: `Le joueur ${rUser.displayName} à été banni, raison ${rreason}`,
-    timestamp: new Date(),
-    footer: {
-      icon_url: "https://i.imgur.com/318H4Xw.png",
-      text: "© Created by Zayn#0607"
-    }
-  }
-});
-
-    if(!banchannel) return;
-
+    _function.embed(`Le joueur ${rUser.displayName} (${rUser}) à été banni par ${message.author.name}, raison ${rreason}`, message.channel.name, true, 3000);
+    _function.embed(`Le joueur ${rUser.displayName} (${rUser}) à été banni par ${message.author.name}, raison ${rreason}`, "history-bot",false,0);
+    _function.embed(`Le joueur ${rUser.displayName} (${rUser}) à été banni par ${message.author.name}, raison ${rreason}`, "sanction-modération",false,0);
 
     message.delete();
-    banchannel.send(reportEmbed);
-
-    if(!banchannelsanction) return;
-    message.delete();
-    banchannelsanction.send(reportEmbed);
 
 
 }
