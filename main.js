@@ -98,14 +98,12 @@ function changeColor() {
 
  bot.on("ready", async () => {
 
-   //setInterval(changeColor, 1);
+   setInterval(changeColor, 1);
    console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
 
    //bot.user.setActivity("Obéir à mon maître", {type: "WATCHING"});
 
    bot.user.setActivity('@ZaynMC_YT', {type: "LISTENING"});
-
-   bot.user.setGame("@ZaynMC_YT");
  });
 
  bot.on("message", async message => {
