@@ -98,7 +98,7 @@ function changeColor() {
 
  bot.on("ready", async () => {
 
-   setInterval(changeColor, 1);
+   setInterval(changeColor, 60);
    console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
 
    //bot.user.setActivity("Obéir à mon maître", {type: "WATCHING"});
