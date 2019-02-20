@@ -267,7 +267,7 @@ bot.on("message", async message => {
       icon_url: "https://i.imgur.com/318H4Xw.png",
       text: "© Created by Zayn#0607"
     }
-  }
+}
 });
 
 bot.on("message", async message => {
