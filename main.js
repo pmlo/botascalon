@@ -107,7 +107,7 @@ function changeColor() {
  });
 
  bot.on("message", async message => {
-   if(message.author.bot) return;
+   //if(message.author.bot) return;
    if(message.channel.type === "dm") return;
 
     let ops = {
@@ -227,6 +227,30 @@ bot.on("message", async message => {
     }
     message.react("✅")
   }
+
+});
+
+bot.on("message", async message => {
+
+  let blacklisted = ['https', 'http', 'twitter.com', ]
+
+  let foundInText = false;
+  for(var i in blacklisted) {
+    if(message.channel.name == "🔴pub-no-discord🔴")return;
+
+    if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
+    
+  }
+
+  if (foundInText) {
+
+    message.delete();
+
+    message.channel.send(`<@${message.author.id}> Bonjour, la pub de chaîne youtube ou autre est interdit.`).then(message => message.delete(5000));
+
+    bot.guilds.get(message.guild.id).channels.get(message.channel.name).send(`a!mute @${message.author.id} 16h`);
+  }
+
 
 });
 
