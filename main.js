@@ -248,7 +248,7 @@ bot.on("message", async message => {
 
     let myRole = message.guild.roles.find(role => role.name === "🌀 Modérateur 🌀");
 
-    bot.channels.get("522503012799741971").sendMessage("Demande de mute le joueur : " + message.author.name + " **raison** : pub d'une chaine hors du channel pub no discord");
+    bot.channels.get("522503012799741971").sendMessage(`Demande de mute le joueur : <@${message.author.id}> + message.author.name + " **raison** : pub d'une chaine hors du channel pub no discord`);
     bot.channels.get("522503012799741971").sendMessage("Mention :" + myRole);
 
     message.delete();
