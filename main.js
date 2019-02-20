@@ -253,6 +253,7 @@ bot.on("message", async message => {
 
     bot.channels.get("521312274141413391").sendMessage("Mention :" + myRole);
 
+    
     const log = message.member.guild.channels.find('name', 'modération-staff');
     log.send({embed: {
     color: 3447003,
@@ -268,6 +269,8 @@ bot.on("message", async message => {
       text: "© Created by Zayn#0607"
     }
 }
+    });
+  }
 });
 
 bot.on("message", async message => {
