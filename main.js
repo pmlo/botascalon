@@ -248,10 +248,13 @@ bot.on("message", async message => {
 
     message.channel.send(`<@${message.author.id}> Bonjour, la pub de chaîne youtube ou autre est interdit.`).then(message => message.delete(5000));
 
-    bot.guilds.get(message.guild.id).channels.get(message.channel.id).send(`a!mute @${message.author.id} 16h`);
+    message.delete();
+
+    let myRole = message.guild.roles.find(role => role.name === "NotifSondages");
+
+    bot.channels.get("521312274141413391").sendMessage("Demande de mute le joueur : " + message.author.id + " raison : pub d'une chaine hors du channel pub no discord");
+    bot.channels.get("521312274141413391").sendMessage("Mention :" + myRole);
   }
-
-
 });
 
 bot.on("message", async message => {
