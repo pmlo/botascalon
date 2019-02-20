@@ -248,10 +248,25 @@ bot.on("message", async message => {
 
     let myRole = message.guild.roles.find(role => role.name === "🌀 Modérateur 🌀");
 
-    bot.channels.get("522503012799741971").sendMessage(`Demande de mute le joueur : <@${message.author.id}> + message.author.name + " **raison** : pub d'une chaine hors du channel pub no discord`);
-    bot.channels.get("522503012799741971").sendMessage("Mention :" + myRole);
+    /*bot.channels.get("522503012799741971").sendMessage(`Demande de mute le joueur : <@${message.author.id}> **raison** : pub d'une chaine hors du channel pub no discord`);
+    bot.channels.get("522503012799741971").sendMessage("Mention :" + myRole);*/
 
-    message.delete();
+    bot.channels.get("521312274141413391").sendMessage("Mention :" + myRole);
+
+    const log = message.member.guild.channels.find('name', 'modération-staff');
+    log.send({embed: {
+    color: 3447003,
+    author: {
+      name: "ASCALON BOT",
+      icon_url: "https://i.imgur.com/r1T3PbX.png"
+    },
+    title: `Demande de mute`,
+    description: `Joueur <@${message.author.id}> || raison : pub en dehors du channel`,
+    timestamp: new Date(),
+    footer: {
+      icon_url: "https://i.imgur.com/318H4Xw.png",
+      text: "© Created by Zayn#0607"
+    }
   }
 });
 
