@@ -248,7 +248,7 @@ bot.on("message", async message => {
 
     message.channel.send(`<@${message.author.id}> Bonjour, la pub de chaîne youtube ou autre est interdit.`).then(message => message.delete(5000));
 
-    bot.guilds.get(message.guild.id).channels.get(message.channel.name).send(`a!mute @${message.author.id} 16h`);
+    bot.guilds.get(message.guild.id).channels.get(message.channel.id).send(`a!mute @${message.author.id} 16h`);
   }
 
 
