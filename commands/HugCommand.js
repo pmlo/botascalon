@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const request = require('request-promise-native');
+const re = require('request-promise-native');
 
 module.exports.run = async (bot, message, args, ops) => {
 
@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args, ops) => {
         json: true
       };
     
-      let response = await request(options);
+      let response = await re(options);
     
       if (!response.data.length) {
         return Bastion.emit('error', Bastion.strings.error(message.guild.language, 'notFound'), Bastion.strings.error(message.guild.language, 'notFound', true, 'image'), message.channel);
