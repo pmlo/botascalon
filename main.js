@@ -230,7 +230,7 @@ bot.on("message", async message => {
 
 });
 
-bot.on("message", async message => {
+/*bot.on("message", async message => {
 
   let blacklisted = ['https', 'http', 'twitter.com', ]
 
@@ -249,7 +249,7 @@ bot.on("message", async message => {
     let myRole = message.guild.roles.find(role => role.name === "🌀 Modérateur 🌀");
 
     /*bot.channels.get("522503012799741971").sendMessage(`Demande de mute le joueur : <@${message.author.id}> **raison** : pub d'une chaine hors du channel pub no discord`);
-    bot.channels.get("522503012799741971").sendMessage("Mention :" + myRole);*/
+    bot.channels.get("522503012799741971").sendMessage("Mention :" + myRole);
 
     bot.channels.get("521312274141413391").sendMessage("Mention :" + myRole);
 
@@ -271,7 +271,7 @@ bot.on("message", async message => {
 }
     });
   }
-});
+});*/
 
 bot.on("message", async message => {
 
