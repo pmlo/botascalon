@@ -14,13 +14,13 @@ module.exports.run = async (bot, message, args, ops) => {
         json: true
       };
     
-      let response = await re(options);
+      let response = re(options);
     
       if (!response.data.length) {
         return Bastion.emit('error', Bastion.strings.error(message.guild.language, 'notFound'), Bastion.strings.error(message.guild.language, 'notFound', true, 'image'), message.channel);
       }
     
-      await message.channel.send({
+    message.channel.send({
         embed: {
           color: Bastion.colors.BLUE,
           title: `A hug from ${message.author.tag}`,
