@@ -16,9 +16,8 @@ module.exports.run = async (bot, message, args, ops) => {
     
       let response = re(options);
     
-      if (!response.data.length) {
-        return Bastion.emit('error', Bastion.strings.error(message.guild.language, 'notFound'), Bastion.strings.error(message.guild.language, 'notFound', true, 'image'), message.channel);
-      }
+      if (!response.data.length) return;
+      
     
     message.channel.send({
         embed: {
