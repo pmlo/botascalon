@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args, ops) => {
     
     message.channel.send({
         embed: {
-          color: Bastion.colors.BLUE,
+          color: 0x315,
           title: `A hug from ${message.author.tag}`,
           image: {
             url: response.data[Math.floor(Math.random() * response.data.length)].images.original.url
