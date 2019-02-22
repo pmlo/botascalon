@@ -431,11 +431,11 @@ bot.on("message", async message => {
         return;
           }
 
-    bot.users.get(support.targetID).send(`${message.member.displayName} : ${message.content}`)
+    bot.users.get(support.targetID).send(`**${message.member.displayName}** : ${message.content}`)
     message.delete();
 
 
-    return message.channel.send(`${message.member.displayName} : ${message.content}`);
+    return message.channel.send(`**${message.member.displayName}** : ${message.content}`);
   }
   });
 
