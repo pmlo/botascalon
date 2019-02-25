@@ -60,23 +60,6 @@ module.exports.run = async (bot, message, args, ops, tools) => {
 
     let rreason = args.join(" ").slice(22);
 
-    message.channel.send({embed: {
-        author: {
-          name: "ASCALON BOT",
-          icon_url: "https://i.imgur.com/r1T3PbX.png"
-        },
-        title: `Le joueur ${rUser.displayName} (${rUser}) à été banni par ${message.author.name}, raison ${rreason}`,
-        timestamp: new Date(),
-        footer: {
-          icon_url: "https://i.imgur.com/318H4Xw.png",
-          text: "© Created by Zayn#0607"
-        }
-      }
-    }).then(message => message.delete(3000));
-
-    _function.embed(`Le joueur ${rUser.displayName} (${rUser}) à été banni par ${message.author.name}, raison ${rreason}`, "history-bot",false,0);
-    _function.embed(`Le joueur ${rUser.displayName} (${rUser}) à été banni par ${message.author.name}, raison ${rreason}`, "sanction-modération",false,0);
-
     message.guild.member(member).ban(rreason);
 
     message.delete();
