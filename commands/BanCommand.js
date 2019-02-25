@@ -61,7 +61,6 @@ module.exports.run = async (bot, message, args, ops, tools) => {
     let rreason = args.join(" ").slice(22);
 
     message.channel.send({embed: {
-        color: FF2D00,
         author: {
           name: "ASCALON BOT",
           icon_url: "https://i.imgur.com/r1T3PbX.png"
