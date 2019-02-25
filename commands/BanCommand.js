@@ -60,11 +60,15 @@ module.exports.run = async (bot, message, args, ops, tools) => {
 
     let rreason = args.join(" ").slice(22);
 
-    message.guild.member(member).ban(rreason);
-
     _function.embed(`Le joueur ${rUser.displayName} (${rUser}) à été banni par ${message.author.name}, raison ${rreason}`, message.channel.name, true, 3000);
     _function.embed(`Le joueur ${rUser.displayName} (${rUser}) à été banni par ${message.author.name}, raison ${rreason}`, "history-bot",false,0);
     _function.embed(`Le joueur ${rUser.displayName} (${rUser}) à été banni par ${message.author.name}, raison ${rreason}`, "sanction-modération",false,0);
+
+    message.guild.member(member).ban(rreason);
+
+    message.delete();
+
+
 }
 
 module.exports.help = {
