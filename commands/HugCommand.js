@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const re = require('request-promise-native');
+const request = require('request-promise-native');
 
 module.exports.run = async (bot, message, args, ops) => {
 
@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args, ops) => {
         json: true
       };
     
-      let response = re(options);
+      let response = request(options);
     
       if (!response.data.length) return;
       
