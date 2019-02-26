@@ -16,9 +16,6 @@ module.exports.run = async (bot, message, args, ops) => {
     
       let response = request(options);
     
-      if (!response.data.length) return;
-      
-    
     message.channel.send({
         embed: {
           color: 0x315,
