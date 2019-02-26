@@ -19,6 +19,7 @@
     "ms": "^2.1.1",
     "opusscript": "0.0.6",
     "quick.db": "7.0.0-b19",
+    "request": "^2.88.0",
     "request-promise-native": "^1.0.7",
     "superagent": "^4.0.0-beta.5",
     "ytdl-core": "^0.28.0"
