@@ -389,7 +389,7 @@ bot.on("message", async message => {
 
       await channel.send(newChannel);
 
-      author.send(":flag_mf: Merci d'avoir contacté le support ! Un membre du staff va vous contacter dans les plus brefs délais \n:flag_lr: Thank you for contacting the support ! A member of the staff will contact you as soon as possible");
+      //author.send(":flag_mf: Merci d'avoir contacté le support ! Un membre du staff va vous contacter dans les plus brefs délais \n:flag_lr: Thank you for contacting the support ! A member of the staff will contact you as soon as possible");
 
       active.channelID = channel.id;
       active.targetID = author.id;
@@ -423,13 +423,24 @@ bot.on("message", async message => {
     let supportUser = bot.users.get(support.targetID);
     if(!supportUser) return message.channel.delete();
 
+    if(message.content.toLowerCase() == "?ban") {
+
+      message.channel.delete();
+
+      db.delete(`support_${support.targetID}`);
+      message.guild.member(supportUser).ban("Test");
+      return;
+
+    }
+
     if(message.content.toLowerCase() == '?complete') {
 
         message.channel.delete();
 
         db.delete(`support_${support.targetID}`);
-        return;
-          }
+
+      
+        }
 
     bot.users.get(support.targetID).send(`**${message.member.displayName}** : ${message.content}`)
     message.delete();

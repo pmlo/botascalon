@@ -26,7 +26,6 @@ module.exports.run = async (bot, message, args, ops) => {
   .addBlankField(true)
  
   message.channel.send({embed});
-
 }
 
 module.exports.help = {
