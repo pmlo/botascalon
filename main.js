@@ -438,8 +438,7 @@ bot.on("message", async message => {
         message.channel.delete();
 
         db.delete(`support_${support.targetID}`);
-
-      
+        return;
         }
 
     bot.users.get(support.targetID).send(`**${message.member.displayName}** : ${message.content}`)
