@@ -51,6 +51,8 @@ module.exports.run = async (bot, message, args, ops) => {
   }).catch(err => {
     console.log(err);
   });*/
+  
+  bot.channels.get("495904344080777246").sendMessage("Mention :" + myRole);
 
     var embed = new Discord.RichEmbed()
     .setDescription(`Sondage`)
