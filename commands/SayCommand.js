@@ -16,7 +16,6 @@ module.exports.run = async (bot, message, args, ops) => {
     message.delete();
     message.channel.send(botmessage);
 
-    
 }
 
 module.exports.help = {

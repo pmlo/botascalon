@@ -230,48 +230,6 @@ bot.on("message", async message => {
 
 });
 
-/*bot.on("message", async message => {
-
-  let blacklisted = ['https', 'http', 'twitter.com', ]
-
-  let foundInText = false;
-  for(var i in blacklisted) {
-    if(message.channel.name == "🔴pub-no-discord🔴")return;
-
-    if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
-    
-  }
-
-  if (foundInText) {
-
-    message.channel.send(`<@${message.author.id}> Bonjour, la pub de chaîne youtube ou autre est interdit.`).then(message => message.delete(5000));
-
-    let myRole = message.guild.roles.find(role => role.name === "🌀 Modérateur 🌀");
-
-    /*bot.channels.get("522503012799741971").sendMessage(`Demande de mute le joueur : <@${message.author.id}> **raison** : pub d'une chaine hors du channel pub no discord`);
-    bot.channels.get("522503012799741971").sendMessage("Mention :" + myRole);
-
-    bot.channels.get("521312274141413391").sendMessage("Mention :" + myRole);
-
-    
-    const log = message.member.guild.channels.find('name', 'modération-staff');
-    log.send({embed: {
-    color: 3447003,
-    author: {
-      name: "ASCALON BOT",
-      icon_url: "https://i.imgur.com/r1T3PbX.png"
-    },
-    title: `Demande de mute`,
-    description: `Joueur <@${message.author.id}> || raison : pub en dehors du channel`,
-    timestamp: new Date(),
-    footer: {
-      icon_url: "https://i.imgur.com/318H4Xw.png",
-      text: "© Created by Zayn#0607"
-    }
-}
-    });
-  }
-});*/
 
 bot.on("message", async message => {
 
@@ -282,7 +240,7 @@ let blacklisted = ['discord.gg'] //words put , after the word
 //2 looking for words
 let foundInText = false;
 for (var i in blacklisted) { // loops through the blacklisted list
-  if(message.channel.name == "👍partenariat" || message.channel.name == "🤝échange-de-pub🤝" || message.channel.name == "👆petite-pub" || message.member.hasPermission("MANAGE_MESSAGES")) return;
+  if(message.channel.name == "👍partenariat" ||message.channel.name == "🤝échange-de-pub🤝" || message.channel.name == "👆petite-pub" || message.member.hasPermission("MANAGE_MESSAGES")) return;
   
 
   if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
@@ -301,6 +259,23 @@ for (var i in blacklisted) { // loops through the blacklisted list
 
   }
 
+});
+
+bot.on("message", async message => {
+  let blacklisted = ['https', 'http'];
+
+  let foundInText = false;
+  for(var i in blacklisted) {
+    if(message.channel.name == "🔴pub-no-discord🔴") return;
+
+    if(message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
+
+    if(foundInText) {
+      message.delete();
+      message.author.send('La pub de discord sur le serveur ASCALON est interdite !');
+    }
+
+  }
 });
 
 bot.on("message", async message => {
