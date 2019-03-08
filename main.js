@@ -260,24 +260,6 @@ for (var i in blacklisted) { // loops through the blacklisted list
   }
 
 });
-
-bot.on("message", async message => {
-  let blacklisted = ['https', 'http'];
-
-  let foundInText = false;
-  for(var i in blacklisted) {
-    if(message.channel.name == "🔴pub-no-discord🔴") return;
-
-    if(message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
-
-    if(foundInText) {
-      message.delete();
-      message.author.send('La pub de discord sur le serveur ASCALON est interdite !');
-    }
-
-  }
-});
-
 bot.on("message", async message => {
 
   if(message.author.bot) return;
