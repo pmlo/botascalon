@@ -97,6 +97,7 @@ function changeColor() {
  });
 
  bot.on("ready", async () => {
+bot.channels.get("510162232659673128").send(`:white_check_mark: Bot **${bot.user.username}** en ligne, Prêt à travailler !`);
 
    //setInterval(changeColor, 60);
    console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
